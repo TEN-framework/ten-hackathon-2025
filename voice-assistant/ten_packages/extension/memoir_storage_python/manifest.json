@@ -1,0 +1,46 @@
+{
+  "type": "extension",
+  "name": "memoir_storage_python",
+  "version": "0.1.0",
+  "dependencies": [
+    {
+      "type": "system",
+      "name": "ten_runtime_python",
+      "version": "0.11"
+    }
+  ],
+  "package": {
+    "include": [
+      "manifest.json",
+      "property.json",
+      "**.py",
+      "requirements.txt",
+      "README.md"
+    ]
+  },
+  "api": {
+    "property": {
+      "properties": {
+        "storage_path": {
+          "type": "string"
+        }
+      }
+    },
+    "data_in": [
+      {
+        "name": "conversation_data"
+      },
+      {
+        "name": "query_request"
+      }
+    ],
+    "data_out": [
+      {
+        "name": "storage_response"
+      },
+      {
+        "name": "outline_data"
+      }
+    ]
+  }
+}
