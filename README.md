@@ -1,3 +1,5 @@
+![Ten Hackathon 2025 banner](banner-hackathon.png)
+
 # 🦌 小鹿光年 - 智能回忆录助手
 
 **团队名称**: 小鹿光年 (DeerLight)  
@@ -138,10 +140,20 @@ xiaolu-memoir-assistant-deerlight/
 
 ## 📞 联系我们
 
+*让每一份回忆都有温度，让每一个故事都值得铭记。* 🦌✨
+
+---
+
+## TEN Hackathon 2025 参赛信息
+
 **团队**: 小鹿光年 (DeerLight)  
 **项目**: XiaoLu Memoir Assistant  
 **Hackathon**: TEN Hackathon 2025
 
----
+### 参赛说明
+1. fork this repository https://github.com/TEN-framework/ten-hackathon-2025
+2. create a folder with following name "<team name> - <project name>" at root folder
+3. push the code to your forked repository, create a pull request
 
-*让每一份回忆都有温度，让每一个故事都值得铭记。* 🦌✨
+More details:
+https://docs.google.com/forms/d/e/1FAIpQLSeApnJUb4bir-NKNDDuGcvcMT45StDteL3mTFQkFDMcntTQdw/viewform
