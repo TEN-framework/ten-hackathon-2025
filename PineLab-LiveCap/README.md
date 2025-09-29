@@ -25,11 +25,14 @@ LiveCap is a revolutionary real-time multilingual transcription system that leve
 
 **For TEN Dev Challenge 2025 judges:**
 
-Due to the large size of the application (2.6GB), the executable files are hosted externally.
+We sincerely apologize that the application size (2.6GB) exceeds GitHub's file size limits, preventing us from including it directly in the repository. We have prepared the application as a RAR archive hosted on Google Drive for your convenience.
+
+### 🔗 Download Link:
+**[Download LiveCap Application from Google Drive](https://drive.google.com/drive/folders/1fq8h64capRXk60NiAxLw97mlaitXC-uE?usp=sharing)**
 
 ### Download Instructions:
 1. **Download the application archive** (RAR format, split into 100MB parts)
-   - **Note**: Please contact the competition organizers for the download link
+   - Access the Google Drive folder using the link above
    - Total size: ~2.6GB (26 parts × 100MB)
 
 2. **Extract the archive**:
