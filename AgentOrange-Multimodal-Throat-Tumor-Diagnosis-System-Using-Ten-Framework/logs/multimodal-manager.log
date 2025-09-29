@@ -1,0 +1,97 @@
+{"level":"info","message":"Initializing multimodal processor manager...","timestamp":"2025-09-22T10:31:18.445Z"}
+{"level":"info","message":"Initializing audio processor...","timestamp":"2025-09-22T10:31:18.446Z"}
+{"level":"info","message":"Initializing image processor...","timestamp":"2025-09-22T10:31:18.446Z"}
+{"level":"info","message":"Initializing clinical processor...","timestamp":"2025-09-22T10:31:18.446Z"}
+{"level":"info","message":"Multimodal processor manager initialized successfully","timestamp":"2025-09-22T10:31:18.446Z"}
+{"level":"info","message":"Processing clinical data...","timestamp":"2025-09-22T10:40:54.801Z"}
+{"level":"info","message":"Clinical data processing completed","timestamp":"2025-09-22T10:40:54.803Z"}
+{"level":"info","message":"Initializing multimodal processor manager...","timestamp":"2025-09-22T10:59:39.250Z"}
+{"level":"info","message":"Initializing audio processor...","timestamp":"2025-09-22T10:59:39.250Z"}
+{"level":"info","message":"Initializing image processor...","timestamp":"2025-09-22T10:59:39.251Z"}
+{"level":"info","message":"Initializing clinical processor...","timestamp":"2025-09-22T10:59:39.251Z"}
+{"level":"info","message":"Multimodal processor manager initialized successfully","timestamp":"2025-09-22T10:59:39.251Z"}
+{"level":"info","message":"Initializing multimodal processor manager...","timestamp":"2025-09-22T11:01:31.342Z"}
+{"level":"info","message":"Initializing audio processor...","timestamp":"2025-09-22T11:01:31.342Z"}
+{"level":"info","message":"Initializing image processor...","timestamp":"2025-09-22T11:01:31.342Z"}
+{"level":"info","message":"Initializing clinical processor...","timestamp":"2025-09-22T11:01:31.342Z"}
+{"level":"info","message":"Multimodal processor manager initialized successfully","timestamp":"2025-09-22T11:01:31.342Z"}
+{"level":"info","message":"Initializing multimodal processor manager...","timestamp":"2025-09-28T09:51:45.019Z"}
+{"level":"info","message":"Initializing audio processor...","timestamp":"2025-09-28T09:51:45.019Z"}
+{"level":"info","message":"Initializing image processor...","timestamp":"2025-09-28T09:51:45.019Z"}
+{"level":"info","message":"Initializing clinical processor...","timestamp":"2025-09-28T09:51:45.019Z"}
+{"level":"info","message":"Multimodal processor manager initialized successfully","timestamp":"2025-09-28T09:51:45.019Z"}
+{"level":"info","message":"Initializing multimodal processor manager...","timestamp":"2025-09-28T09:58:41.153Z"}
+{"level":"info","message":"Initializing audio processor...","timestamp":"2025-09-28T09:58:41.153Z"}
+{"level":"info","message":"Initializing image processor...","timestamp":"2025-09-28T09:58:41.153Z"}
+{"level":"info","message":"Initializing clinical processor...","timestamp":"2025-09-28T09:58:41.154Z"}
+{"level":"info","message":"Multimodal processor manager initialized successfully","timestamp":"2025-09-28T09:58:41.154Z"}
+{"level":"info","message":"Initializing multimodal processor manager...","timestamp":"2025-09-28T10:01:35.054Z"}
+{"level":"info","message":"Initializing audio processor...","timestamp":"2025-09-28T10:01:35.054Z"}
+{"level":"info","message":"Initializing image processor...","timestamp":"2025-09-28T10:01:35.054Z"}
+{"level":"info","message":"Initializing clinical processor...","timestamp":"2025-09-28T10:01:35.054Z"}
+{"level":"info","message":"Multimodal processor manager initialized successfully","timestamp":"2025-09-28T10:01:35.054Z"}
+{"level":"info","message":"Initializing multimodal processor manager...","timestamp":"2025-09-28T10:04:15.219Z"}
+{"level":"info","message":"Initializing audio processor...","timestamp":"2025-09-28T10:04:15.219Z"}
+{"level":"info","message":"Initializing image processor...","timestamp":"2025-09-28T10:04:15.219Z"}
+{"level":"info","message":"Initializing clinical processor...","timestamp":"2025-09-28T10:04:15.219Z"}
+{"level":"info","message":"Multimodal processor manager initialized successfully","timestamp":"2025-09-28T10:04:15.219Z"}
+{"level":"info","message":"Initializing multimodal processor manager...","timestamp":"2025-09-28T10:13:33.049Z"}
+{"level":"info","message":"Initializing audio processor...","timestamp":"2025-09-28T10:13:33.049Z"}
+{"level":"info","message":"Initializing image processor...","timestamp":"2025-09-28T10:13:33.049Z"}
+{"level":"info","message":"Initializing clinical processor...","timestamp":"2025-09-28T10:13:33.049Z"}
+{"level":"info","message":"Multimodal processor manager initialized successfully","timestamp":"2025-09-28T10:13:33.049Z"}
+{"level":"info","message":"Initializing multimodal processor manager...","timestamp":"2025-09-28T10:19:57.308Z"}
+{"level":"info","message":"Initializing audio processor...","timestamp":"2025-09-28T10:19:57.308Z"}
+{"level":"info","message":"Initializing image processor...","timestamp":"2025-09-28T10:19:57.308Z"}
+{"level":"info","message":"Initializing clinical processor...","timestamp":"2025-09-28T10:19:57.309Z"}
+{"level":"info","message":"Multimodal processor manager initialized successfully","timestamp":"2025-09-28T10:19:57.309Z"}
+{"level":"info","message":"Starting multimodal input processing...","timestamp":"2025-09-28T10:22:55.528Z"}
+{"level":"error","message":"Multimodal input processing failed: Multimodal input validation failed: Voice data must include audio file or buffer","stack":"Error: Multimodal input validation failed: Voice data must include audio file or buffer\n    at MultimodalProcessorManager.processMultimodalInput (/app/src/processors/multimodal-manager.js:87:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async /app/src/api/routes/multimodal.js:94:33","timestamp":"2025-09-28T10:22:55.529Z"}
+{"level":"info","message":"Initializing multimodal processor manager...","timestamp":"2025-09-28T10:26:03.222Z"}
+{"level":"info","message":"Initializing audio processor...","timestamp":"2025-09-28T10:26:03.222Z"}
+{"level":"info","message":"Initializing image processor...","timestamp":"2025-09-28T10:26:03.222Z"}
+{"level":"info","message":"Initializing clinical processor...","timestamp":"2025-09-28T10:26:03.222Z"}
+{"level":"info","message":"Multimodal processor manager initialized successfully","timestamp":"2025-09-28T10:26:03.222Z"}
+{"level":"info","message":"Starting multimodal input processing...","timestamp":"2025-09-28T10:38:05.631Z"}
+{"level":"error","message":"Multimodal input processing failed: Multimodal input validation failed: Voice data must include audio file or buffer","stack":"Error: Multimodal input validation failed: Voice data must include audio file or buffer\n    at MultimodalProcessorManager.processMultimodalInput (/app/src/processors/multimodal-manager.js:87:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async /app/src/api/routes/multimodal.js:98:33","timestamp":"2025-09-28T10:38:05.632Z"}
+{"level":"info","message":"Initializing multimodal processor manager...","timestamp":"2025-09-28T10:43:46.630Z"}
+{"level":"info","message":"Initializing audio processor...","timestamp":"2025-09-28T10:43:46.630Z"}
+{"level":"info","message":"Initializing image processor...","timestamp":"2025-09-28T10:43:46.630Z"}
+{"level":"info","message":"Initializing clinical processor...","timestamp":"2025-09-28T10:43:46.631Z"}
+{"level":"info","message":"Multimodal processor manager initialized successfully","timestamp":"2025-09-28T10:43:46.631Z"}
+{"level":"info","message":"Starting multimodal input processing...","timestamp":"2025-09-28T10:44:34.956Z"}
+{"level":"info","message":"Processing voice data...","timestamp":"2025-09-28T10:44:34.956Z"}
+{"level":"info","message":"Processing clinical data...","timestamp":"2025-09-28T10:44:34.957Z"}
+{"level":"error","message":"Voice data processing failed: Audio validation failed: Sample rate must be at least 44100 Hz, Bit depth must be at least 16 bits","stack":"Error: Audio validation failed: Sample rate must be at least 44100 Hz, Bit depth must be at least 16 bits\n    at AudioProcessor.process (/app/src/processors/audio-processor.js:59:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async MultimodalProcessorManager.processVoiceData (/app/src/processors/multimodal-manager.js:201:28)\n    at async Promise.all (index 0)\n    at async MultimodalProcessorManager.processMultimodalInput (/app/src/processors/multimodal-manager.js:122:13)\n    at async /app/src/api/routes/multimodal.js:94:33","timestamp":"2025-09-28T10:44:34.958Z"}
+{"level":"error","message":"Multimodal input processing failed: Audio validation failed: Sample rate must be at least 44100 Hz, Bit depth must be at least 16 bits","stack":"Error: Audio validation failed: Sample rate must be at least 44100 Hz, Bit depth must be at least 16 bits\n    at AudioProcessor.process (/app/src/processors/audio-processor.js:59:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async MultimodalProcessorManager.processVoiceData (/app/src/processors/multimodal-manager.js:201:28)\n    at async Promise.all (index 0)\n    at async MultimodalProcessorManager.processMultimodalInput (/app/src/processors/multimodal-manager.js:122:13)\n    at async /app/src/api/routes/multimodal.js:94:33","timestamp":"2025-09-28T10:44:34.960Z"}
+{"level":"info","message":"Clinical data processing completed","timestamp":"2025-09-28T10:44:34.962Z"}
+{"level":"info","message":"Initializing multimodal processor manager...","timestamp":"2025-09-28T10:47:25.789Z"}
+{"level":"info","message":"Initializing audio processor...","timestamp":"2025-09-28T10:47:25.789Z"}
+{"level":"info","message":"Initializing image processor...","timestamp":"2025-09-28T10:47:25.789Z"}
+{"level":"info","message":"Initializing clinical processor...","timestamp":"2025-09-28T10:47:25.789Z"}
+{"level":"info","message":"Multimodal processor manager initialized successfully","timestamp":"2025-09-28T10:47:25.789Z"}
+{"level":"info","message":"Starting multimodal input processing...","timestamp":"2025-09-28T10:48:14.504Z"}
+{"level":"info","message":"Processing voice data...","timestamp":"2025-09-28T10:48:14.504Z"}
+{"level":"info","message":"Processing clinical data...","timestamp":"2025-09-28T10:48:14.505Z"}
+{"level":"info","message":"Voice data processing completed","timestamp":"2025-09-28T10:48:14.511Z"}
+{"level":"info","message":"Clinical data processing completed","timestamp":"2025-09-28T10:48:14.511Z"}
+{"level":"info","message":"Performing multimodal fusion...","timestamp":"2025-09-28T10:48:14.511Z"}
+{"level":"info","message":"Multimodal fusion completed","timestamp":"2025-09-28T10:48:14.512Z"}
+{"level":"info","message":"Generating comprehensive analysis...","timestamp":"2025-09-28T10:48:14.512Z"}
+{"level":"info","message":"Comprehensive analysis generation completed","timestamp":"2025-09-28T10:48:14.512Z"}
+{"level":"info","message":"Multimodal input processing completed successfully","timestamp":"2025-09-28T10:48:14.513Z"}
+{"level":"info","message":"Initializing multimodal processor manager...","timestamp":"2025-09-29T05:36:20.642Z"}
+{"level":"info","message":"Initializing audio processor...","timestamp":"2025-09-29T05:36:20.642Z"}
+{"level":"info","message":"Initializing image processor...","timestamp":"2025-09-29T05:36:20.642Z"}
+{"level":"info","message":"Initializing clinical processor...","timestamp":"2025-09-29T05:36:20.642Z"}
+{"level":"info","message":"Multimodal processor manager initialized successfully","timestamp":"2025-09-29T05:36:20.642Z"}
+{"level":"info","message":"Starting multimodal input processing...","timestamp":"2025-09-29T05:37:00.087Z"}
+{"level":"info","message":"Processing voice data...","timestamp":"2025-09-29T05:37:00.087Z"}
+{"level":"info","message":"Processing clinical data...","timestamp":"2025-09-29T05:37:00.088Z"}
+{"level":"info","message":"Voice data processing completed","timestamp":"2025-09-29T05:37:00.093Z"}
+{"level":"info","message":"Clinical data processing completed","timestamp":"2025-09-29T05:37:00.094Z"}
+{"level":"info","message":"Performing multimodal fusion...","timestamp":"2025-09-29T05:37:00.094Z"}
+{"level":"info","message":"Multimodal fusion completed","timestamp":"2025-09-29T05:37:00.095Z"}
+{"level":"info","message":"Generating comprehensive analysis...","timestamp":"2025-09-29T05:37:00.095Z"}
+{"level":"info","message":"Comprehensive analysis generation completed","timestamp":"2025-09-29T05:37:00.095Z"}
+{"level":"info","message":"Multimodal input processing completed successfully","timestamp":"2025-09-29T05:37:00.095Z"}
