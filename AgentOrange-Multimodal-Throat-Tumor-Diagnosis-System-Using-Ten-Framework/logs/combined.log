@@ -24299,3 +24299,83 @@
 {"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:42:55.879Z","url":"/"}
 {"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:43:25.936Z","url":"/health","userAgent":"curl/7.88.1"}
 {"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:43:25.936Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:43:56.001Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:43:56.002Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:44:26.062Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:44:26.063Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:44:56.123Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:44:56.123Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:45:26.188Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:45:26.189Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:45:56.250Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:45:56.250Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:46:26.310Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:46:26.311Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:46:56.374Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:46:56.374Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:47:26.434Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:47:26.434Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:47:56.494Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:47:56.495Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:48:26.558Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:48:26.559Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:48:56.618Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:48:56.619Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:49:26.679Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:49:26.679Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:49:56.737Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:49:56.737Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:50:26.797Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:50:26.798Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:50:56.860Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:50:56.861Z","url":"/"}
+{"ip":"::ffff:172.18.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:51:07.204Z","url":"/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:51:07.205Z","url":"/"}
+{"ip":"::ffff:172.18.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:51:12.913Z","url":"/frontend","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":304,"timestamp":"2025-09-29T05:51:12.914Z","url":"/frontend"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:51:26.919Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:51:26.919Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:51:56.983Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:51:56.984Z","url":"/"}
+{"ip":"::ffff:172.18.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-09-29T05:52:12.207Z","url":"/api/multimodal/analyze","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"}
+{"duration":444,"level":"info","message":"Request completed","method":"POST","statusCode":200,"timestamp":"2025-09-29T05:52:12.650Z","url":"/analyze"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:52:27.046Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:52:27.046Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:52:57.109Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:52:57.110Z","url":"/"}
+{"ip":"::ffff:172.18.0.6","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:53:07.276Z","url":"/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:53:07.276Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:53:27.165Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:53:27.166Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:53:57.230Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:53:57.231Z","url":"/"}
+{"ip":"::ffff:172.18.0.6","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:54:25.893Z","url":"/webui/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":404,"timestamp":"2025-09-29T05:54:25.894Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:54:27.293Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:54:27.293Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:54:57.352Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:54:57.352Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:55:27.410Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:55:27.411Z","url":"/"}
+{"ip":"::ffff:172.18.0.6","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:55:53.162Z","url":"/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:55:53.163Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:55:57.473Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:55:57.473Z","url":"/"}
+{"ip":"::ffff:172.18.0.6","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:56:20.369Z","url":"/favicon.ico","userAgent":"Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.6261.156 Not(A:Brand/24 YaBrowser/24.4.1.901 Yowser/2.5  Safari/537.36"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":404,"timestamp":"2025-09-29T05:56:20.369Z","url":"/"}
+{"ip":"::ffff:172.18.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-09-29T05:56:26.733Z","url":"/api/multimodal/analyze","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"}
+{"duration":64,"level":"info","message":"Request completed","method":"POST","statusCode":200,"timestamp":"2025-09-29T05:56:26.797Z","url":"/analyze"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:56:27.530Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:56:27.530Z","url":"/"}
+{"ip":"::ffff:172.18.0.6","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:56:43.641Z","url":"/geoserver/web/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":404,"timestamp":"2025-09-29T05:56:43.642Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:56:57.592Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:56:57.592Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:57:27.645Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:57:27.646Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:57:57.702Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:57:57.702Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:58:27.760Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:58:27.761Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-29T05:58:57.824Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-29T05:58:57.825Z","url":"/"}
