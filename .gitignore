@@ -1,0 +1,47 @@
+# Claude configuration
+.claude/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*~
+
+# Build outputs
+dist/
+build/
+
+# Large binary files
+*.exe
+*.dll
+*.pyd
+*.so
+
+# Archives
+*.rar
+*.zip
+*.7z
+*.tar.gz
