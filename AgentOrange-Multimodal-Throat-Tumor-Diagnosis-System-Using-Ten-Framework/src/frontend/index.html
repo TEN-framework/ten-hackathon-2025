@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimodal Throat Tumor Diagnosis System - Complete API Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .modality-section {
+            margin-bottom: 40px;
+            padding: 30px;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            background: #f9f9f9;
+        }
+
+        .modality-section h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .file-upload {
+            border: 2px dashed #3498db;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-upload:hover {
+            border-color: #2980b9;
+            background: #f8f9fa;
+        }
+
+        .file-upload.dragover {
+            border-color: #27ae60;
+            background: #e8f5e8;
+        }
+
+        .upload-icon {
+            font-size: 3em;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+
+        .btn-danger:hover {
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+        }
+
+        .btn-warning:hover {
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+        }
+
+        .btn-success:hover {
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+        }
+
+        .btn-secondary:hover {
+            box-shadow: 0 5px 15px rgba(149, 165, 166, 0.4);
+        }
+
+        /* Recording Controls Styles */
+        .recording-controls {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 2px solid #e9ecef;
+        }
+
+        .recording-guidance {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+        }
+
+        .recording-guidance h4 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-size: 16px;
+        }
+
+        .recording-guidance ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .recording-guidance li {
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .recording-status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 10px;
+            background: #95a5a6;
+            transition: all 0.3s ease;
+        }
+
+        .status-indicator.recording {
+            background: #e74c3c;
+            animation: pulse 1.5s infinite;
+        }
+
+        .status-indicator.paused {
+            background: #f39c12;
+        }
+
+        .status-indicator.ready {
+            background: #27ae60;
+        }
+
+        .status-indicator.warning {
+            background: #f39c12;
+        }
+
+        .status-indicator.success {
+            background: #27ae60;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .recording-timer {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+
+        .recording-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .audio-preview {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            border: 2px solid #e9ecef;
+        }
+
+        .audio-preview h4 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .preview-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .results-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            display: none;
+        }
+
+        .results-section.show {
+            display: block;
+        }
+
+        .result-item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+
+        .result-item h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .confidence-bar {
+            background: #e0e0e0;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #e74c3c 0%, #f39c12 50%, #27ae60 100%);
+            transition: width 0.3s ease;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .status-success { background: #27ae60; }
+        .status-warning { background: #f39c12; }
+        .status-error { background: #e74c3c; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .card h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            transition: width 0.3s ease;
+        }
+
+        .navigation {
+            background: #34495e;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-tabs {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            overflow-x: auto;
+        }
+
+        .nav-tab {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .nav-tab button {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav-tab button:hover {
+            background: #2c3e50;
+        }
+
+        .nav-tab button.active {
+            background: #3498db;
+            border-bottom: 3px solid #2980b9;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 30px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .api-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+
+        .api-section h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .api-endpoint {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .endpoint-method {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .method-get { background: #27ae60; color: white; }
+        .method-post { background: #3498db; color: white; }
+        .method-put { background: #f39c12; color: white; }
+        .method-delete { background: #e74c3c; color: white; }
+
+        .endpoint-url {
+            font-family: monospace;
+            background: #ecf0f1;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .response-section {
+            margin-top: 20px;
+            padding: 15px;
+            background: #2c3e50;
+            color: white;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .login-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .user-info {
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .user-info.show {
+            display: block;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏥 Multimodal Throat Tumor Diagnosis</h1>
+            <p>AI-Powered Comprehensive Medical Analysis using TEN Framework</p>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="navigation">
+            <ul class="nav-tabs">
+                <li class="nav-tab">
+                    <button onclick="showTab('multimodal')" class="active">🔍 Multimodal Analysis</button>
+                </li>
+                <li class="nav-tab">
+                    <button onclick="showTab('auth')">🔐 Authentication</button>
+                </li>
+                <li class="nav-tab">
+                    <button onclick="showTab('individual')">🎯 Individual APIs</button>
+                </li>
+                <li class="nav-tab">
+                    <button onclick="showTab('analysis')">📊 Analysis History</button>
+                </li>
+                <li class="nav-tab">
+                    <button onclick="showTab('system')">⚙️ System Status</button>
+                </li>
+                <li class="nav-tab">
+                    <button onclick="showTab('docs')">📚 API Documentation</button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Multimodal Analysis Tab -->
+        <div id="multimodal" class="tab-content active">
+            <form id="diagnosisForm">
+                <!-- Voice Analysis Section -->
+                <div class="modality-section">
+                    <h3>🎤 Voice Analysis</h3>
+                    
+                    <!-- Audio Recording Controls -->
+                    <div class="recording-controls">
+                        <div class="recording-guidance">
+                            <h4>📋 Recording Guidelines:</h4>
+                            <ul>
+                                <li>Speak clearly and at normal volume</li>
+                                <li>Record in a quiet environment</li>
+                                <li>Keep microphone 10-30cm from your mouth</li>
+                                <li>Record for 10-30 seconds for best analysis</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="recording-status" id="recordingStatus">
+                            <div class="status-indicator" id="statusIndicator"></div>
+                            <span id="statusText">Ready to record</span>
+                        </div>
+                        
+                        <div class="recording-timer" id="recordingTimer" style="display: none;">
+                            <span id="timerDisplay">00:00</span>
+                        </div>
+                        
+                        <div class="recording-buttons">
+                            <button type="button" id="startRecording" class="btn btn-primary">
+                                🎤 Start Recording
+                            </button>
+                            <button type="button" id="stopRecording" class="btn btn-danger" style="display: none;">
+                                ⏹️ Stop Recording
+                            </button>
+                            <button type="button" id="pauseRecording" class="btn btn-warning" style="display: none;">
+                                ⏸️ Pause
+                            </button>
+                        </div>
+                        
+                        <div class="audio-preview" id="audioPreview" style="display: none;">
+                            <h4>Recording Preview:</h4>
+                            <audio id="recordedAudio" controls style="width: 100%;"></audio>
+                            <div class="preview-actions">
+                                <button type="button" id="useRecording" class="btn btn-success">✅ Use This Recording</button>
+                                <button type="button" id="recordAgain" class="btn btn-secondary">🔄 Record Again</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- File Upload Option -->
+                    <div class="file-upload" id="voiceUpload">
+                        <div class="upload-icon">📁</div>
+                        <p>Or upload existing audio file</p>
+                        <p><small>Supported formats: WAV, MP3, FLAC, M4A (10-30 seconds)</small></p>
+                        <input type="file" id="voiceFile" accept="audio/*" style="display: none;">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Recording Duration (seconds):</label>
+                        <input type="number" id="voiceDuration" min="10" max="30" value="20">
+                    </div>
+                </div>
+
+                <!-- Medical Images Section -->
+                <div class="modality-section">
+                    <h3>🖼️ Medical Images</h3>
+                    <div class="file-upload" id="imageUpload">
+                        <div class="upload-icon">📷</div>
+                        <p>Click to upload medical images or drag and drop</p>
+                        <p><small>Supported formats: JPG, PNG, TIFF, DICOM</small></p>
+                        <input type="file" id="imageFiles" accept="image/*,.dcm" multiple style="display: none;">
+                    </div>
+                    <div class="form-group">
+                        <label>Image Type:</label>
+                        <select id="imageType">
+                            <option value="laryngoscopy">Laryngoscopy</option>
+                            <option value="ct_scan">CT Scan</option>
+                            <option value="mri">MRI</option>
+                            <option value="x_ray">X-Ray</option>
+                            <option value="ultrasound">Ultrasound</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Clinical Data Section -->
+                <div class="modality-section">
+                    <h3>📋 Clinical Data</h3>
+                    <div class="grid">
+                        <div class="card">
+                            <h4>Demographics</h4>
+                            <div class="form-group">
+                                <label>Age:</label>
+                                <input type="number" id="age" min="0" max="120" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Gender:</label>
+                                <select id="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h4>Symptoms</h4>
+                            <div class="form-group">
+                                <label>Current Symptoms:</label>
+                                <textarea id="symptoms" rows="4" placeholder="Describe current symptoms..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Symptom Duration (days):</label>
+                                <input type="number" id="symptomDuration" min="1" max="365">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Medical History:</label>
+                        <textarea id="medicalHistory" rows="3" placeholder="Previous medical conditions, surgeries, etc."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Current Medications:</label>
+                        <textarea id="medications" rows="2" placeholder="List current medications..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Analysis Button -->
+                <div style="text-align: center; margin-top: 40px;">
+                    <button type="submit" class="btn btn-primary" id="analyzeBtn">
+                        🔍 Start Comprehensive Analysis
+                    </button>
+                </div>
+            </form>
+
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection">
+                <h3>📊 Analysis Results</h3>
+                <div id="resultsContent"></div>
+            </div>
+            </form>
+        </div>
+
+        <!-- Authentication Tab -->
+        <div id="auth" class="tab-content">
+            <div class="user-info" id="userInfo">
+                <h4>👤 Logged in as: <span id="userName"></span></h4>
+                <p>Role: <span id="userRole"></span></p>
+                <button class="btn" onclick="logout()">Logout</button>
+            </div>
+            
+            <div class="login-form" id="loginForm">
+                <h3>🔐 User Authentication</h3>
+                <form id="authForm">
+                    <div class="form-group">
+                        <label>Username:</label>
+                        <input type="text" id="username" value="admin" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password:</label>
+                        <input type="password" id="password" value="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                
+                <hr style="margin: 20px 0;">
+                
+                <h4>Register New User</h4>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label>Username:</label>
+                        <input type="text" id="regUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input type="email" id="regEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password:</label>
+                        <input type="password" id="regPassword" required>
+                    </div>
+                    <button type="submit" class="btn">Register</button>
+                </form>
+            </div>
+            
+            <div class="api-section">
+                <h4>🔗 Authentication API Endpoints</h4>
+                <div class="api-endpoint">
+                    <span class="endpoint-method method-post">POST</span>
+                    <span class="endpoint-url">/api/auth/login</span>
+                    <p>User login with username and password</p>
+                </div>
+                <div class="api-endpoint">
+                    <span class="endpoint-method method-post">POST</span>
+                    <span class="endpoint-url">/api/auth/register</span>
+                    <p>Register a new user account</p>
+                </div>
+                <div class="api-endpoint">
+                    <span class="endpoint-method method-get">GET</span>
+                    <span class="endpoint-url">/api/auth/me</span>
+                    <p>Get current user information (requires JWT token)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Individual APIs Tab -->
+        <div id="individual" class="tab-content">
+            <div class="api-section">
+                <h4>🎤 Voice Analysis API</h4>
+                <div class="file-upload" id="voiceApiUpload">
+                    <div class="upload-icon">🎵</div>
+                    <p>Upload voice file for analysis</p>
+                    <input type="file" id="voiceApiFile" accept="audio/*" style="display: none;">
+                </div>
+                <button class="btn" onclick="analyzeVoice()">Analyze Voice</button>
+                <div class="response-section" id="voiceResponse"></div>
+            </div>
+
+            <div class="api-section">
+                <h4>🖼️ Image Analysis API</h4>
+                <div class="file-upload" id="imageApiUpload">
+                    <div class="upload-icon">📷</div>
+                    <p>Upload medical images for analysis</p>
+                    <input type="file" id="imageApiFiles" accept="image/*,.dcm" multiple style="display: none;">
+                </div>
+                <button class="btn" onclick="analyzeImages()">Analyze Images</button>
+                <div class="response-section" id="imageResponse"></div>
+            </div>
+
+            <div class="api-section">
+                <h4>📋 Clinical Data API</h4>
+                <div class="form-group">
+                    <label>Clinical Data (JSON):</label>
+                    <textarea id="clinicalData" rows="6" placeholder='{"age": 45, "gender": "male", "symptoms": ["hoarseness"]}'>{"age": 45, "gender": "male", "current_symptoms": ["hoarseness", "difficulty_swallowing"], "medical_history": "None", "medications": []}</textarea>
+                </div>
+                <button class="btn" onclick="analyzeClinical()">Analyze Clinical Data</button>
+                <div class="response-section" id="clinicalResponse"></div>
+            </div>
+        </div>
+
+        <!-- Analysis History Tab -->
+        <div id="analysis" class="tab-content">
+            <div class="api-section">
+                <h4>📊 Analysis Statistics</h4>
+                <button class="btn" onclick="loadStatistics()">Load Statistics</button>
+                <div class="stats-grid" id="statsGrid"></div>
+                <div class="response-section" id="statsResponse"></div>
+            </div>
+
+            <div class="api-section">
+                <h4>📈 Analysis History</h4>
+                <button class="btn" onclick="loadHistory()">Load History</button>
+                <div class="response-section" id="historyResponse"></div>
+            </div>
+        </div>
+
+        <!-- System Status Tab -->
+        <div id="system" class="tab-content">
+            <div class="api-section">
+                <h4>🏥 System Health</h4>
+                <button class="btn" onclick="checkHealth()">Check Health</button>
+                <button class="btn" onclick="checkDetailedHealth()">Detailed Health</button>
+                <div class="response-section" id="healthResponse"></div>
+            </div>
+
+            <div class="api-section">
+                <h4>⚙️ System Status & Capabilities</h4>
+                <button class="btn" onclick="getSystemStatus()">Get System Status</button>
+                <div class="response-section" id="statusResponse"></div>
+            </div>
+        </div>
+
+        <!-- API Documentation Tab -->
+        <div id="docs" class="tab-content">
+            <div class="api-section">
+                <h4>📚 API Documentation</h4>
+                <button class="btn" onclick="loadDocs()">Load Documentation</button>
+                <div class="response-section" id="docsResponse"></div>
+            </div>
+
+            <div class="api-section">
+                <h4>🔗 All Available Endpoints</h4>
+                <div class="api-endpoint">
+                    <span class="endpoint-method method-get">GET</span>
+                    <span class="endpoint-url">/</span>
+                    <p>System overview and status</p>
+                </div>
+                <div class="api-endpoint">
+                    <span class="endpoint-method method-get">GET</span>
+                    <span class="endpoint-url">/docs</span>
+                    <p>API documentation and endpoint listing</p>
+                </div>
+                <div class="api-endpoint">
+                    <span class="endpoint-method method-get">GET</span>
+                    <span class="endpoint-url">/health</span>
+                    <p>Basic health check</p>
+                </div>
+                <div class="api-endpoint">
+                    <span class="endpoint-method method-get">GET</span>
+                    <span class="endpoint-url">/health/detailed</span>
+                    <p>Detailed system health with metrics</p>
+                </div>
+                <div class="api-endpoint">
+                    <span class="endpoint-method method-post">POST</span>
+                    <span class="endpoint-url">/api/multimodal/analyze</span>
+                    <p>Full multimodal analysis (voice, images, clinical data, video)</p>
+                </div>
+                <div class="api-endpoint">
+                    <span class="endpoint-method method-post">POST</span>
+                    <span class="endpoint-url">/api/multimodal/voice</span>
+                    <p>Voice-only analysis</p>
+                </div>
+                <div class="api-endpoint">
+                    <span class="endpoint-method method-post">POST</span>
+                    <span class="endpoint-url">/api/multimodal/images</span>
+                    <p>Medical image analysis</p>
+                </div>
+                <div class="api-endpoint">
+                    <span class="endpoint-method method-post">POST</span>
+                    <span class="endpoint-url">/api/multimodal/clinical</span>
+                    <p>Clinical data analysis</p>
+                </div>
+                <div class="api-endpoint">
+                    <span class="endpoint-method method-get">GET</span>
+                    <span class="endpoint-url">/api/multimodal/status</span>
+                    <p>System capabilities and status</p>
+                </div>
+                <div class="api-endpoint">
+                    <span class="endpoint-method method-get">GET</span>
+                    <span class="endpoint-url">/api/analysis/history</span>
+                    <p>Get user's analysis history</p>
+                </div>
+                <div class="api-endpoint">
+                    <span class="endpoint-method method-get">GET</span>
+                    <span class="endpoint-url">/api/analysis/statistics</span>
+                    <p>System-wide analysis statistics</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let authToken = localStorage.getItem('authToken');
+        let currentUser = null;
+
+        // Audio recording variables
+        let mediaRecorder = null;
+        let audioChunks = [];
+        let recordingStartTime = null;
+        let recordingTimer = null;
+        let isRecording = false;
+        let isPaused = false;
+        let recordedBlob = null;
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                initializeApp();
+                setupFileUploads();
+                setupAuthForms();
+                setupAudioRecording();
+                checkAuthStatus();
+            } catch (error) {
+                console.error('Error during app initialization:', error);
+            }
+        });
+
+        function initializeApp() {
+            // Set up file upload handlers
+            setupFileUploadHandlers();
+            
+            // Set up drag and drop
+            setupDragAndDrop();
+        }
+
+        function setupFileUploadHandlers() {
+            // Main form uploads
+            document.getElementById('voiceUpload').addEventListener('click', () => {
+                document.getElementById('voiceFile').click();
+            });
+
+            document.getElementById('imageUpload').addEventListener('click', () => {
+                document.getElementById('imageFiles').click();
+            });
+
+            // Individual API uploads
+            document.getElementById('voiceApiUpload').addEventListener('click', () => {
+                document.getElementById('voiceApiFile').click();
+            });
+
+            document.getElementById('imageApiUpload').addEventListener('click', () => {
+                document.getElementById('imageApiFiles').click();
+            });
+        }
+
+        function setupDragAndDrop() {
+            ['voiceUpload', 'imageUpload', 'voiceApiUpload', 'imageApiUpload'].forEach(id => {
+                const element = document.getElementById(id);
+                
+                element.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    element.classList.add('dragover');
+                });
+                
+                element.addEventListener('dragleave', () => {
+                    element.classList.remove('dragover');
+                });
+                
+                element.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    element.classList.remove('dragover');
+                    
+                    const files = e.dataTransfer.files;
+                    if (id === 'voiceUpload') {
+                        document.getElementById('voiceFile').files = files;
+                    } else if (id === 'imageUpload') {
+                        document.getElementById('imageFiles').files = files;
+                    } else if (id === 'voiceApiUpload') {
+                        document.getElementById('voiceApiFile').files = files;
+                    } else if (id === 'imageApiUpload') {
+                        document.getElementById('imageApiFiles').files = files;
+                    }
+                });
+            });
+        }
+
+        function setupAuthForms() {
+            // Login form
+            document.getElementById('authForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                await login();
+            });
+
+            // Register form
+            document.getElementById('registerForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                await register();
+            });
+        }
+
+        // Audio Recording Functions
+        function setupAudioRecording() {
+            // Start recording button
+            document.getElementById('startRecording').addEventListener('click', startRecording);
+            
+            // Stop recording button
+            document.getElementById('stopRecording').addEventListener('click', stopRecording);
+            
+            // Pause recording button
+            document.getElementById('pauseRecording').addEventListener('click', pauseRecording);
+            
+            // Use recording button
+            document.getElementById('useRecording').addEventListener('click', useRecording);
+            
+            // Record again button
+            document.getElementById('recordAgain').addEventListener('click', recordAgain);
+        }
+
+        async function startRecording() {
+            try {
+                // Check if MediaRecorder is supported
+                if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                    throw new Error('Your browser does not support audio recording');
+                }
+
+                // Request microphone access
+                const stream = await navigator.mediaDevices.getUserMedia({ 
+                    audio: {
+                        echoCancellation: true,
+                        noiseSuppression: true,
+                        sampleRate: 44100,
+                        channelCount: 1
+                    } 
+                });
+
+                // Validate audio quality
+                const audioTracks = stream.getAudioTracks();
+                if (audioTracks.length === 0) {
+                    throw new Error('No audio track available');
+                }
+
+                const audioTrack = audioTracks[0];
+                const settings = audioTrack.getSettings();
+                
+                // Log audio settings for debugging
+                console.log('Audio settings:', settings);
+                
+                // Check if we have good audio quality
+                if (settings.sampleRate && settings.sampleRate < 22050) {
+                    console.warn('Low sample rate detected:', settings.sampleRate);
+                    showRecordingStatus('Warning: Low audio quality detected', 'warning');
+                }
+
+                // Create MediaRecorder
+                mediaRecorder = new MediaRecorder(stream, {
+                    mimeType: 'audio/webm;codecs=opus'
+                });
+
+                audioChunks = [];
+                recordingStartTime = Date.now();
+
+                // Handle data available
+                mediaRecorder.ondataavailable = (event) => {
+                    if (event.data.size > 0) {
+                        audioChunks.push(event.data);
+                    }
+                };
+
+                // Handle recording stop
+                mediaRecorder.onstop = () => {
+                    recordedBlob = new Blob(audioChunks, { type: 'audio/webm' });
+                    const audioUrl = URL.createObjectURL(recordedBlob);
+                    document.getElementById('recordedAudio').src = audioUrl;
+                    document.getElementById('audioPreview').style.display = 'block';
+                    
+                    // Stop all tracks
+                    stream.getTracks().forEach(track => track.stop());
+                };
+
+                // Start recording
+                mediaRecorder.start(1000); // Collect data every second
+                isRecording = true;
+                isPaused = false;
+
+                // Update UI
+                updateRecordingUI();
+                startTimer();
+
+            } catch (error) {
+                console.error('Error accessing microphone:', error);
+                
+                let errorMessage = 'Unable to access microphone. ';
+                if (error.name === 'NotAllowedError') {
+                    errorMessage += 'Please allow microphone access and try again.';
+                } else if (error.name === 'NotFoundError') {
+                    errorMessage += 'No microphone found. Please connect a microphone.';
+                } else if (error.name === 'NotSupportedError') {
+                    errorMessage += 'Your browser does not support audio recording.';
+                } else {
+                    errorMessage += 'Please check your browser permissions and try again.';
+                }
+                
+                showRecordingStatus(errorMessage, 'warning');
+                alert(errorMessage);
+            }
+        }
+
+        function stopRecording() {
+            if (mediaRecorder && isRecording) {
+                mediaRecorder.stop();
+                isRecording = false;
+                isPaused = false;
+                stopTimer();
+                updateRecordingUI();
+            }
+        }
+
+        function pauseRecording() {
+            if (mediaRecorder && isRecording) {
+                if (isPaused) {
+                    mediaRecorder.resume();
+                    isPaused = false;
+                    startTimer();
+                } else {
+                    mediaRecorder.pause();
+                    isPaused = true;
+                    stopTimer();
+                }
+                updateRecordingUI();
+            }
+        }
+
+        function useRecording() {
+            if (recordedBlob) {
+                // Create a File object from the blob
+                const fileName = `recording_${Date.now()}.webm`;
+                const file = new File([recordedBlob], fileName, { type: 'audio/webm' });
+                
+                // Create a new FileList-like object
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                
+                // Set the file input
+                document.getElementById('voiceFile').files = dataTransfer.files;
+                
+                // Hide preview and reset
+                document.getElementById('audioPreview').style.display = 'none';
+                resetRecording();
+                
+                // Show success message
+                showRecordingStatus('Recording saved successfully!', 'success');
+            }
+        }
+
+        function recordAgain() {
+            document.getElementById('audioPreview').style.display = 'none';
+            resetRecording();
+            showRecordingStatus('Ready to record', 'ready');
+        }
+
+        function resetRecording() {
+            recordedBlob = null;
+            audioChunks = [];
+            mediaRecorder = null;
+            isRecording = false;
+            isPaused = false;
+            recordingStartTime = null;
+            stopTimer();
+            updateRecordingUI();
+        }
+
+        function updateRecordingUI() {
+            const statusIndicator = document.getElementById('statusIndicator');
+            const statusText = document.getElementById('statusText');
+            const startBtn = document.getElementById('startRecording');
+            const stopBtn = document.getElementById('stopRecording');
+            const pauseBtn = document.getElementById('pauseRecording');
+            const timer = document.getElementById('recordingTimer');
+
+            if (isRecording) {
+                statusIndicator.className = 'status-indicator recording';
+                statusText.textContent = isPaused ? 'Recording paused' : 'Recording...';
+                startBtn.style.display = 'none';
+                stopBtn.style.display = 'inline-block';
+                pauseBtn.style.display = 'inline-block';
+                pauseBtn.textContent = isPaused ? '▶️ Resume' : '⏸️ Pause';
+                timer.style.display = 'block';
+            } else {
+                statusIndicator.className = 'status-indicator ready';
+                statusText.textContent = 'Ready to record';
+                startBtn.style.display = 'inline-block';
+                stopBtn.style.display = 'none';
+                pauseBtn.style.display = 'none';
+                timer.style.display = 'none';
+            }
+        }
+
+        function startTimer() {
+            recordingTimer = setInterval(() => {
+                if (recordingStartTime && !isPaused) {
+                    const elapsed = Math.floor((Date.now() - recordingStartTime) / 1000);
+                    const minutes = Math.floor(elapsed / 60);
+                    const seconds = elapsed % 60;
+                    document.getElementById('timerDisplay').textContent = 
+                        `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                    
+                    // Auto-stop at maximum duration (30 seconds)
+                    const maxDuration = parseInt(document.getElementById('voiceDuration').value) || 30;
+                    if (elapsed >= maxDuration) {
+                        stopRecording();
+                        showRecordingStatus('Recording stopped automatically at maximum duration', 'ready');
+                    }
+                }
+            }, 1000);
+        }
+
+        function stopTimer() {
+            if (recordingTimer) {
+                clearInterval(recordingTimer);
+                recordingTimer = null;
+            }
+        }
+
+        function showRecordingStatus(message, type) {
+            const statusText = document.getElementById('statusText');
+            const statusIndicator = document.getElementById('statusIndicator');
+            
+            statusText.textContent = message;
+            statusIndicator.className = `status-indicator ${type}`;
+            
+            // Reset after 3 seconds
+            setTimeout(() => {
+                if (!isRecording) {
+                    statusText.textContent = 'Ready to record';
+                    statusIndicator.className = 'status-indicator ready';
+                }
+            }, 3000);
+        }
+
+        function checkAuthStatus() {
+            if (authToken) {
+                showUserInfo();
+            } else {
+                showLoginForm();
+            }
+        }
+
+        function showUserInfo() {
+            document.getElementById('userInfo').classList.add('show');
+            document.getElementById('loginForm').style.display = 'none';
+        }
+
+        function showLoginForm() {
+            document.getElementById('userInfo').classList.remove('show');
+            document.getElementById('loginForm').style.display = 'block';
+        }
+
+        // Tab navigation
+        function showTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all nav buttons
+            document.querySelectorAll('.nav-tab button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Authentication functions
+        async function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    authToken = data.token;
+                    currentUser = data.user;
+                    localStorage.setItem('authToken', authToken);
+                    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                    showUserInfo();
+                    document.getElementById('userName').textContent = currentUser.username;
+                    document.getElementById('userRole').textContent = currentUser.role;
+                    showResponse('authResponse', data);
+                } else {
+                    showResponse('authResponse', data, true);
+                }
+            } catch (error) {
+                showResponse('authResponse', { error: error.message }, true);
+            }
+        }
+
+        async function register() {
+            const username = document.getElementById('regUsername').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+
+            try {
+                const response = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, email, password })
+                });
+
+                const data = await response.json();
+                showResponse('authResponse', data, !response.ok);
+            } catch (error) {
+                showResponse('authResponse', { error: error.message }, true);
+            }
+        }
+
+        function logout() {
+            authToken = null;
+            currentUser = null;
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('currentUser');
+            showLoginForm();
+        }
+
+        // Individual API functions
+        async function analyzeVoice() {
+            const file = document.getElementById('voiceApiFile').files[0];
+            if (!file) {
+                showResponse('voiceResponse', { error: 'Please select a voice file' }, true);
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('voice_file', file);
+
+            try {
+                const response = await fetch('/api/multimodal/voice', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+                showResponse('voiceResponse', data, !response.ok);
+            } catch (error) {
+                showResponse('voiceResponse', { error: error.message }, true);
+            }
+        }
+
+        async function analyzeImages() {
+            const files = document.getElementById('imageApiFiles').files;
+            if (files.length === 0) {
+                showResponse('imageResponse', { error: 'Please select at least one image file' }, true);
+                return;
+            }
+
+            const formData = new FormData();
+            for (let file of files) {
+                formData.append('medical_images', file);
+            }
+
+            try {
+                const response = await fetch('/api/multimodal/images', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+                showResponse('imageResponse', data, !response.ok);
+            } catch (error) {
+                showResponse('imageResponse', { error: error.message }, true);
+            }
+        }
+
+        async function analyzeClinical() {
+            const clinicalData = document.getElementById('clinicalData').value;
+            
+            try {
+                const parsedData = JSON.parse(clinicalData);
+                
+                const response = await fetch('/api/multimodal/clinical', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ clinical_data: parsedData })
+                });
+
+                const data = await response.json();
+                showResponse('clinicalResponse', data, !response.ok);
+            } catch (error) {
+                showResponse('clinicalResponse', { error: 'Invalid JSON format' }, true);
+            }
+        }
+
+        // Analysis history functions
+        async function loadStatistics() {
+            try {
+                const response = await fetch('/api/analysis/statistics');
+                const data = await response.json();
+                
+                if (response.ok) {
+                    displayStatistics(data);
+                }
+                showResponse('statsResponse', data, !response.ok);
+            } catch (error) {
+                showResponse('statsResponse', { error: error.message }, true);
+            }
+        }
+
+        function displayStatistics(stats) {
+            const statsGrid = document.getElementById('statsGrid');
+            statsGrid.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-number">${stats.total_analyses}</div>
+                    <div class="stat-label">Total Analyses</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.successful_analyses}</div>
+                    <div class="stat-label">Successful</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${(stats.average_confidence * 100).toFixed(1)}%</div>
+                    <div class="stat-label">Avg Confidence</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.risk_distribution.low}</div>
+                    <div class="stat-label">Low Risk</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.risk_distribution.moderate}</div>
+                    <div class="stat-label">Moderate Risk</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.risk_distribution.high}</div>
+                    <div class="stat-label">High Risk</div>
+                </div>
+            `;
+        }
+
+        async function loadHistory() {
+            try {
+                const response = await fetch('/api/analysis/history');
+                const data = await response.json();
+                showResponse('historyResponse', data, !response.ok);
+            } catch (error) {
+                showResponse('historyResponse', { error: error.message }, true);
+            }
+        }
+
+        // System status functions
+        async function checkHealth() {
+            try {
+                const response = await fetch('/health');
+                const data = await response.json();
+                showResponse('healthResponse', data, !response.ok);
+            } catch (error) {
+                showResponse('healthResponse', { error: error.message }, true);
+            }
+        }
+
+        async function checkDetailedHealth() {
+            try {
+                const response = await fetch('/health/detailed');
+                const data = await response.json();
+                showResponse('healthResponse', data, !response.ok);
+            } catch (error) {
+                showResponse('healthResponse', { error: error.message }, true);
+            }
+        }
+
+        async function getSystemStatus() {
+            try {
+                const response = await fetch('/api/multimodal/status');
+                const data = await response.json();
+                showResponse('statusResponse', data, !response.ok);
+            } catch (error) {
+                showResponse('statusResponse', { error: error.message }, true);
+            }
+        }
+
+        // Documentation functions
+        async function loadDocs() {
+            try {
+                const response = await fetch('/docs');
+                const data = await response.json();
+                showResponse('docsResponse', data, !response.ok);
+            } catch (error) {
+                showResponse('docsResponse', { error: error.message }, true);
+            }
+        }
+
+        // Utility functions
+        function showResponse(elementId, data, isError = false) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.innerHTML = JSON.stringify(data, null, 2);
+                element.style.borderLeft = isError ? '4px solid #e74c3c' : '4px solid #27ae60';
+            }
+        }
+
+        function setupFileUploads() {
+            // This function is called during initialization
+            // File upload handlers are set up in setupFileUploadHandlers()
+        }
+
+        // Main form submission (multimodal analysis)
+        document.getElementById('diagnosisForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const analyzeBtn = document.getElementById('analyzeBtn');
+            const resultsSection = document.getElementById('resultsSection');
+            const resultsContent = document.getElementById('resultsContent');
+            
+            // Show loading state
+            analyzeBtn.disabled = true;
+            analyzeBtn.textContent = '🔄 Analyzing...';
+            
+            resultsSection.classList.add('show');
+            resultsContent.innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <h3>Processing Multimodal Data...</h3>
+                    <p>Analyzing voice, images, and clinical data using advanced AI</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+            `;
+            
+            // Simulate progress
+            let progress = 0;
+            const progressInterval = setInterval(() => {
+                progress += Math.random() * 20;
+                if (progress > 90) progress = 90;
+                document.querySelector('.progress-fill').style.width = progress + '%';
+            }, 500);
+            
+            try {
+                // Prepare form data
+                const formData = new FormData();
+                
+                // Add voice file
+                const voiceFile = document.getElementById('voiceFile').files[0];
+                if (voiceFile) {
+                    formData.append('voice_file', voiceFile);
+                    formData.append('voice_duration', document.getElementById('voiceDuration').value);
+                }
+                
+                // Add image files
+                const imageFiles = document.getElementById('imageFiles').files;
+                for (let file of imageFiles) {
+                    formData.append('medical_images', file);
+                }
+                formData.append('image_type', document.getElementById('imageType').value);
+                
+                // Add clinical data
+                const clinicalData = {
+                    age: document.getElementById('age').value,
+                    gender: document.getElementById('gender').value,
+                    current_symptoms: document.getElementById('symptoms').value.split(',').map(s => s.trim()),
+                    medical_history: document.getElementById('medicalHistory').value,
+                    medications: document.getElementById('medications').value.split(',').map(m => m.trim()),
+                    symptom_duration: document.getElementById('symptomDuration').value
+                };
+                formData.append('clinical_data', JSON.stringify(clinicalData));
+                
+                // Make API request
+                const response = await fetch('/api/multimodal/analyze', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                clearInterval(progressInterval);
+                document.querySelector('.progress-fill').style.width = '100%';
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const results = await response.json();
+                
+                // Display results
+                displayResults(results);
+                
+            } catch (error) {
+                console.error('Analysis failed:', error);
+                resultsContent.innerHTML = `
+                    <div class="result-item" style="border-left-color: #e74c3c;">
+                        <h4><span class="status-indicator status-error"></span>Analysis Failed</h4>
+                        <p>Error: ${error.message}</p>
+                        <p>Please try again or contact support if the problem persists.</p>
+                    </div>
+                `;
+            } finally {
+                analyzeBtn.disabled = false;
+                analyzeBtn.textContent = '🔍 Start Comprehensive Analysis';
+            }
+        });
+        
+        function displayResults(results) {
+            const resultsContent = document.getElementById('resultsContent');
+            
+            let html = `
+                <div class="result-item">
+                    <h4><span class="status-indicator status-success"></span>Analysis Complete</h4>
+                    <p><strong>Analysis ID:</strong> ${results.analysis_id}</p>
+                    <p><strong>Processing Time:</strong> ${results.processing_time}ms</p>
+                    <p><strong>Available Modalities:</strong> ${results.available_modalities.join(', ')}</p>
+                </div>
+                
+                <div class="result-item">
+                    <h4>🎯 Diagnosis</h4>
+                    <p><strong>Primary Diagnosis:</strong> ${results.diagnosis.primary_diagnosis}</p>
+                    <p><strong>Confidence:</strong> ${(results.diagnosis.confidence * 100).toFixed(1)}%</p>
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" style="width: ${results.diagnosis.confidence * 100}%"></div>
+                    </div>
+                </div>
+                
+                <div class="result-item">
+                    <h4>📈 Risk Assessment</h4>
+                    <p><strong>Risk Level:</strong> ${results.risk_stratification.risk_level.toUpperCase()}</p>
+                    <p><strong>Risk Score:</strong> ${(results.risk_stratification.risk_score * 100).toFixed(1)}%</p>
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" style="width: ${results.risk_stratification.risk_score * 100}%"></div>
+                    </div>
+                </div>
+                
+                <div class="result-item">
+                    <h4>💡 Recommendations</h4>
+                    <ul>
+                        ${results.recommendations.map(rec => `
+                            <li><strong>${rec.type}:</strong> ${rec.action} (${rec.timeframe})</li>
+                        `).join('')}
+                    </ul>
+                </div>
+                
+                <div class="result-item">
+                    <h4>📋 Follow-up Plan</h4>
+                    <p><strong>Immediate Actions:</strong> ${results.follow_up_plan.immediate_actions.join(', ') || 'None'}</p>
+                    <p><strong>Short-term:</strong> ${results.follow_up_plan.short_term.join(', ')}</p>
+                    <p><strong>Long-term:</strong> ${results.follow_up_plan.long_term.join(', ')}</p>
+                    <p><strong>Monitoring Frequency:</strong> ${results.follow_up_plan.monitoring_plan.frequency}</p>
+                </div>
+                
+                <div class="result-item">
+                    <h4>🤖 AI Conversation</h4>
+                    <p>${results.conversation_response || 'AI analysis completed successfully. Please consult with your healthcare provider for detailed interpretation of results.'}</p>
+                </div>
+            `;
+            
+            resultsContent.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
