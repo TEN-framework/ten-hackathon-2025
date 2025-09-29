@@ -1,0 +1,223 @@
+{
+  "ten": {
+    "predefined_graphs": [
+      {
+        "name": "voice_assistant_with_memoir",
+        "auto_start": true,
+        "graph": {
+          "nodes": [
+            {
+              "type": "extension",
+              "name": "agora_rtc",
+              "addon": "agora_rtc",
+              "extension_group": "default",
+              "property": {
+                "app_id": "${env:AGORA_APP_ID}",
+                "app_certificate": "${env:AGORA_APP_CERTIFICATE|}",
+                "channel": "ten_agent_test",
+                "stream_id": 1234,
+                "remote_stream_id": 123,
+                "subscribe_audio": true,
+                "publish_audio": true,
+                "publish_data": true,
+                "enable_agora_asr": false
+              }
+            },
+            {
+              "type": "extension",
+              "name": "stt",
+              "addon": "aliyun_asr",
+              "extension_group": "stt",
+              "property": {
+                "api_url": "wss://nls-gateway.aliyuncs.com/ws/v1",
+                "appkey": "${env:ALIYUN_ASR_APPKEY}",
+                "akid": "${env:ALIYUN_ASR_AKID}",
+                "aksecret": "${env:ALIYUN_ASR_AKKEY}"
+              }
+            },
+            {
+              "type": "extension",
+              "name": "llm",
+              "addon": "openai_llm2_python",
+              "extension_group": "chatgpt",
+              "property": {
+                "base_url": "https://ark.cn-beijing.volces.com/api/v3/",
+                "api_key": "44beb488-3916-4da6-912c-5ebcf50644c5",
+                "proxy_url": "${env:OPENAI_PROXY_URL|}",
+                "model": "doubao-1-5-lite-32k-250115",
+                "prompt": "你是小鹿，一个专业且温暖的回忆录助手。你的使命是陪伴用户记录珍贵的人生回忆。\n\n## 你的个性特点：\n- 温暖亲切，善于倾听\n- 真诚关心用户的每一个回忆\n- 会给予适当的情感回应和鼓励\n- 让用户感到被理解和支持\n\n## 对话原则：\n1. **以用户为主导** - 让用户按自己的节奏分享\n2. **温暖回应** - 对每个回忆给予真诚的反馈\n3. **适度互动** - 不会过度引导，但会给予必要的鼓励\n4. **情感共鸣** - 理解并回应用户的情感\n\n## 回应风格：\n- 用温暖简洁的话语表达理解：\"听起来很温馨呢！\" \"真是珍贵的回忆\"\n- 给予情感支持：\"我能感受到那份快乐\" \"那一定很难忘\"\n- 适当鼓励继续：\"还想聊聊那时候的其他事情吗？\" \"这让我想了解更多\"\n- 表达关心：\"这段经历对你很重要吧\" \"听你这么说我也很感动\"\n\n## 你不会：\n❌ 连续提很多问题\n❌ 强行引导话题方向\n❌ 给出建议或评判\n❌ 打断用户的分享\n\n## 你会：\n✅ 真诚回应用户的每个分享\n✅ 表达对回忆的珍视和理解\n✅ 在适当时候给予温暖的鼓励\n✅ 让用户感到被倾听和理解\n\n记住：你是用户最温暖的回忆录伙伴，既要倾听，也要给予温暖的陪伴和反馈。"
+              }
+            },
+            {
+              "type": "extension",
+              "name": "tts",
+              "addon": "minimax_tts_websocket_python",
+              "extension_group": "tts",
+              "property": {
+                "params": {
+                  "api_key": "${env:MINIMAX_TTS_API_KEY|}"
+                }
+              }
+            },
+            {
+              "type": "extension",
+              "name": "main_control",
+              "addon": "main_python",
+              "extension_group": "control",
+              "property": {
+                "greeting": "你好呀～我是小鹿，专门帮你梳理和记录。那些藏在时光里的故事、情绪和瞬间，都不该被悄悄遗忘 —— 毕竟，每个人的回忆都值得被认真铭记。。"
+              }
+            },
+            {
+              "type": "extension",
+              "name": "message_collector",
+              "addon": "message_collector2",
+              "extension_group": "transcriber",
+              "property": {}
+            },
+            {
+              "type": "extension",
+              "name": "weatherapi_tool_python",
+              "addon": "weatherapi_tool_python",
+              "extension_group": "default",
+              "property": {
+                "api_key": "${env:WEATHERAPI_API_KEY|}"
+              }
+            },
+            {
+              "type": "extension",
+              "name": "streamid_adapter",
+              "addon": "streamid_adapter",
+              "property": {}
+            },
+            {
+              "type": "extension",
+              "name": "memoir_storage",
+              "addon": "memoir_storage_python",
+              "extension_group": "storage",
+              "property": {
+                "storage_path": "./memoir_data"
+              }
+            }
+          ],
+          "connections": [
+            {
+              "extension": "main_control",
+              "cmd": [
+                {
+                  "names": [
+                    "on_user_joined",
+                    "on_user_left"
+                  ],
+                  "source": [
+                    {
+                      "extension": "agora_rtc"
+                    }
+                  ]
+                },
+                {
+                  "names": [
+                    "tool_register"
+                  ],
+                  "source": [
+                    {
+                      "extension": "weatherapi_tool_python"
+                    }
+                  ]
+                }
+              ],
+              "data": [
+                {
+                  "name": "asr_result",
+                  "source": [
+                    {
+                      "extension": "stt"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "extension": "agora_rtc",
+              "audio_frame": [
+                {
+                  "name": "pcm_frame",
+                  "dest": [
+                    {
+                      "extension": "streamid_adapter"
+                    }
+                  ]
+                },
+                {
+                  "name": "pcm_frame",
+                  "source": [
+                    {
+                      "extension": "tts"
+                    }
+                  ]
+                }
+              ],
+              "data": [
+                {
+                  "name": "data",
+                  "source": [
+                    {
+                      "extension": "message_collector"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "extension": "streamid_adapter",
+              "audio_frame": [
+                {
+                  "name": "pcm_frame",
+                  "dest": [
+                    {
+                      "extension": "stt"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "extension": "memoir_storage",
+              "data": [
+                {
+                  "name": "conversation_data",
+                  "source": [
+                    {
+                      "extension": "main_control"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "log": {
+      "handlers": [
+        {
+          "matchers": [
+            {
+              "level": "info"
+            }
+          ],
+          "formatter": {
+            "type": "plain",
+            "colored": true
+          },
+          "emitter": {
+            "type": "console",
+            "config": {
+              "stream": "stdout"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

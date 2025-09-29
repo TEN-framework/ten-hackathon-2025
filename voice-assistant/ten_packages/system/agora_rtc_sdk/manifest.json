@@ -1,0 +1,19 @@
+{
+  "type": "system",
+  "name": "agora_rtc_sdk",
+  "version": "4.4.32-140",
+  "dependencies": [],
+  "package": {
+    "include": [
+      "manifest.json",
+      "lib/**",
+      "include/**"
+    ]
+  },
+  "supports": [
+    {
+      "os": "linux",
+      "arch": "x64"
+    }
+  ]
+}
