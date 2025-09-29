@@ -1,0 +1,25 @@
+{
+  "name": "ten_framework",
+  "image": "ghcr.io/ten-framework/ten_agent_build:0.7.3",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "golang.go",
+        "ms-vscode.cpptools"
+      ]
+    }
+  },
+  "workspaceMount": "source=${localWorkspaceFolder}/ai_agents,target=/app,type=bind",
+  "workspaceFolder": "/app",
+  "forwardPorts": [
+    3000,
+    8080,
+    49483,
+    49484
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/python:1": {},
+    "ghcr.io/devcontainers/features/node:1": {}
+  }
+}

@@ -1,0 +1,5 @@
+# Shell scripts use LF as line separator, even checked out to Windows(NTFS)
+# file-system
+*.sh       text eol=lf
+ai_agents/agents/bin/* text eol=lf
+ai_agents/agents/scripts/* text eol=lf
