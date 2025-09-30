@@ -476,10 +476,17 @@ class MultimodalProcessorManager {
         // Extract risk score from voice analysis
         let riskScore = 0;
         
-        if (voiceResults.pathological_indicators.hoarseness.detected) riskScore += 0.3;
-        if (voiceResults.pathological_indicators.breathiness.detected) riskScore += 0.2;
-        if (voiceResults.pathological_indicators.strain.detected) riskScore += 0.2;
-        if (voiceResults.pathological_indicators.voice_breaks.detected) riskScore += 0.3;
+        // Check if voice results and pathological indicators exist
+        if (!voiceResults || !voiceResults.pathological_indicators) {
+            return riskScore;
+        }
+        
+        const indicators = voiceResults.pathological_indicators;
+        
+        if (indicators.hoarseness && indicators.hoarseness.detected) riskScore += 0.3;
+        if (indicators.breathiness && indicators.breathiness.detected) riskScore += 0.2;
+        if (indicators.strain && indicators.strain.detected) riskScore += 0.2;
+        if (indicators.voice_breaks && indicators.voice_breaks.detected) riskScore += 0.3;
 
         return Math.min(riskScore, 1.0);
     }

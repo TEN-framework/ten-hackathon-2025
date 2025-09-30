@@ -44,9 +44,13 @@ const upload = multer({
         const extname = allowedExtensions.test(file.originalname);
         const mimetype = allowedMimeTypes.test(file.mimetype);
 
-        if (mimetype && extname) {
+        // Special handling for M4A files which might have different MIME types
+        const isM4A = /\.m4a$/i.test(file.originalname);
+        
+        if ((mimetype && extname) || (isM4A && extname)) {
             return cb(null, true);
         } else {
+            console.log(`File upload rejected: ${file.originalname}, MIME: ${file.mimetype}, Extension: ${extname}, MIME match: ${mimetype}`);
             cb(new Error('Invalid file type. Only audio, image, and video files are allowed.'));
         }
     }

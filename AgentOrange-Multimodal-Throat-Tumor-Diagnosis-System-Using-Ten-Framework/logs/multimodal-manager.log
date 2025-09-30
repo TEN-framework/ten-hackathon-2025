@@ -365,3 +365,146 @@
 {"level":"info","message":"Processing clinical data...","timestamp":"2025-09-30T22:44:18.703Z"}
 {"level":"info","message":"Clinical data processing completed","timestamp":"2025-09-30T22:44:18.704Z"}
 {"level":"info","message":"Performing multimodal fusion with real AI analysis...","timestamp":"2025-09-30T22:44:18.704Z"}
+{"level":"info","message":"AI analysis completed successfully","timestamp":"2025-09-30T22:44:35.055Z"}
+{"level":"info","message":"Multimodal fusion completed","timestamp":"2025-09-30T22:44:35.056Z"}
+{"level":"info","message":"Generating comprehensive analysis...","timestamp":"2025-09-30T22:44:35.056Z"}
+{"level":"info","message":"Comprehensive analysis generation completed","timestamp":"2025-09-30T22:44:35.056Z"}
+{"level":"info","message":"Multimodal input processing completed successfully","timestamp":"2025-09-30T22:44:35.056Z"}
+{"level":"info","message":"Starting multimodal input processing...","timestamp":"2025-09-30T22:45:32.066Z"}
+{"level":"info","message":"Processing clinical data...","timestamp":"2025-09-30T22:45:32.066Z"}
+{"level":"info","message":"Clinical data processing completed","timestamp":"2025-09-30T22:45:32.067Z"}
+{"level":"info","message":"Performing multimodal fusion with real AI analysis...","timestamp":"2025-09-30T22:45:32.067Z"}
+{"level":"info","message":"AI analysis completed successfully","timestamp":"2025-09-30T22:45:48.244Z"}
+{"level":"info","message":"Multimodal fusion completed","timestamp":"2025-09-30T22:45:48.244Z"}
+{"level":"info","message":"Generating comprehensive analysis...","timestamp":"2025-09-30T22:45:48.244Z"}
+{"level":"info","message":"Comprehensive analysis generation completed","timestamp":"2025-09-30T22:45:48.245Z"}
+{"level":"info","message":"Multimodal input processing completed successfully","timestamp":"2025-09-30T22:45:48.245Z"}
+{"level":"info","message":"Starting multimodal input processing...","timestamp":"2025-09-30T22:46:35.421Z"}
+{"level":"info","message":"Processing clinical data...","timestamp":"2025-09-30T22:46:35.422Z"}
+{"level":"info","message":"Clinical data processing completed","timestamp":"2025-09-30T22:46:35.423Z"}
+{"level":"info","message":"Performing multimodal fusion with real AI analysis...","timestamp":"2025-09-30T22:46:35.424Z"}
+{"level":"info","message":"AI analysis completed successfully","timestamp":"2025-09-30T22:47:01.113Z"}
+{"level":"info","message":"Multimodal fusion completed","timestamp":"2025-09-30T22:47:01.114Z"}
+{"level":"info","message":"Generating comprehensive analysis...","timestamp":"2025-09-30T22:47:01.114Z"}
+{"level":"info","message":"Comprehensive analysis generation completed","timestamp":"2025-09-30T22:47:01.114Z"}
+{"level":"info","message":"Multimodal input processing completed successfully","timestamp":"2025-09-30T22:47:01.114Z"}
+{"level":"info","message":"Starting multimodal input processing...","timestamp":"2025-09-30T22:51:17.385Z"}
+{"level":"info","message":"Processing voice data with real audio analysis...","timestamp":"2025-09-30T22:51:17.386Z"}
+{"level":"info","message":"Processing clinical data...","timestamp":"2025-09-30T22:51:17.440Z"}
+{"level":"info","message":"Real voice data processing completed","timestamp":"2025-09-30T22:51:18.839Z"}
+{"level":"info","message":"Clinical data processing completed","timestamp":"2025-09-30T22:51:18.840Z"}
+{"level":"info","message":"Performing multimodal fusion with real AI analysis...","timestamp":"2025-09-30T22:51:18.840Z"}
+{"level":"info","message":"AI analysis completed successfully","timestamp":"2025-09-30T22:51:42.683Z"}
+{"level":"error","message":"Multimodal fusion failed: Cannot read properties of undefined (reading 'detected')","stack":"TypeError: Cannot read properties of undefined (reading 'detected')\n    at MultimodalProcessorManager.extractRiskFromVoice (/app/src/processors/multimodal-manager.js:482:63)\n    at MultimodalProcessorManager.fuseFeatures (/app/src/processors/multimodal-manager.js:442:61)\n    at MultimodalProcessorManager.performMultimodalFusion (/app/src/processors/multimodal-manager.js:272:38)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async MultimodalProcessorManager.processMultimodalInput (/app/src/processors/multimodal-manager.js:127:34)\n    at async /app/src/api/routes/multimodal.js:96:33","timestamp":"2025-09-30T22:51:42.684Z"}
+{"level":"error","message":"Multimodal input processing failed: Cannot read properties of undefined (reading 'detected')","stack":"TypeError: Cannot read properties of undefined (reading 'detected')\n    at MultimodalProcessorManager.extractRiskFromVoice (/app/src/processors/multimodal-manager.js:482:63)\n    at MultimodalProcessorManager.fuseFeatures (/app/src/processors/multimodal-manager.js:442:61)\n    at MultimodalProcessorManager.performMultimodalFusion (/app/src/processors/multimodal-manager.js:272:38)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async MultimodalProcessorManager.processMultimodalInput (/app/src/processors/multimodal-manager.js:127:34)\n    at async /app/src/api/routes/multimodal.js:96:33","timestamp":"2025-09-30T22:51:42.684Z"}
+{"level":"info","message":"Starting multimodal input processing...","timestamp":"2025-09-30T22:59:21.987Z"}
+{"level":"info","message":"Processing clinical data...","timestamp":"2025-09-30T22:59:21.987Z"}
+{"level":"info","message":"Clinical data processing completed","timestamp":"2025-09-30T22:59:21.988Z"}
+{"level":"info","message":"Performing multimodal fusion with real AI analysis...","timestamp":"2025-09-30T22:59:21.988Z"}
+{"level":"info","message":"AI analysis completed successfully","timestamp":"2025-09-30T22:59:42.605Z"}
+{"level":"info","message":"Multimodal fusion completed","timestamp":"2025-09-30T22:59:42.605Z"}
+{"level":"info","message":"Generating comprehensive analysis...","timestamp":"2025-09-30T22:59:42.606Z"}
+{"level":"info","message":"Comprehensive analysis generation completed","timestamp":"2025-09-30T22:59:42.606Z"}
+{"level":"info","message":"Multimodal input processing completed successfully","timestamp":"2025-09-30T22:59:42.606Z"}
+{"level":"info","message":"Starting multimodal input processing...","timestamp":"2025-09-30T23:00:19.101Z"}
+{"level":"info","message":"Processing voice data with real audio analysis...","timestamp":"2025-09-30T23:00:19.101Z"}
+{"level":"info","message":"Processing clinical data...","timestamp":"2025-09-30T23:00:19.175Z"}
+{"level":"info","message":"Real voice data processing completed","timestamp":"2025-09-30T23:00:20.528Z"}
+{"level":"info","message":"Clinical data processing completed","timestamp":"2025-09-30T23:00:20.529Z"}
+{"level":"info","message":"Performing multimodal fusion with real AI analysis...","timestamp":"2025-09-30T23:00:20.529Z"}
+{"level":"info","message":"AI analysis completed successfully","timestamp":"2025-09-30T23:00:55.913Z"}
+{"level":"error","message":"Multimodal fusion failed: Cannot read properties of undefined (reading 'detected')","stack":"TypeError: Cannot read properties of undefined (reading 'detected')\n    at MultimodalProcessorManager.extractRiskFromVoice (/app/src/processors/multimodal-manager.js:482:63)\n    at MultimodalProcessorManager.fuseFeatures (/app/src/processors/multimodal-manager.js:442:61)\n    at MultimodalProcessorManager.performMultimodalFusion (/app/src/processors/multimodal-manager.js:272:38)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async MultimodalProcessorManager.processMultimodalInput (/app/src/processors/multimodal-manager.js:127:34)\n    at async /app/src/api/routes/multimodal.js:96:33","timestamp":"2025-09-30T23:00:55.913Z"}
+{"level":"error","message":"Multimodal input processing failed: Cannot read properties of undefined (reading 'detected')","stack":"TypeError: Cannot read properties of undefined (reading 'detected')\n    at MultimodalProcessorManager.extractRiskFromVoice (/app/src/processors/multimodal-manager.js:482:63)\n    at MultimodalProcessorManager.fuseFeatures (/app/src/processors/multimodal-manager.js:442:61)\n    at MultimodalProcessorManager.performMultimodalFusion (/app/src/processors/multimodal-manager.js:272:38)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async MultimodalProcessorManager.processMultimodalInput (/app/src/processors/multimodal-manager.js:127:34)\n    at async /app/src/api/routes/multimodal.js:96:33","timestamp":"2025-09-30T23:00:55.914Z"}
+{"level":"info","message":"Starting multimodal input processing...","timestamp":"2025-09-30T23:01:12.700Z"}
+{"level":"info","message":"Processing clinical data...","timestamp":"2025-09-30T23:01:12.700Z"}
+{"level":"info","message":"Clinical data processing completed","timestamp":"2025-09-30T23:01:12.701Z"}
+{"level":"info","message":"Performing multimodal fusion with real AI analysis...","timestamp":"2025-09-30T23:01:12.701Z"}
+{"level":"info","message":"AI analysis completed successfully","timestamp":"2025-09-30T23:01:31.944Z"}
+{"level":"info","message":"Multimodal fusion completed","timestamp":"2025-09-30T23:01:31.944Z"}
+{"level":"info","message":"Generating comprehensive analysis...","timestamp":"2025-09-30T23:01:31.944Z"}
+{"level":"info","message":"Comprehensive analysis generation completed","timestamp":"2025-09-30T23:01:31.944Z"}
+{"level":"info","message":"Multimodal input processing completed successfully","timestamp":"2025-09-30T23:01:31.944Z"}
+{"level":"info","message":"Initializing multimodal processor manager...","timestamp":"2025-09-30T23:02:50.103Z"}
+{"level":"info","message":"Initializing audio processor...","timestamp":"2025-09-30T23:02:50.103Z"}
+{"level":"info","message":"Initializing image processor...","timestamp":"2025-09-30T23:02:50.104Z"}
+{"level":"info","message":"Initializing clinical processor...","timestamp":"2025-09-30T23:02:50.104Z"}
+{"level":"info","message":"Multimodal processor manager initialized successfully","timestamp":"2025-09-30T23:02:50.104Z"}
+{"level":"info","message":"Starting multimodal input processing...","timestamp":"2025-09-30T23:03:04.951Z"}
+{"level":"info","message":"Processing clinical data...","timestamp":"2025-09-30T23:03:04.952Z"}
+{"level":"info","message":"Clinical data processing completed","timestamp":"2025-09-30T23:03:04.955Z"}
+{"level":"info","message":"Performing multimodal fusion with real AI analysis...","timestamp":"2025-09-30T23:03:04.955Z"}
+{"level":"info","message":"AI analysis completed successfully","timestamp":"2025-09-30T23:03:43.204Z"}
+{"level":"info","message":"Multimodal fusion completed","timestamp":"2025-09-30T23:03:43.204Z"}
+{"level":"info","message":"Generating comprehensive analysis...","timestamp":"2025-09-30T23:03:43.204Z"}
+{"level":"info","message":"Comprehensive analysis generation completed","timestamp":"2025-09-30T23:03:43.205Z"}
+{"level":"info","message":"Multimodal input processing completed successfully","timestamp":"2025-09-30T23:03:43.205Z"}
+{"level":"info","message":"Starting multimodal input processing...","timestamp":"2025-09-30T23:04:52.728Z"}
+{"level":"info","message":"Processing voice data with real audio analysis...","timestamp":"2025-09-30T23:04:52.728Z"}
+{"level":"info","message":"Processing clinical data...","timestamp":"2025-09-30T23:04:52.786Z"}
+{"level":"info","message":"Real voice data processing completed","timestamp":"2025-09-30T23:04:54.101Z"}
+{"level":"info","message":"Clinical data processing completed","timestamp":"2025-09-30T23:04:54.101Z"}
+{"level":"info","message":"Performing multimodal fusion with real AI analysis...","timestamp":"2025-09-30T23:04:54.101Z"}
+{"level":"info","message":"AI analysis completed successfully","timestamp":"2025-09-30T23:05:18.699Z"}
+{"level":"info","message":"Multimodal fusion completed","timestamp":"2025-09-30T23:05:18.700Z"}
+{"level":"info","message":"Generating comprehensive analysis...","timestamp":"2025-09-30T23:05:18.700Z"}
+{"level":"info","message":"Comprehensive analysis generation completed","timestamp":"2025-09-30T23:05:18.700Z"}
+{"level":"info","message":"Multimodal input processing completed successfully","timestamp":"2025-09-30T23:05:18.700Z"}
+{"level":"info","message":"Initializing multimodal processor manager...","timestamp":"2025-09-30T23:06:56.695Z"}
+{"level":"info","message":"Initializing audio processor...","timestamp":"2025-09-30T23:06:56.695Z"}
+{"level":"info","message":"Initializing image processor...","timestamp":"2025-09-30T23:06:56.696Z"}
+{"level":"info","message":"Initializing clinical processor...","timestamp":"2025-09-30T23:06:56.696Z"}
+{"level":"info","message":"Multimodal processor manager initialized successfully","timestamp":"2025-09-30T23:06:56.696Z"}
+{"level":"info","message":"Starting multimodal input processing...","timestamp":"2025-09-30T23:07:03.745Z"}
+{"level":"info","message":"Processing voice data with real audio analysis...","timestamp":"2025-09-30T23:07:03.745Z"}
+{"level":"info","message":"Processing clinical data...","timestamp":"2025-09-30T23:07:03.803Z"}
+{"level":"info","message":"Real voice data processing completed","timestamp":"2025-09-30T23:07:05.117Z"}
+{"level":"info","message":"Clinical data processing completed","timestamp":"2025-09-30T23:07:05.117Z"}
+{"level":"info","message":"Performing multimodal fusion with real AI analysis...","timestamp":"2025-09-30T23:07:05.118Z"}
+{"level":"info","message":"Starting multimodal input processing...","timestamp":"2025-09-30T23:08:19.400Z"}
+{"level":"info","message":"Processing voice data with real audio analysis...","timestamp":"2025-09-30T23:08:19.400Z"}
+{"level":"info","message":"Processing clinical data...","timestamp":"2025-09-30T23:08:19.458Z"}
+{"level":"info","message":"Real voice data processing completed","timestamp":"2025-09-30T23:08:20.821Z"}
+{"level":"info","message":"Clinical data processing completed","timestamp":"2025-09-30T23:08:20.822Z"}
+{"level":"info","message":"Performing multimodal fusion with real AI analysis...","timestamp":"2025-09-30T23:08:20.822Z"}
+{"level":"info","message":"AI analysis completed successfully","timestamp":"2025-09-30T23:08:24.169Z"}
+{"level":"info","message":"Multimodal fusion completed","timestamp":"2025-09-30T23:08:24.170Z"}
+{"level":"info","message":"Generating comprehensive analysis...","timestamp":"2025-09-30T23:08:24.170Z"}
+{"level":"info","message":"Comprehensive analysis generation completed","timestamp":"2025-09-30T23:08:24.170Z"}
+{"level":"info","message":"Multimodal input processing completed successfully","timestamp":"2025-09-30T23:08:24.170Z"}
+{"level":"info","message":"AI analysis completed successfully","timestamp":"2025-09-30T23:09:14.201Z"}
+{"level":"info","message":"Multimodal fusion completed","timestamp":"2025-09-30T23:09:14.201Z"}
+{"level":"info","message":"Generating comprehensive analysis...","timestamp":"2025-09-30T23:09:14.201Z"}
+{"level":"info","message":"Comprehensive analysis generation completed","timestamp":"2025-09-30T23:09:14.202Z"}
+{"level":"info","message":"Multimodal input processing completed successfully","timestamp":"2025-09-30T23:09:14.202Z"}
+{"level":"info","message":"Initializing multimodal processor manager...","timestamp":"2025-09-30T23:14:42.209Z"}
+{"level":"info","message":"Initializing audio processor...","timestamp":"2025-09-30T23:14:42.209Z"}
+{"level":"info","message":"Initializing image processor...","timestamp":"2025-09-30T23:14:42.209Z"}
+{"level":"info","message":"Initializing clinical processor...","timestamp":"2025-09-30T23:14:42.209Z"}
+{"level":"info","message":"Multimodal processor manager initialized successfully","timestamp":"2025-09-30T23:14:42.209Z"}
+{"level":"info","message":"Starting multimodal input processing...","timestamp":"2025-09-30T23:16:12.129Z"}
+{"level":"info","message":"Processing voice data with real audio analysis...","timestamp":"2025-09-30T23:16:12.129Z"}
+{"level":"info","message":"Processing clinical data...","timestamp":"2025-09-30T23:16:12.131Z"}
+{"level":"info","message":"Clinical data processing completed","timestamp":"2025-09-30T23:16:12.135Z"}
+{"level":"info","message":"Real voice data processing completed","timestamp":"2025-09-30T23:16:12.921Z"}
+{"level":"info","message":"Performing multimodal fusion with real AI analysis...","timestamp":"2025-09-30T23:16:12.921Z"}
+{"level":"info","message":"AI analysis completed successfully","timestamp":"2025-09-30T23:16:44.265Z"}
+{"level":"info","message":"Multimodal fusion completed","timestamp":"2025-09-30T23:16:44.266Z"}
+{"level":"info","message":"Generating comprehensive analysis...","timestamp":"2025-09-30T23:16:44.266Z"}
+{"level":"info","message":"Comprehensive analysis generation completed","timestamp":"2025-09-30T23:16:44.267Z"}
+{"level":"info","message":"Multimodal input processing completed successfully","timestamp":"2025-09-30T23:16:44.267Z"}
+{"level":"info","message":"Initializing multimodal processor manager...","timestamp":"2025-09-30T23:18:07.907Z"}
+{"level":"info","message":"Initializing audio processor...","timestamp":"2025-09-30T23:18:07.907Z"}
+{"level":"info","message":"Initializing image processor...","timestamp":"2025-09-30T23:18:07.907Z"}
+{"level":"info","message":"Initializing clinical processor...","timestamp":"2025-09-30T23:18:07.907Z"}
+{"level":"info","message":"Multimodal processor manager initialized successfully","timestamp":"2025-09-30T23:18:07.907Z"}
+{"level":"info","message":"Starting multimodal input processing...","timestamp":"2025-09-30T23:18:14.142Z"}
+{"level":"info","message":"Processing voice data with real audio analysis...","timestamp":"2025-09-30T23:18:14.143Z"}
+{"level":"info","message":"Processing clinical data...","timestamp":"2025-09-30T23:18:14.144Z"}
+{"level":"info","message":"Clinical data processing completed","timestamp":"2025-09-30T23:18:14.148Z"}
+{"level":"info","message":"Real voice data processing completed","timestamp":"2025-09-30T23:18:14.952Z"}
+{"level":"info","message":"Performing multimodal fusion with real AI analysis...","timestamp":"2025-09-30T23:18:14.953Z"}
+{"level":"info","message":"AI analysis completed successfully","timestamp":"2025-09-30T23:18:48.930Z"}
+{"level":"info","message":"Multimodal fusion completed","timestamp":"2025-09-30T23:18:48.930Z"}
+{"level":"info","message":"Generating comprehensive analysis...","timestamp":"2025-09-30T23:18:48.931Z"}
+{"level":"info","message":"Comprehensive analysis generation completed","timestamp":"2025-09-30T23:18:48.931Z"}
+{"level":"info","message":"Multimodal input processing completed successfully","timestamp":"2025-09-30T23:18:48.931Z"}

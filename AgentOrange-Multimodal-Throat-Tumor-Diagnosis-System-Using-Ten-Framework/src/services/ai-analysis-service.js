@@ -33,7 +33,14 @@ class AIAnalysisService {
     async analyzeVoiceForTumorDiagnosis(audioAnalysis, clinicalData) {
         try {
             this.logger.info('Starting real AI analysis for tumor diagnosis...');
-            this.logger.info('Audio analysis data:', JSON.stringify(audioAnalysis, null, 2));
+                   this.logger.info('Audio analysis data:', JSON.stringify(audioAnalysis, null, 2));
+                   this.logger.info('Audio analysis summary:', {
+                       hasAcousticFeatures: !!audioAnalysis.acoustic_features,
+                       hasVoiceQuality: !!audioAnalysis.voice_quality,
+                       hasPathologicalIndicators: !!audioAnalysis.pathological_indicators,
+                       sampleRate: audioAnalysis.audio_metadata?.sample_rate,
+                       duration: audioAnalysis.audio_metadata?.duration
+                   });
             this.logger.info('Clinical data:', JSON.stringify(clinicalData, null, 2));
 
             const prompt = this.buildMedicalAnalysisPrompt(audioAnalysis, clinicalData);
