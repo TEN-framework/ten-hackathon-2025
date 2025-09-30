@@ -40,6 +40,60 @@
 {"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-28T10:47:25.778Z"}
 {"level":"info","message":"Redis client connected","timestamp":"2025-09-28T10:47:25.783Z"}
 {"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-28T10:47:25.785Z"}
-{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-29T05:36:20.630Z"}
-{"level":"info","message":"Redis client connected","timestamp":"2025-09-29T05:36:20.635Z"}
-{"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-29T05:36:20.638Z"}
+{"level":"error","message":"Redis Client Error: Socket closed unexpectedly","stack":"Error: Socket closed unexpectedly\n    at Socket.<anonymous> (/app/node_modules/@redis/client/dist/lib/client/socket.js:194:118)\n    at Object.onceWrapper (node:events:623:26)\n    at Socket.emit (node:events:508:28)\n    at TCP.<anonymous> (node:net:346:12)","timestamp":"2025-09-29T05:31:13.160Z"}
+{"address":"172.18.0.4","code":"ECONNREFUSED","errno":-111,"level":"error","message":"Redis Client Error: connect ECONNREFUSED 172.18.0.4:6379","port":6379,"stack":"Error: connect ECONNREFUSED 172.18.0.4:6379\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)","syscall":"connect","timestamp":"2025-09-29T05:31:13.166Z"}
+{"address":"172.18.0.4","code":"ECONNREFUSED","errno":-111,"level":"error","message":"Redis Client Error: connect ECONNREFUSED 172.18.0.4:6379","port":6379,"stack":"Error: connect ECONNREFUSED 172.18.0.4:6379\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)","syscall":"connect","timestamp":"2025-09-29T05:31:13.169Z"}
+{"address":"172.18.0.4","code":"ECONNREFUSED","errno":-111,"level":"error","message":"Redis Client Error: connect ECONNREFUSED 172.18.0.4:6379","port":6379,"stack":"Error: connect ECONNREFUSED 172.18.0.4:6379\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)","syscall":"connect","timestamp":"2025-09-29T05:31:13.221Z"}
+{"address":"172.18.0.4","code":"ECONNREFUSED","errno":-111,"level":"error","message":"Redis Client Error: connect ECONNREFUSED 172.18.0.4:6379","port":6379,"stack":"Error: connect ECONNREFUSED 172.18.0.4:6379\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)","syscall":"connect","timestamp":"2025-09-29T05:31:13.329Z"}
+{"code":"EAI_AGAIN","errno":-3001,"hostname":"redis","level":"error","message":"Redis Client Error: getaddrinfo EAI_AGAIN redis","stack":"Error: getaddrinfo EAI_AGAIN redis\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","syscall":"getaddrinfo","timestamp":"2025-09-29T05:31:13.483Z"}
+{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-30T20:06:07.351Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-30T20:06:07.357Z"}
+{"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-30T20:06:07.359Z"}
+{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-30T20:07:41.435Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-30T20:07:41.440Z"}
+{"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-30T20:07:41.443Z"}
+{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-30T20:18:36.811Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-30T20:18:36.816Z"}
+{"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-30T20:18:36.819Z"}
+{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-30T20:46:02.841Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-30T20:46:02.846Z"}
+{"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-30T20:46:02.848Z"}
+{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-30T21:02:48.698Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-30T21:02:48.703Z"}
+{"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-30T21:02:48.705Z"}
+{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-30T21:05:21.673Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-30T21:05:21.677Z"}
+{"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-30T21:05:21.680Z"}
+{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-30T21:06:19.416Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-30T21:06:19.421Z"}
+{"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-30T21:06:19.423Z"}
+{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-30T21:07:06.552Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-30T21:07:06.557Z"}
+{"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-30T21:07:06.559Z"}
+{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-30T21:21:34.302Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-30T21:21:34.307Z"}
+{"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-30T21:21:34.309Z"}
+{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-30T21:25:01.767Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-30T21:25:01.772Z"}
+{"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-30T21:25:01.774Z"}
+{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-30T21:27:19.562Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-30T21:27:19.567Z"}
+{"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-30T21:27:19.569Z"}
+{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-30T21:28:34.065Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-30T21:28:34.070Z"}
+{"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-30T21:28:34.072Z"}
+{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-30T21:30:41.971Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-30T21:30:41.976Z"}
+{"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-30T21:30:41.978Z"}
+{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-30T21:36:26.319Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-30T21:36:26.323Z"}
+{"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-30T21:36:26.326Z"}
+{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-30T22:21:03.218Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-30T22:21:03.223Z"}
+{"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-30T22:21:03.225Z"}
+{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-30T22:22:04.256Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-30T22:22:04.261Z"}
+{"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-30T22:22:04.263Z"}
+{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-30T22:24:11.631Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-30T22:24:11.636Z"}
+{"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-30T22:24:11.639Z"}

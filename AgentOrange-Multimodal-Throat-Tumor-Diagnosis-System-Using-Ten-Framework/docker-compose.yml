@@ -11,12 +11,38 @@ services:
       - DATABASE_URL=postgresql://postgres:password@postgres:5432/voice_diagnosis
       - REDIS_URL=redis://redis:6379
       - JWT_SECRET=your-super-secret-jwt-key-here
-      - TEN_FRAMEWORK_URL=http://ten-framework:80
+      
+      # TEN Framework Configuration
+      - TEN_FRAMEWORK_URL=http://ten-agent:8080
       - TEN_API_KEY=your-ten-api-key
+      - TEN_AGENT_ID=your-agent-id
+      - TEN_GRAPH_ID=voice-assistant
+      - TEN_MULTIMODAL_ENABLED=true
+      - TEN_AUDIO_EXTENSION_ENABLED=true
+      - TEN_IMAGE_EXTENSION_ENABLED=true
+      - TEN_VIDEO_EXTENSION_ENABLED=true
+      - TEN_SENSOR_EXTENSION_ENABLED=true
+      
+      # SiliconFlow API Configuration (OpenAI-compatible alternative)
+      - SILICONFLOW_API_KEY=your-siliconflow-api-key
+      - SILICONFLOW_BASE_URL=https://api.siliconflow.com/v1
+      
+      # Optional: Keep other services if needed, or disable them
+      # - DEEPGRAM_API_KEY=your-deepgram-api-key
+      # - ELEVENLABS_API_KEY=your-elevenlabs-api-key
+      # - AGORA_APP_ID=your-agora-app-id
+      # - AGORA_APP_CERTIFICATE=your-agora-app-certificate
+      
+      # Legacy OpenAI support (can be used as fallback)
+      # - OPENAI_API_KEY=your-openai-api-key
+      
+      # Medical Compliance
+      - HIPAA_COMPLIANCE=true
+      - AUDIT_LOGGING=true
     depends_on:
       - postgres
       - redis
-      - ten-framework
+      - ten-agent
     volumes:
       - ./uploads:/app/uploads
       - ./logs:/app/logs
@@ -46,14 +72,60 @@ services:
       - redis_data:/data
     restart: unless-stopped
 
-  # TEN Framework (mock service for development)
-  ten-framework:
-    image: nginx:alpine
+  # TEN Agent (real implementation)
+  ten-agent:
+    image: ghcr.io/ten-framework/ten_agent_build:0.7.3
+    container_name: ten_agent_dev
+    platform: linux/amd64
+    tty: true
+    stdin_open: true
+    restart: always
     ports:
-      - "8081:80"
+      - "49483:49483"  # TMAN Designer server port
+      - "8080:8080"    # TEN Agent server port
     volumes:
-      - ./ten-framework-mock:/usr/share/nginx/html
-    restart: unless-stopped
+      - ./ten-agent:/app
+      - ./logs:/tmp/ten_agent
+    working_dir: /app
+    environment:
+      # Log & Server & Worker
+      - LOG_PATH=/tmp/ten_agent
+      - LOG_STDOUT=true
+      - GRAPH_DESIGNER_SERVER_PORT=49483
+      - SERVER_PORT=8080
+      - WORKERS_MAX=100
+      - WORKER_QUIT_TIMEOUT_SECONDS=60
+      
+      # LLM (SiliconFlow - OpenAI compatible for all services)
+      - OPENAI_API_BASE=https://api.siliconflow.com/v1
+      - OPENAI_API_KEY=${SILICONFLOW_API_KEY}
+      - OPENAI_MODEL=gpt-4o
+      
+      # Valid format credentials for required services (using SiliconFlow for actual functionality)
+      - AGORA_APP_ID=12345678901234567890123456789012
+      - AGORA_APP_CERTIFICATE=1234567890123456789012345678901234567890123456789012345678901234
+      - DEEPGRAM_API_KEY=sk-1234567890123456789012345678901234567890123456789012345678901234
+      - ELEVENLABS_TTS_KEY=sk-1234567890123456789012345678901234567890123456789012345678901234
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - ten_agent_network
+
+  # TEN Agent Playground
+  ten-playground:
+    image: ghcr.io/ten-framework/ten_agent_playground:0.11.4-10-g2b884e498
+    container_name: ten_agent_playground
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - ten_agent_network
+    environment:
+      - AGENT_SERVER_URL=http://ten-agent:8080
+      - TEN_DEV_SERVER_URL=http://ten-agent:49483
+    depends_on:
+      - ten-agent
 
   # Nginx Reverse Proxy
   nginx:
@@ -71,3 +143,7 @@ services:
 volumes:
   postgres_data:
   redis_data:
+
+networks:
+  ten_agent_network:
+    driver: bridge

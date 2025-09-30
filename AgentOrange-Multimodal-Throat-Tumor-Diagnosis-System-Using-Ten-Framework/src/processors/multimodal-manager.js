@@ -26,7 +26,7 @@ class MultimodalProcessorManager {
         });
 
         // Initialize processors
-        this.audioProcessor = new AudioProcessor();
+        this.audioProcessor = new AudioProcessor(); // Use real audio processing
         this.imageProcessor = new MedicalImageProcessor();
         this.clinicalProcessor = new ClinicalDataProcessor();
 
@@ -197,12 +197,12 @@ class MultimodalProcessorManager {
 
     async processVoiceData(voiceData) {
         try {
-            this.logger.info('Processing voice data...');
-            const result = await this.audioProcessor.process(voiceData);
-            this.logger.info('Voice data processing completed');
+            this.logger.info('Processing voice data with real audio analysis...');
+            const result = await this.audioProcessor.processAudio(voiceData.filePath);
+            this.logger.info('Real voice data processing completed');
             return result;
         } catch (error) {
-            this.logger.error('Voice data processing failed:', error);
+            this.logger.error('Real voice data processing failed:', error);
             throw error;
         }
     }

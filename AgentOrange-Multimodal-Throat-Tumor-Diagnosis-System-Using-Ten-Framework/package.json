@@ -37,7 +37,12 @@
     "joi": "^17.9.2",
     "winston": "^3.10.0",
     "compression": "^1.7.4",
-    "rate-limiter-flexible": "^2.4.1"
+    "rate-limiter-flexible": "^2.4.1",
+    "openai": "^4.20.0",
+    "node-wav": "^0.0.2",
+    "audio-buffer-utils": "^4.0.1",
+    "fft": "^0.2.1",
+    "ml-matrix": "^6.10.4"
   },
   "devDependencies": {
     "nodemon": "^3.0.1",

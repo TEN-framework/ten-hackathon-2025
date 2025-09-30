@@ -6,7 +6,7 @@ FROM node:24-slim
 # Set working directory
 WORKDIR /app
 
-# Install system dependencies
+# Install system dependencies including TEN framework requirements
 RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
@@ -19,6 +19,18 @@ RUN apt-get update && apt-get install -y \
     ffmpeg \
     imagemagick \
     curl \
+    wget \
+    git \
+    ca-certificates \
+    gnupg \
+    lsb-release \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Docker CLI for TEN framework (if needed)
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg \
+    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null \
+    && apt-get update \
+    && apt-get install -y docker-ce-cli \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy package files first for better caching
@@ -57,11 +69,29 @@ RUN echo '#!/bin/bash\n\n# Monitoring script for Multimodal Throat Tumor Diagnos
 # Set up log rotation configuration (from install.sh)
 RUN echo '$(pwd)/logs/*.log {\n    daily\n    missingok\n    rotate 30\n    compress\n    delaycompress\n    notifempty\n    create 644 root root\n    postrotate\n        # Reload application if needed\n        # systemctl reload multimodal-diagnosis\n    endscript\n}' > logrotate.conf
 
-# Set environment variables
+# Set environment variables including TEN framework configuration
 ENV NODE_ENV=production
 ENV PORT=3199
 ENV DATABASE_URL=postgresql://username:password@postgres:5432/voice_diagnosis
 ENV REDIS_URL=redis://redis:6379
+
+# TEN Framework Configuration
+ENV TEN_FRAMEWORK_URL=https://api.theten.ai
+ENV TEN_API_KEY=your-ten-api-key
+ENV TEN_AGENT_ID=your-agent-id
+ENV TEN_GRAPH_ID=voice-assistant
+ENV TEN_MULTIMODAL_ENABLED=true
+ENV TEN_AUDIO_EXTENSION_ENABLED=true
+ENV TEN_IMAGE_EXTENSION_ENABLED=true
+ENV TEN_VIDEO_EXTENSION_ENABLED=true
+ENV TEN_SENSOR_EXTENSION_ENABLED=true
+
+# SiliconFlow API Configuration (OpenAI-compatible alternative)
+ENV SILICONFLOW_API_KEY=your-siliconflow-api-key
+ENV SILICONFLOW_BASE_URL=https://api.siliconflow.com/v1
+
+# Legacy OpenAI support (can be used as fallback)
+# ENV OPENAI_API_KEY=your-openai-api-key
 
 # Expose port
 EXPOSE 3199

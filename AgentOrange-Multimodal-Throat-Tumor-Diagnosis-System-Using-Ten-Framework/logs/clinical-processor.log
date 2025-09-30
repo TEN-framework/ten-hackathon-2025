@@ -34,39 +34,135 @@
 {"level":"info","message":"Generating clinical insights...","timestamp":"2025-09-28T10:48:14.510Z"}
 {"level":"info","message":"Clinical insights generation completed","timestamp":"2025-09-28T10:48:14.510Z"}
 {"level":"info","message":"Clinical data processing completed successfully","timestamp":"2025-09-28T10:48:14.511Z"}
-{"level":"info","message":"Starting clinical data processing...","timestamp":"2025-09-29T05:37:00.088Z"}
-{"level":"info","message":"Preprocessing clinical data...","timestamp":"2025-09-29T05:37:00.089Z"}
-{"level":"info","message":"Clinical data preprocessing completed","timestamp":"2025-09-29T05:37:00.089Z"}
-{"level":"info","message":"Extracting medical entities...","timestamp":"2025-09-29T05:37:00.090Z"}
-{"level":"info","message":"Medical entity extraction completed","timestamp":"2025-09-29T05:37:00.091Z"}
-{"level":"info","message":"Analyzing risk factors...","timestamp":"2025-09-29T05:37:00.091Z"}
-{"level":"info","message":"Risk factor analysis completed","timestamp":"2025-09-29T05:37:00.092Z"}
-{"level":"info","message":"Analyzing temporal information...","timestamp":"2025-09-29T05:37:00.092Z"}
-{"level":"info","message":"Temporal analysis completed","timestamp":"2025-09-29T05:37:00.092Z"}
-{"level":"info","message":"Generating clinical insights...","timestamp":"2025-09-29T05:37:00.093Z"}
-{"level":"info","message":"Clinical insights generation completed","timestamp":"2025-09-29T05:37:00.093Z"}
-{"level":"info","message":"Clinical data processing completed successfully","timestamp":"2025-09-29T05:37:00.094Z"}
-{"level":"info","message":"Starting clinical data processing...","timestamp":"2025-09-29T05:52:12.647Z"}
-{"level":"info","message":"Preprocessing clinical data...","timestamp":"2025-09-29T05:52:12.647Z"}
-{"level":"info","message":"Clinical data preprocessing completed","timestamp":"2025-09-29T05:52:12.647Z"}
-{"level":"info","message":"Extracting medical entities...","timestamp":"2025-09-29T05:52:12.648Z"}
-{"level":"info","message":"Medical entity extraction completed","timestamp":"2025-09-29T05:52:12.648Z"}
-{"level":"info","message":"Analyzing risk factors...","timestamp":"2025-09-29T05:52:12.648Z"}
-{"level":"info","message":"Risk factor analysis completed","timestamp":"2025-09-29T05:52:12.648Z"}
-{"level":"info","message":"Analyzing temporal information...","timestamp":"2025-09-29T05:52:12.648Z"}
-{"level":"info","message":"Temporal analysis completed","timestamp":"2025-09-29T05:52:12.648Z"}
-{"level":"info","message":"Generating clinical insights...","timestamp":"2025-09-29T05:52:12.649Z"}
-{"level":"info","message":"Clinical insights generation completed","timestamp":"2025-09-29T05:52:12.649Z"}
-{"level":"info","message":"Clinical data processing completed successfully","timestamp":"2025-09-29T05:52:12.649Z"}
-{"level":"info","message":"Starting clinical data processing...","timestamp":"2025-09-29T05:56:26.795Z"}
-{"level":"info","message":"Preprocessing clinical data...","timestamp":"2025-09-29T05:56:26.795Z"}
-{"level":"info","message":"Clinical data preprocessing completed","timestamp":"2025-09-29T05:56:26.795Z"}
-{"level":"info","message":"Extracting medical entities...","timestamp":"2025-09-29T05:56:26.796Z"}
-{"level":"info","message":"Medical entity extraction completed","timestamp":"2025-09-29T05:56:26.796Z"}
-{"level":"info","message":"Analyzing risk factors...","timestamp":"2025-09-29T05:56:26.796Z"}
-{"level":"info","message":"Risk factor analysis completed","timestamp":"2025-09-29T05:56:26.796Z"}
-{"level":"info","message":"Analyzing temporal information...","timestamp":"2025-09-29T05:56:26.796Z"}
-{"level":"info","message":"Temporal analysis completed","timestamp":"2025-09-29T05:56:26.796Z"}
-{"level":"info","message":"Generating clinical insights...","timestamp":"2025-09-29T05:56:26.796Z"}
-{"level":"info","message":"Clinical insights generation completed","timestamp":"2025-09-29T05:56:26.796Z"}
-{"level":"info","message":"Clinical data processing completed successfully","timestamp":"2025-09-29T05:56:26.797Z"}
+{"level":"info","message":"Starting clinical data processing...","timestamp":"2025-09-30T20:57:46.749Z"}
+{"level":"info","message":"Preprocessing clinical data...","timestamp":"2025-09-30T20:57:46.750Z"}
+{"level":"info","message":"Clinical data preprocessing completed","timestamp":"2025-09-30T20:57:46.750Z"}
+{"level":"info","message":"Extracting medical entities...","timestamp":"2025-09-30T20:57:46.751Z"}
+{"level":"info","message":"Medical entity extraction completed","timestamp":"2025-09-30T20:57:46.751Z"}
+{"level":"info","message":"Analyzing risk factors...","timestamp":"2025-09-30T20:57:46.751Z"}
+{"level":"info","message":"Risk factor analysis completed","timestamp":"2025-09-30T20:57:46.752Z"}
+{"level":"info","message":"Analyzing temporal information...","timestamp":"2025-09-30T20:57:46.752Z"}
+{"level":"info","message":"Temporal analysis completed","timestamp":"2025-09-30T20:57:46.752Z"}
+{"level":"info","message":"Generating clinical insights...","timestamp":"2025-09-30T20:57:46.752Z"}
+{"level":"info","message":"Clinical insights generation completed","timestamp":"2025-09-30T20:57:46.753Z"}
+{"level":"info","message":"Clinical data processing completed successfully","timestamp":"2025-09-30T20:57:46.753Z"}
+{"level":"info","message":"Starting clinical data processing...","timestamp":"2025-09-30T21:04:14.639Z"}
+{"level":"info","message":"Preprocessing clinical data...","timestamp":"2025-09-30T21:04:14.639Z"}
+{"level":"info","message":"Clinical data preprocessing completed","timestamp":"2025-09-30T21:04:14.640Z"}
+{"level":"info","message":"Extracting medical entities...","timestamp":"2025-09-30T21:04:14.640Z"}
+{"level":"info","message":"Medical entity extraction completed","timestamp":"2025-09-30T21:04:14.640Z"}
+{"level":"info","message":"Analyzing risk factors...","timestamp":"2025-09-30T21:04:14.640Z"}
+{"level":"info","message":"Risk factor analysis completed","timestamp":"2025-09-30T21:04:14.641Z"}
+{"level":"info","message":"Analyzing temporal information...","timestamp":"2025-09-30T21:04:14.641Z"}
+{"level":"info","message":"Temporal analysis completed","timestamp":"2025-09-30T21:04:14.641Z"}
+{"level":"info","message":"Generating clinical insights...","timestamp":"2025-09-30T21:04:14.641Z"}
+{"level":"info","message":"Clinical insights generation completed","timestamp":"2025-09-30T21:04:14.641Z"}
+{"level":"info","message":"Clinical data processing completed successfully","timestamp":"2025-09-30T21:04:14.642Z"}
+{"level":"info","message":"Starting clinical data processing...","timestamp":"2025-09-30T21:07:44.479Z"}
+{"level":"info","message":"Preprocessing clinical data...","timestamp":"2025-09-30T21:07:44.480Z"}
+{"level":"info","message":"Clinical data preprocessing completed","timestamp":"2025-09-30T21:07:44.480Z"}
+{"level":"info","message":"Extracting medical entities...","timestamp":"2025-09-30T21:07:44.480Z"}
+{"level":"info","message":"Medical entity extraction completed","timestamp":"2025-09-30T21:07:44.481Z"}
+{"level":"info","message":"Analyzing risk factors...","timestamp":"2025-09-30T21:07:44.481Z"}
+{"level":"info","message":"Risk factor analysis completed","timestamp":"2025-09-30T21:07:44.481Z"}
+{"level":"info","message":"Analyzing temporal information...","timestamp":"2025-09-30T21:07:44.482Z"}
+{"level":"info","message":"Temporal analysis completed","timestamp":"2025-09-30T21:07:44.482Z"}
+{"level":"info","message":"Generating clinical insights...","timestamp":"2025-09-30T21:07:44.482Z"}
+{"level":"info","message":"Clinical insights generation completed","timestamp":"2025-09-30T21:07:44.483Z"}
+{"level":"info","message":"Clinical data processing completed successfully","timestamp":"2025-09-30T21:07:44.483Z"}
+{"level":"info","message":"Starting clinical data processing...","timestamp":"2025-09-30T21:08:43.073Z"}
+{"level":"info","message":"Preprocessing clinical data...","timestamp":"2025-09-30T21:08:43.073Z"}
+{"level":"info","message":"Clinical data preprocessing completed","timestamp":"2025-09-30T21:08:43.073Z"}
+{"level":"info","message":"Extracting medical entities...","timestamp":"2025-09-30T21:08:43.074Z"}
+{"level":"info","message":"Medical entity extraction completed","timestamp":"2025-09-30T21:08:43.074Z"}
+{"level":"info","message":"Analyzing risk factors...","timestamp":"2025-09-30T21:08:43.075Z"}
+{"level":"info","message":"Risk factor analysis completed","timestamp":"2025-09-30T21:08:43.075Z"}
+{"level":"info","message":"Analyzing temporal information...","timestamp":"2025-09-30T21:08:43.075Z"}
+{"level":"info","message":"Temporal analysis completed","timestamp":"2025-09-30T21:08:43.075Z"}
+{"level":"info","message":"Generating clinical insights...","timestamp":"2025-09-30T21:08:43.075Z"}
+{"level":"info","message":"Clinical insights generation completed","timestamp":"2025-09-30T21:08:43.076Z"}
+{"level":"info","message":"Clinical data processing completed successfully","timestamp":"2025-09-30T21:08:43.076Z"}
+{"level":"info","message":"Starting clinical data processing...","timestamp":"2025-09-30T21:22:24.171Z"}
+{"level":"info","message":"Preprocessing clinical data...","timestamp":"2025-09-30T21:22:24.172Z"}
+{"level":"info","message":"Clinical data preprocessing completed","timestamp":"2025-09-30T21:22:24.172Z"}
+{"level":"info","message":"Extracting medical entities...","timestamp":"2025-09-30T21:22:24.172Z"}
+{"level":"info","message":"Medical entity extraction completed","timestamp":"2025-09-30T21:22:24.173Z"}
+{"level":"info","message":"Analyzing risk factors...","timestamp":"2025-09-30T21:22:24.173Z"}
+{"level":"info","message":"Risk factor analysis completed","timestamp":"2025-09-30T21:22:24.173Z"}
+{"level":"info","message":"Analyzing temporal information...","timestamp":"2025-09-30T21:22:24.173Z"}
+{"level":"info","message":"Temporal analysis completed","timestamp":"2025-09-30T21:22:24.174Z"}
+{"level":"info","message":"Generating clinical insights...","timestamp":"2025-09-30T21:22:24.174Z"}
+{"level":"info","message":"Clinical insights generation completed","timestamp":"2025-09-30T21:22:24.174Z"}
+{"level":"info","message":"Clinical data processing completed successfully","timestamp":"2025-09-30T21:22:24.175Z"}
+{"level":"info","message":"Starting clinical data processing...","timestamp":"2025-09-30T21:26:26.327Z"}
+{"level":"info","message":"Preprocessing clinical data...","timestamp":"2025-09-30T21:26:26.327Z"}
+{"level":"info","message":"Clinical data preprocessing completed","timestamp":"2025-09-30T21:26:26.328Z"}
+{"level":"info","message":"Extracting medical entities...","timestamp":"2025-09-30T21:26:26.328Z"}
+{"level":"info","message":"Medical entity extraction completed","timestamp":"2025-09-30T21:26:26.328Z"}
+{"level":"info","message":"Analyzing risk factors...","timestamp":"2025-09-30T21:26:26.329Z"}
+{"level":"info","message":"Risk factor analysis completed","timestamp":"2025-09-30T21:26:26.329Z"}
+{"level":"info","message":"Analyzing temporal information...","timestamp":"2025-09-30T21:26:26.329Z"}
+{"level":"info","message":"Temporal analysis completed","timestamp":"2025-09-30T21:26:26.329Z"}
+{"level":"info","message":"Generating clinical insights...","timestamp":"2025-09-30T21:26:26.330Z"}
+{"level":"info","message":"Clinical insights generation completed","timestamp":"2025-09-30T21:26:26.330Z"}
+{"level":"info","message":"Clinical data processing completed successfully","timestamp":"2025-09-30T21:26:26.330Z"}
+{"level":"info","message":"Starting clinical data processing...","timestamp":"2025-09-30T21:27:40.356Z"}
+{"level":"info","message":"Preprocessing clinical data...","timestamp":"2025-09-30T21:27:40.357Z"}
+{"level":"info","message":"Clinical data preprocessing completed","timestamp":"2025-09-30T21:27:40.357Z"}
+{"level":"info","message":"Extracting medical entities...","timestamp":"2025-09-30T21:27:40.357Z"}
+{"level":"info","message":"Medical entity extraction completed","timestamp":"2025-09-30T21:27:40.358Z"}
+{"level":"info","message":"Analyzing risk factors...","timestamp":"2025-09-30T21:27:40.358Z"}
+{"level":"info","message":"Risk factor analysis completed","timestamp":"2025-09-30T21:27:40.358Z"}
+{"level":"info","message":"Analyzing temporal information...","timestamp":"2025-09-30T21:27:40.358Z"}
+{"level":"info","message":"Temporal analysis completed","timestamp":"2025-09-30T21:27:40.358Z"}
+{"level":"info","message":"Generating clinical insights...","timestamp":"2025-09-30T21:27:40.358Z"}
+{"level":"info","message":"Clinical insights generation completed","timestamp":"2025-09-30T21:27:40.359Z"}
+{"level":"info","message":"Clinical data processing completed successfully","timestamp":"2025-09-30T21:27:40.359Z"}
+{"level":"info","message":"Starting clinical data processing...","timestamp":"2025-09-30T21:31:05.168Z"}
+{"level":"info","message":"Preprocessing clinical data...","timestamp":"2025-09-30T21:31:05.169Z"}
+{"level":"info","message":"Clinical data preprocessing completed","timestamp":"2025-09-30T21:31:05.169Z"}
+{"level":"info","message":"Extracting medical entities...","timestamp":"2025-09-30T21:31:05.169Z"}
+{"level":"info","message":"Medical entity extraction completed","timestamp":"2025-09-30T21:31:05.170Z"}
+{"level":"info","message":"Analyzing risk factors...","timestamp":"2025-09-30T21:31:05.170Z"}
+{"level":"info","message":"Risk factor analysis completed","timestamp":"2025-09-30T21:31:05.170Z"}
+{"level":"info","message":"Analyzing temporal information...","timestamp":"2025-09-30T21:31:05.170Z"}
+{"level":"info","message":"Temporal analysis completed","timestamp":"2025-09-30T21:31:05.171Z"}
+{"level":"info","message":"Generating clinical insights...","timestamp":"2025-09-30T21:31:05.171Z"}
+{"level":"info","message":"Clinical insights generation completed","timestamp":"2025-09-30T21:31:05.171Z"}
+{"level":"info","message":"Clinical data processing completed successfully","timestamp":"2025-09-30T21:31:05.171Z"}
+{"level":"info","message":"Starting clinical data processing...","timestamp":"2025-09-30T21:32:17.486Z"}
+{"level":"info","message":"Preprocessing clinical data...","timestamp":"2025-09-30T21:32:17.486Z"}
+{"level":"info","message":"Clinical data preprocessing completed","timestamp":"2025-09-30T21:32:17.486Z"}
+{"level":"info","message":"Extracting medical entities...","timestamp":"2025-09-30T21:32:17.487Z"}
+{"level":"info","message":"Medical entity extraction completed","timestamp":"2025-09-30T21:32:17.487Z"}
+{"level":"info","message":"Analyzing risk factors...","timestamp":"2025-09-30T21:32:17.488Z"}
+{"level":"info","message":"Risk factor analysis completed","timestamp":"2025-09-30T21:32:17.488Z"}
+{"level":"info","message":"Analyzing temporal information...","timestamp":"2025-09-30T21:32:17.488Z"}
+{"level":"info","message":"Temporal analysis completed","timestamp":"2025-09-30T21:32:17.488Z"}
+{"level":"info","message":"Generating clinical insights...","timestamp":"2025-09-30T21:32:17.488Z"}
+{"level":"info","message":"Clinical insights generation completed","timestamp":"2025-09-30T21:32:17.489Z"}
+{"level":"info","message":"Clinical data processing completed successfully","timestamp":"2025-09-30T21:32:17.489Z"}
+{"level":"info","message":"Starting clinical data processing...","timestamp":"2025-09-30T21:37:54.602Z"}
+{"level":"info","message":"Preprocessing clinical data...","timestamp":"2025-09-30T21:37:54.603Z"}
+{"level":"info","message":"Clinical data preprocessing completed","timestamp":"2025-09-30T21:37:54.603Z"}
+{"level":"info","message":"Extracting medical entities...","timestamp":"2025-09-30T21:37:54.604Z"}
+{"level":"info","message":"Medical entity extraction completed","timestamp":"2025-09-30T21:37:54.604Z"}
+{"level":"info","message":"Analyzing risk factors...","timestamp":"2025-09-30T21:37:54.605Z"}
+{"level":"info","message":"Risk factor analysis completed","timestamp":"2025-09-30T21:37:54.605Z"}
+{"level":"info","message":"Analyzing temporal information...","timestamp":"2025-09-30T21:37:54.606Z"}
+{"level":"info","message":"Temporal analysis completed","timestamp":"2025-09-30T21:37:54.606Z"}
+{"level":"info","message":"Generating clinical insights...","timestamp":"2025-09-30T21:37:54.606Z"}
+{"level":"info","message":"Clinical insights generation completed","timestamp":"2025-09-30T21:37:54.607Z"}
+{"level":"info","message":"Clinical data processing completed successfully","timestamp":"2025-09-30T21:37:54.607Z"}
+{"level":"info","message":"Starting clinical data processing...","timestamp":"2025-09-30T22:25:09.109Z"}
+{"level":"info","message":"Preprocessing clinical data...","timestamp":"2025-09-30T22:25:09.109Z"}
+{"level":"info","message":"Clinical data preprocessing completed","timestamp":"2025-09-30T22:25:09.110Z"}
+{"level":"info","message":"Extracting medical entities...","timestamp":"2025-09-30T22:25:09.110Z"}
+{"level":"info","message":"Medical entity extraction completed","timestamp":"2025-09-30T22:25:09.110Z"}
+{"level":"info","message":"Analyzing risk factors...","timestamp":"2025-09-30T22:25:09.111Z"}
+{"level":"info","message":"Risk factor analysis completed","timestamp":"2025-09-30T22:25:09.111Z"}
+{"level":"info","message":"Analyzing temporal information...","timestamp":"2025-09-30T22:25:09.111Z"}
+{"level":"info","message":"Temporal analysis completed","timestamp":"2025-09-30T22:25:09.111Z"}
+{"level":"info","message":"Generating clinical insights...","timestamp":"2025-09-30T22:25:09.112Z"}
+{"level":"info","message":"Clinical insights generation completed","timestamp":"2025-09-30T22:25:09.112Z"}
+{"level":"info","message":"Clinical data processing completed successfully","timestamp":"2025-09-30T22:25:09.112Z"}
