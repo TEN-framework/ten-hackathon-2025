@@ -219,3 +219,29 @@
 {"level":"info","message":"TEN Framework service connection initialized successfully","timestamp":"2025-09-30T21:36:26.340Z"}
 {"level":"info","message":"Generating conversation response using TEN Framework integration...","timestamp":"2025-09-30T21:37:54.608Z"}
 {"level":"error","message":"TEN Framework service call failed for /api/agents/generate-response:","timestamp":"2025-09-30T21:37:54.614Z"}
+{"level":"info","message":"Initializing TEN Framework service connection...","timestamp":"2025-09-30T22:21:03.226Z"}
+{"level":"warn","message":"TEN Framework service not available, using fallback mode:","timestamp":"2025-09-30T22:21:03.239Z"}
+{"level":"info","message":"TEN Framework connection test result: false","timestamp":"2025-09-30T22:21:03.239Z"}
+{"level":"info","message":"About to create medical agent...","timestamp":"2025-09-30T22:21:03.240Z"}
+{"level":"info","message":"Creating multimodal medical diagnosis agent for TEN Framework integration...","timestamp":"2025-09-30T22:21:03.240Z"}
+{"level":"info","message":"Medical diagnosis agent created successfully for TEN Framework integration","timestamp":"2025-09-30T22:21:03.240Z"}
+{"level":"info","message":"Medical agent creation completed","timestamp":"2025-09-30T22:21:03.240Z"}
+{"level":"info","message":"TEN Framework service connection initialized successfully","timestamp":"2025-09-30T22:21:03.240Z"}
+{"level":"info","message":"Initializing TEN Framework service connection...","timestamp":"2025-09-30T22:22:04.264Z"}
+{"level":"warn","message":"TEN Framework service not available, using fallback mode:","timestamp":"2025-09-30T22:22:04.277Z"}
+{"level":"info","message":"TEN Framework connection test result: false","timestamp":"2025-09-30T22:22:04.277Z"}
+{"level":"info","message":"About to create medical agent...","timestamp":"2025-09-30T22:22:04.277Z"}
+{"level":"info","message":"Creating multimodal medical diagnosis agent for TEN Framework integration...","timestamp":"2025-09-30T22:22:04.277Z"}
+{"level":"info","message":"Medical diagnosis agent created successfully for TEN Framework integration","timestamp":"2025-09-30T22:22:04.277Z"}
+{"level":"info","message":"Medical agent creation completed","timestamp":"2025-09-30T22:22:04.278Z"}
+{"level":"info","message":"TEN Framework service connection initialized successfully","timestamp":"2025-09-30T22:22:04.278Z"}
+{"level":"info","message":"Initializing TEN Framework service connection...","timestamp":"2025-09-30T22:24:11.640Z"}
+{"level":"warn","message":"TEN Framework service not available, using fallback mode:","timestamp":"2025-09-30T22:24:11.652Z"}
+{"level":"info","message":"TEN Framework connection test result: false","timestamp":"2025-09-30T22:24:11.652Z"}
+{"level":"info","message":"About to create medical agent...","timestamp":"2025-09-30T22:24:11.653Z"}
+{"level":"info","message":"Creating multimodal medical diagnosis agent for TEN Framework integration...","timestamp":"2025-09-30T22:24:11.653Z"}
+{"level":"info","message":"Medical diagnosis agent created successfully for TEN Framework integration","timestamp":"2025-09-30T22:24:11.653Z"}
+{"level":"info","message":"Medical agent creation completed","timestamp":"2025-09-30T22:24:11.653Z"}
+{"level":"info","message":"TEN Framework service connection initialized successfully","timestamp":"2025-09-30T22:24:11.653Z"}
+{"level":"info","message":"Generating conversation response using TEN Framework integration...","timestamp":"2025-09-30T22:25:09.114Z"}
+{"level":"error","message":"TEN Framework service call failed for /api/agents/generate-response:","timestamp":"2025-09-30T22:25:09.119Z"}

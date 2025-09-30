@@ -32,3 +32,19 @@
 {"level":"info","message":"Voice analysis completed","timestamp":"2025-09-30T21:37:16.425Z"}
 {"level":"info","message":"Starting multimodal analysis request","timestamp":"2025-09-30T21:37:54.600Z"}
 {"level":"info","message":"Multimodal analysis completed for analysis_id: analysis_1759268274608_93gen0od7","timestamp":"2025-09-30T21:37:54.614Z"}
+{"level":"info","message":"Starting voice analysis request","timestamp":"2025-09-30T21:59:24.450Z"}
+{"level":"info","message":"Voice analysis completed","timestamp":"2025-09-30T21:59:24.451Z"}
+{"level":"info","message":"Starting voice analysis request","timestamp":"2025-09-30T22:10:21.061Z"}
+{"level":"info","message":"Voice analysis completed","timestamp":"2025-09-30T22:10:21.063Z"}
+{"level":"info","message":"Starting voice analysis request","timestamp":"2025-09-30T22:21:11.826Z"}
+{"level":"error","message":"Voice analysis failed: Invalid WAV file","stack":"TypeError: Invalid WAV file\n    at Object.decode (/app/node_modules/node-wav/index.js:189:11)\n    at AudioProcessor.loadAudioFile (/app/src/processors/audio-processor.js:83:35)\n    at AudioProcessor.processAudio (/app/src/processors/audio-processor.js:42:42)\n    at MultimodalProcessorManager.processVoiceData (/app/src/processors/multimodal-manager.js:201:54)\n    at /app/src/api/routes/multimodal.js:163:54\n    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)\n    at next (/app/node_modules/express/lib/router/route.js:149:13)\n    at done (/app/node_modules/multer/lib/make-middleware.js:47:7)\n    at indicateDone (/app/node_modules/multer/lib/make-middleware.js:51:68)\n    at /app/node_modules/multer/lib/make-middleware.js:157:11","timestamp":"2025-09-30T22:21:11.828Z"}
+{"level":"info","message":"Starting voice analysis request","timestamp":"2025-09-30T22:22:08.305Z"}
+{"level":"error","message":"Voice analysis failed: fft.fft is not a function","stack":"TypeError: fft.fft is not a function\n    at AudioProcessor.calculateHNR (/app/src/processors/audio-processor.js:281:34)\n    at AudioProcessor.extractRealAcousticFeatures (/app/src/processors/audio-processor.js:152:30)\n    at AudioProcessor.processAudio (/app/src/processors/audio-processor.js:45:49)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async MultimodalProcessorManager.processVoiceData (/app/src/processors/multimodal-manager.js:201:28)\n    at async /app/src/api/routes/multimodal.js:163:30","timestamp":"2025-09-30T22:22:09.656Z"}
+{"level":"info","message":"Starting voice analysis request","timestamp":"2025-09-30T22:24:19.871Z"}
+{"level":"info","message":"Voice analysis completed","timestamp":"2025-09-30T22:24:21.231Z"}
+{"level":"info","message":"Starting voice analysis request","timestamp":"2025-09-30T22:24:49.119Z"}
+{"level":"info","message":"Voice analysis completed","timestamp":"2025-09-30T22:24:50.471Z"}
+{"level":"info","message":"Starting voice analysis request","timestamp":"2025-09-30T22:24:57.707Z"}
+{"level":"info","message":"Voice analysis completed","timestamp":"2025-09-30T22:24:59.042Z"}
+{"level":"info","message":"Starting multimodal analysis request","timestamp":"2025-09-30T22:25:09.108Z"}
+{"level":"info","message":"Multimodal analysis completed for analysis_id: analysis_1759271109113_3k6aqlokk","timestamp":"2025-09-30T22:25:09.119Z"}

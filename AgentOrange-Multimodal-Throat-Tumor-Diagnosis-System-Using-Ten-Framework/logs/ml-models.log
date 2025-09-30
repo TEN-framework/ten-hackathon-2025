@@ -310,3 +310,39 @@
 {"level":"info","message":"Multimodal fusion model loaded","timestamp":"2025-09-30T21:36:26.344Z"}
 {"level":"info","message":"All ML models loaded successfully","timestamp":"2025-09-30T21:36:26.344Z"}
 {"level":"info","message":"ML models manager initialized successfully","timestamp":"2025-09-30T21:36:26.344Z"}
+{"level":"info","message":"Initializing ML models manager...","timestamp":"2025-09-30T22:21:03.243Z"}
+{"level":"info","message":"Loading ML models...","timestamp":"2025-09-30T22:21:03.244Z"}
+{"level":"info","message":"Loading voice analysis model...","timestamp":"2025-09-30T22:21:03.244Z"}
+{"level":"info","message":"Voice analysis model loaded","timestamp":"2025-09-30T22:21:03.244Z"}
+{"level":"info","message":"Loading image analysis model...","timestamp":"2025-09-30T22:21:03.244Z"}
+{"level":"info","message":"Image analysis model loaded","timestamp":"2025-09-30T22:21:03.244Z"}
+{"level":"info","message":"Loading clinical analysis model...","timestamp":"2025-09-30T22:21:03.244Z"}
+{"level":"info","message":"Clinical analysis model loaded","timestamp":"2025-09-30T22:21:03.245Z"}
+{"level":"info","message":"Loading multimodal fusion model...","timestamp":"2025-09-30T22:21:03.245Z"}
+{"level":"info","message":"Multimodal fusion model loaded","timestamp":"2025-09-30T22:21:03.245Z"}
+{"level":"info","message":"All ML models loaded successfully","timestamp":"2025-09-30T22:21:03.245Z"}
+{"level":"info","message":"ML models manager initialized successfully","timestamp":"2025-09-30T22:21:03.245Z"}
+{"level":"info","message":"Initializing ML models manager...","timestamp":"2025-09-30T22:22:04.281Z"}
+{"level":"info","message":"Loading ML models...","timestamp":"2025-09-30T22:22:04.281Z"}
+{"level":"info","message":"Loading voice analysis model...","timestamp":"2025-09-30T22:22:04.281Z"}
+{"level":"info","message":"Voice analysis model loaded","timestamp":"2025-09-30T22:22:04.281Z"}
+{"level":"info","message":"Loading image analysis model...","timestamp":"2025-09-30T22:22:04.281Z"}
+{"level":"info","message":"Image analysis model loaded","timestamp":"2025-09-30T22:22:04.281Z"}
+{"level":"info","message":"Loading clinical analysis model...","timestamp":"2025-09-30T22:22:04.282Z"}
+{"level":"info","message":"Clinical analysis model loaded","timestamp":"2025-09-30T22:22:04.282Z"}
+{"level":"info","message":"Loading multimodal fusion model...","timestamp":"2025-09-30T22:22:04.282Z"}
+{"level":"info","message":"Multimodal fusion model loaded","timestamp":"2025-09-30T22:22:04.282Z"}
+{"level":"info","message":"All ML models loaded successfully","timestamp":"2025-09-30T22:22:04.282Z"}
+{"level":"info","message":"ML models manager initialized successfully","timestamp":"2025-09-30T22:22:04.282Z"}
+{"level":"info","message":"Initializing ML models manager...","timestamp":"2025-09-30T22:24:11.656Z"}
+{"level":"info","message":"Loading ML models...","timestamp":"2025-09-30T22:24:11.657Z"}
+{"level":"info","message":"Loading voice analysis model...","timestamp":"2025-09-30T22:24:11.657Z"}
+{"level":"info","message":"Voice analysis model loaded","timestamp":"2025-09-30T22:24:11.657Z"}
+{"level":"info","message":"Loading image analysis model...","timestamp":"2025-09-30T22:24:11.657Z"}
+{"level":"info","message":"Image analysis model loaded","timestamp":"2025-09-30T22:24:11.657Z"}
+{"level":"info","message":"Loading clinical analysis model...","timestamp":"2025-09-30T22:24:11.657Z"}
+{"level":"info","message":"Clinical analysis model loaded","timestamp":"2025-09-30T22:24:11.657Z"}
+{"level":"info","message":"Loading multimodal fusion model...","timestamp":"2025-09-30T22:24:11.657Z"}
+{"level":"info","message":"Multimodal fusion model loaded","timestamp":"2025-09-30T22:24:11.657Z"}
+{"level":"info","message":"All ML models loaded successfully","timestamp":"2025-09-30T22:24:11.658Z"}
+{"level":"info","message":"ML models manager initialized successfully","timestamp":"2025-09-30T22:24:11.658Z"}

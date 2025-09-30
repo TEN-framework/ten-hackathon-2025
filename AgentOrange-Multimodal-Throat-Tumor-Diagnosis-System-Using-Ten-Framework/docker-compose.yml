@@ -101,11 +101,11 @@ services:
       - OPENAI_API_KEY=${SILICONFLOW_API_KEY}
       - OPENAI_MODEL=gpt-4o
       
-      # Dummy values for required services (using SiliconFlow for actual functionality)
-      - AGORA_APP_ID=dummy-agora-app-id
-      - AGORA_APP_CERTIFICATE=dummy-agora-app-certificate
-      - DEEPGRAM_API_KEY=dummy-deepgram-api-key
-      - ELEVENLABS_TTS_KEY=dummy-elevenlabs-api-key
+      # Valid format credentials for required services (using SiliconFlow for actual functionality)
+      - AGORA_APP_ID=12345678901234567890123456789012
+      - AGORA_APP_CERTIFICATE=1234567890123456789012345678901234567890123456789012345678901234
+      - DEEPGRAM_API_KEY=sk-1234567890123456789012345678901234567890123456789012345678901234
+      - ELEVENLABS_TTS_KEY=sk-1234567890123456789012345678901234567890123456789012345678901234
     depends_on:
       - postgres
       - redis

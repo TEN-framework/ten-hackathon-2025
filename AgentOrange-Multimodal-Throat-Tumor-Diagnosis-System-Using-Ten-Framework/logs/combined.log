@@ -24956,3 +24956,202 @@
 {"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T21:51:32.565Z","url":"/"}
 {"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T21:52:02.622Z","url":"/health","userAgent":"curl/7.88.1"}
 {"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T21:52:02.623Z","url":"/"}
+{"ip":"::ffff:172.18.0.5","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T21:52:25.042Z","url":"/","userAgent":"'Mozilla/5.0 (compatible; GenomeCrawlerd/1.0; +https://www.nokia.com/genomecrawler)'"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T21:52:25.043Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T21:52:32.680Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T21:52:32.680Z","url":"/"}
+{"ip":"::ffff:172.18.0.5","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T21:52:51.796Z","url":"/","userAgent":"'Mozilla/5.0 (compatible; GenomeCrawlerd/1.0; +https://www.nokia.com/genomecrawler)'"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T21:52:51.797Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T21:53:02.740Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T21:53:02.740Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T21:53:32.801Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T21:53:32.801Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T21:54:02.861Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T21:54:02.862Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T21:54:32.917Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T21:54:32.918Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T21:55:02.975Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T21:55:02.976Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T21:55:33.037Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T21:55:33.038Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T21:56:03.093Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T21:56:03.094Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T21:56:33.149Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T21:56:33.149Z","url":"/"}
+{"ip":"::ffff:172.18.0.5","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T21:56:57.712Z","url":"/favicon.ico","userAgent":"'Mozilla/5.0 (compatible; GenomeCrawlerd/1.0; +https://www.nokia.com/genomecrawler)'"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":404,"timestamp":"2025-09-30T21:56:57.713Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T21:57:03.209Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T21:57:03.210Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T21:57:33.270Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T21:57:33.271Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T21:58:03.333Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T21:58:03.333Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T21:58:33.393Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T21:58:33.393Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T21:59:03.454Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T21:59:03.455Z","url":"/"}
+{"ip":"::ffff:172.18.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-09-30T21:59:24.447Z","url":"/api/multimodal/voice","userAgent":"curl/8.12.1"}
+{"duration":4,"level":"info","message":"Request completed","method":"POST","statusCode":200,"timestamp":"2025-09-30T21:59:24.451Z","url":"/voice"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T21:59:33.510Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T21:59:33.511Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:00:03.571Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:00:03.572Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:00:33.632Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:00:33.633Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:01:03.686Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:01:03.687Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:01:33.745Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:01:33.746Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:02:03.811Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:02:03.811Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:02:33.886Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":4,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:02:33.890Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:03:03.950Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:03:03.951Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:03:34.009Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:03:34.010Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:04:04.067Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:04:04.067Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:04:34.124Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:04:34.124Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:05:04.183Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:05:04.183Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:05:34.240Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:05:34.241Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:06:04.303Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:06:04.304Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:06:34.359Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:06:34.359Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:07:04.418Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:07:04.418Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:07:34.476Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:07:34.477Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:08:04.531Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:08:04.532Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:08:34.586Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:08:34.587Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:09:04.650Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:09:04.651Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:09:34.706Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:09:34.707Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:10:04.760Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:10:04.761Z","url":"/"}
+{"ip":"::ffff:172.18.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-09-30T22:10:21.059Z","url":"/api/multimodal/voice","userAgent":"curl/8.12.1"}
+{"duration":4,"level":"info","message":"Request completed","method":"POST","statusCode":200,"timestamp":"2025-09-30T22:10:21.063Z","url":"/voice"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:10:34.818Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:10:34.818Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:11:04.881Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:11:04.882Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:11:34.938Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:11:34.938Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:12:04.996Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:12:04.996Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:12:35.051Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:12:35.051Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:13:05.105Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:13:05.105Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:13:35.159Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:13:35.160Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:14:05.219Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:14:05.219Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:14:35.271Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:14:35.272Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:15:05.328Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:15:05.329Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:15:35.389Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:15:35.389Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:16:05.450Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:16:05.450Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:16:35.508Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:16:35.509Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:17:05.574Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:17:05.575Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:17:35.635Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:17:35.635Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:18:05.689Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:18:05.690Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:18:35.743Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:18:35.744Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:19:05.801Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:19:05.802Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:19:35.871Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:19:35.871Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:20:05.953Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:20:05.953Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:20:36.009Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:20:36.010Z","url":"/"}
+{"level":"info","message":"Initializing Multimodal Throat Tumor Diagnosis System...","timestamp":"2025-09-30T22:21:03.175Z"}
+{"level":"info","message":"Initializing core services...","timestamp":"2025-09-30T22:21:03.181Z"}
+{"level":"info","message":"🚀 Multimodal Throat Tumor Diagnosis System running on port 3199","timestamp":"2025-09-30T22:21:03.192Z"}
+{"level":"info","message":"📚 Documentation available at http://localhost:3199/docs","timestamp":"2025-09-30T22:21:03.192Z"}
+{"level":"info","message":"🏥 Health check available at http://localhost:3199/health","timestamp":"2025-09-30T22:21:03.193Z"}
+{"level":"info","message":"🎯 Ready for multimodal medical diagnosis!","timestamp":"2025-09-30T22:21:03.193Z"}
+{"level":"info","message":"Database initialized","timestamp":"2025-09-30T22:21:03.217Z"}
+{"level":"info","message":"Redis cache initialized","timestamp":"2025-09-30T22:21:03.225Z"}
+{"level":"info","message":"TEN Framework initialized","timestamp":"2025-09-30T22:21:03.240Z"}
+{"level":"info","message":"Multimodal processors initialized","timestamp":"2025-09-30T22:21:03.243Z"}
+{"level":"info","message":"ML models initialized","timestamp":"2025-09-30T22:21:03.245Z"}
+{"level":"info","message":"Setting up API routes...","timestamp":"2025-09-30T22:21:03.245Z"}
+{"level":"info","message":"Application initialization completed successfully","timestamp":"2025-09-30T22:21:03.246Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:21:07.583Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":4,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:21:07.586Z","url":"/"}
+{"ip":"::ffff:172.18.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-09-30T22:21:11.821Z","url":"/api/multimodal/voice","userAgent":"curl/8.12.1"}
+{"duration":7,"level":"info","message":"Request completed","method":"POST","statusCode":500,"timestamp":"2025-09-30T22:21:11.828Z","url":"/voice"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:21:37.646Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":0,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:21:37.646Z","url":"/"}
+{"level":"info","message":"Initializing Multimodal Throat Tumor Diagnosis System...","timestamp":"2025-09-30T22:22:04.209Z"}
+{"level":"info","message":"Initializing core services...","timestamp":"2025-09-30T22:22:04.214Z"}
+{"level":"info","message":"🚀 Multimodal Throat Tumor Diagnosis System running on port 3199","timestamp":"2025-09-30T22:22:04.226Z"}
+{"level":"info","message":"📚 Documentation available at http://localhost:3199/docs","timestamp":"2025-09-30T22:22:04.226Z"}
+{"level":"info","message":"🏥 Health check available at http://localhost:3199/health","timestamp":"2025-09-30T22:22:04.226Z"}
+{"level":"info","message":"🎯 Ready for multimodal medical diagnosis!","timestamp":"2025-09-30T22:22:04.227Z"}
+{"level":"info","message":"Database initialized","timestamp":"2025-09-30T22:22:04.255Z"}
+{"level":"info","message":"Redis cache initialized","timestamp":"2025-09-30T22:22:04.263Z"}
+{"level":"info","message":"TEN Framework initialized","timestamp":"2025-09-30T22:22:04.278Z"}
+{"level":"info","message":"Multimodal processors initialized","timestamp":"2025-09-30T22:22:04.280Z"}
+{"level":"info","message":"ML models initialized","timestamp":"2025-09-30T22:22:04.282Z"}
+{"level":"info","message":"Setting up API routes...","timestamp":"2025-09-30T22:22:04.282Z"}
+{"level":"info","message":"Application initialization completed successfully","timestamp":"2025-09-30T22:22:04.282Z"}
+{"ip":"::ffff:172.18.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-09-30T22:22:08.298Z","url":"/api/multimodal/voice","userAgent":"curl/8.12.1"}
+{"duration":1360,"level":"info","message":"Request completed","method":"POST","statusCode":500,"timestamp":"2025-09-30T22:22:09.658Z","url":"/voice"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:22:09.662Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:22:09.663Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:22:39.721Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:22:39.722Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:23:09.786Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:23:09.787Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:23:39.844Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:23:39.845Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:24:09.910Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:24:09.911Z","url":"/"}
+{"level":"info","message":"Initializing Multimodal Throat Tumor Diagnosis System...","timestamp":"2025-09-30T22:24:11.594Z"}
+{"level":"info","message":"Initializing core services...","timestamp":"2025-09-30T22:24:11.600Z"}
+{"level":"info","message":"🚀 Multimodal Throat Tumor Diagnosis System running on port 3199","timestamp":"2025-09-30T22:24:11.611Z"}
+{"level":"info","message":"📚 Documentation available at http://localhost:3199/docs","timestamp":"2025-09-30T22:24:11.611Z"}
+{"level":"info","message":"🏥 Health check available at http://localhost:3199/health","timestamp":"2025-09-30T22:24:11.612Z"}
+{"level":"info","message":"🎯 Ready for multimodal medical diagnosis!","timestamp":"2025-09-30T22:24:11.612Z"}
+{"level":"info","message":"Database initialized","timestamp":"2025-09-30T22:24:11.630Z"}
+{"level":"info","message":"Redis cache initialized","timestamp":"2025-09-30T22:24:11.639Z"}
+{"level":"info","message":"TEN Framework initialized","timestamp":"2025-09-30T22:24:11.653Z"}
+{"level":"info","message":"Multimodal processors initialized","timestamp":"2025-09-30T22:24:11.656Z"}
+{"level":"info","message":"ML models initialized","timestamp":"2025-09-30T22:24:11.658Z"}
+{"level":"info","message":"Setting up API routes...","timestamp":"2025-09-30T22:24:11.658Z"}
+{"level":"info","message":"Application initialization completed successfully","timestamp":"2025-09-30T22:24:11.658Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:24:16.093Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":4,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:24:16.096Z","url":"/"}
+{"ip":"::ffff:172.18.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-09-30T22:24:19.866Z","url":"/api/multimodal/voice","userAgent":"curl/8.12.1"}
+{"duration":1367,"level":"info","message":"Request completed","method":"POST","statusCode":200,"timestamp":"2025-09-30T22:24:21.232Z","url":"/voice"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:24:46.154Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:24:46.155Z","url":"/"}
+{"ip":"::ffff:172.18.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-09-30T22:24:49.117Z","url":"/api/multimodal/voice","userAgent":"curl/8.12.1"}
+{"duration":1354,"level":"info","message":"Request completed","method":"POST","statusCode":200,"timestamp":"2025-09-30T22:24:50.471Z","url":"/voice"}
+{"ip":"::ffff:172.18.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-09-30T22:24:57.705Z","url":"/api/multimodal/voice","userAgent":"curl/8.12.1"}
+{"duration":1338,"level":"info","message":"Request completed","method":"POST","statusCode":200,"timestamp":"2025-09-30T22:24:59.043Z","url":"/voice"}
+{"ip":"::ffff:172.18.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-09-30T22:25:09.107Z","url":"/api/multimodal/analyze","userAgent":"curl/8.12.1"}
+{"duration":13,"level":"info","message":"Request completed","method":"POST","statusCode":200,"timestamp":"2025-09-30T22:25:09.120Z","url":"/analyze"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:25:16.217Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:25:16.218Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:25:46.272Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:25:46.273Z","url":"/"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-09-30T22:26:16.331Z","url":"/health","userAgent":"curl/7.88.1"}
+{"duration":1,"level":"info","message":"Request completed","method":"GET","statusCode":200,"timestamp":"2025-09-30T22:26:16.332Z","url":"/"}
