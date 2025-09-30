@@ -10,9 +10,25 @@
 {"level":"error","message":"Multimodal analysis failed: Audio validation failed: Sample rate must be at least 44100 Hz, Bit depth must be at least 16 bits","stack":"Error: Audio validation failed: Sample rate must be at least 44100 Hz, Bit depth must be at least 16 bits\n    at AudioProcessor.process (/app/src/processors/audio-processor.js:59:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async MultimodalProcessorManager.processVoiceData (/app/src/processors/multimodal-manager.js:201:28)\n    at async Promise.all (index 0)\n    at async MultimodalProcessorManager.processMultimodalInput (/app/src/processors/multimodal-manager.js:122:13)\n    at async /app/src/api/routes/multimodal.js:94:33","timestamp":"2025-09-28T10:44:34.961Z"}
 {"level":"info","message":"Starting multimodal analysis request","timestamp":"2025-09-28T10:48:14.503Z"}
 {"level":"info","message":"Multimodal analysis completed for analysis_id: analysis_1759056494512_vi3nx8sud","timestamp":"2025-09-28T10:48:14.513Z"}
-{"level":"info","message":"Starting multimodal analysis request","timestamp":"2025-09-29T05:37:00.086Z"}
-{"level":"info","message":"Multimodal analysis completed for analysis_id: analysis_1759124220095_nwo96ezpo","timestamp":"2025-09-29T05:37:00.096Z"}
-{"level":"info","message":"Starting multimodal analysis request","timestamp":"2025-09-29T05:52:12.646Z"}
-{"level":"info","message":"Multimodal analysis completed for analysis_id: analysis_1759125132649_0vblokiey","timestamp":"2025-09-29T05:52:12.650Z"}
-{"level":"info","message":"Starting multimodal analysis request","timestamp":"2025-09-29T05:56:26.794Z"}
-{"level":"info","message":"Multimodal analysis completed for analysis_id: analysis_1759125386797_4l285590n","timestamp":"2025-09-29T05:56:26.797Z"}
+{"level":"info","message":"Starting multimodal analysis request","timestamp":"2025-09-30T20:57:46.747Z"}
+{"level":"error","message":"Multimodal analysis failed: Medical agent not initialized","stack":"Error: Medical agent not initialized\n    at TENFrameworkManager.generateConversationResponse (/app/src/ten-framework/ten-manager.js:419:23)\n    at /app/src/api/routes/multimodal.js:98:55\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-09-30T20:57:46.755Z"}
+{"level":"info","message":"Starting multimodal analysis request","timestamp":"2025-09-30T21:04:14.638Z"}
+{"level":"error","message":"Multimodal analysis failed: Medical agent not initialized","stack":"Error: Medical agent not initialized\n    at TENFrameworkManager.generateConversationResponse (/app/src/ten-framework/ten-manager.js:419:23)\n    at /app/src/api/routes/multimodal.js:98:55\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-09-30T21:04:14.644Z"}
+{"level":"info","message":"Starting multimodal analysis request","timestamp":"2025-09-30T21:07:44.478Z"}
+{"level":"info","message":"Multimodal analysis completed for analysis_id: analysis_1759266464484_nmp4q0uyv","timestamp":"2025-09-30T21:07:44.486Z"}
+{"level":"info","message":"Starting multimodal analysis request","timestamp":"2025-09-30T21:08:43.071Z"}
+{"level":"info","message":"Multimodal analysis completed for analysis_id: analysis_1759266523076_u1p0k8jue","timestamp":"2025-09-30T21:08:43.077Z"}
+{"level":"info","message":"Starting multimodal analysis request","timestamp":"2025-09-30T21:22:24.170Z"}
+{"level":"info","message":"Multimodal analysis completed for analysis_id: analysis_1759267344176_cd09y0q6g","timestamp":"2025-09-30T21:22:24.177Z"}
+{"level":"info","message":"Starting multimodal analysis request","timestamp":"2025-09-30T21:26:26.325Z"}
+{"level":"info","message":"Multimodal analysis completed for analysis_id: analysis_1759267586331_rb96bi3yr","timestamp":"2025-09-30T21:26:26.337Z"}
+{"level":"info","message":"Starting multimodal analysis request","timestamp":"2025-09-30T21:27:40.355Z"}
+{"level":"info","message":"Multimodal analysis completed for analysis_id: analysis_1759267660360_9ydnxf271","timestamp":"2025-09-30T21:27:40.366Z"}
+{"level":"info","message":"Starting multimodal analysis request","timestamp":"2025-09-30T21:31:05.167Z"}
+{"level":"info","message":"Multimodal analysis completed for analysis_id: analysis_1759267865172_zqs8qzeww","timestamp":"2025-09-30T21:31:05.177Z"}
+{"level":"info","message":"Starting multimodal analysis request","timestamp":"2025-09-30T21:32:17.484Z"}
+{"level":"info","message":"Multimodal analysis completed for analysis_id: analysis_1759267937489_6zpo0l5k5","timestamp":"2025-09-30T21:32:17.494Z"}
+{"level":"info","message":"Starting voice analysis request","timestamp":"2025-09-30T21:37:16.421Z"}
+{"level":"info","message":"Voice analysis completed","timestamp":"2025-09-30T21:37:16.425Z"}
+{"level":"info","message":"Starting multimodal analysis request","timestamp":"2025-09-30T21:37:54.600Z"}
+{"level":"info","message":"Multimodal analysis completed for analysis_id: analysis_1759268274608_93gen0od7","timestamp":"2025-09-30T21:37:54.614Z"}

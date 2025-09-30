@@ -10,33 +10,53 @@
 {"level":"info","message":"Detecting pathological voice indicators...","timestamp":"2025-09-28T10:48:14.509Z"}
 {"level":"info","message":"Pathological indicator detection completed","timestamp":"2025-09-28T10:48:14.509Z"}
 {"level":"info","message":"Audio processing completed successfully","timestamp":"2025-09-28T10:48:14.510Z"}
-{"level":"info","message":"Starting audio processing...","timestamp":"2025-09-29T05:37:00.087Z"}
-{"level":"info","message":"Preprocessing audio...","timestamp":"2025-09-29T05:37:00.089Z"}
-{"level":"info","message":"Audio preprocessing completed","timestamp":"2025-09-29T05:37:00.089Z"}
-{"level":"info","message":"Extracting acoustic features...","timestamp":"2025-09-29T05:37:00.090Z"}
-{"level":"info","message":"Acoustic feature extraction completed","timestamp":"2025-09-29T05:37:00.090Z"}
-{"level":"info","message":"Analyzing voice quality...","timestamp":"2025-09-29T05:37:00.091Z"}
-{"level":"info","message":"Voice quality analysis completed","timestamp":"2025-09-29T05:37:00.091Z"}
-{"level":"info","message":"Detecting pathological voice indicators...","timestamp":"2025-09-29T05:37:00.092Z"}
-{"level":"info","message":"Pathological indicator detection completed","timestamp":"2025-09-29T05:37:00.092Z"}
-{"level":"info","message":"Audio processing completed successfully","timestamp":"2025-09-29T05:37:00.093Z"}
-{"level":"info","message":"Starting audio processing...","timestamp":"2025-09-29T05:52:12.646Z"}
-{"level":"info","message":"Preprocessing audio...","timestamp":"2025-09-29T05:52:12.647Z"}
-{"level":"info","message":"Audio preprocessing completed","timestamp":"2025-09-29T05:52:12.647Z"}
-{"level":"info","message":"Extracting acoustic features...","timestamp":"2025-09-29T05:52:12.647Z"}
-{"level":"info","message":"Acoustic feature extraction completed","timestamp":"2025-09-29T05:52:12.647Z"}
-{"level":"info","message":"Analyzing voice quality...","timestamp":"2025-09-29T05:52:12.648Z"}
-{"level":"info","message":"Voice quality analysis completed","timestamp":"2025-09-29T05:52:12.648Z"}
-{"level":"info","message":"Detecting pathological voice indicators...","timestamp":"2025-09-29T05:52:12.648Z"}
-{"level":"info","message":"Pathological indicator detection completed","timestamp":"2025-09-29T05:52:12.648Z"}
-{"level":"info","message":"Audio processing completed successfully","timestamp":"2025-09-29T05:52:12.648Z"}
-{"level":"info","message":"Starting audio processing...","timestamp":"2025-09-29T05:56:26.795Z"}
-{"level":"info","message":"Preprocessing audio...","timestamp":"2025-09-29T05:56:26.795Z"}
-{"level":"info","message":"Audio preprocessing completed","timestamp":"2025-09-29T05:56:26.795Z"}
-{"level":"info","message":"Extracting acoustic features...","timestamp":"2025-09-29T05:56:26.795Z"}
-{"level":"info","message":"Acoustic feature extraction completed","timestamp":"2025-09-29T05:56:26.796Z"}
-{"level":"info","message":"Analyzing voice quality...","timestamp":"2025-09-29T05:56:26.796Z"}
-{"level":"info","message":"Voice quality analysis completed","timestamp":"2025-09-29T05:56:26.796Z"}
-{"level":"info","message":"Detecting pathological voice indicators...","timestamp":"2025-09-29T05:56:26.796Z"}
-{"level":"info","message":"Pathological indicator detection completed","timestamp":"2025-09-29T05:56:26.796Z"}
-{"level":"info","message":"Audio processing completed successfully","timestamp":"2025-09-29T05:56:26.796Z"}
+{"level":"info","message":"Starting audio processing...","timestamp":"2025-09-30T20:57:46.748Z"}
+{"level":"info","message":"Preprocessing audio...","timestamp":"2025-09-30T20:57:46.749Z"}
+{"level":"info","message":"Audio preprocessing completed","timestamp":"2025-09-30T20:57:46.750Z"}
+{"level":"info","message":"Extracting acoustic features...","timestamp":"2025-09-30T20:57:46.750Z"}
+{"level":"info","message":"Acoustic feature extraction completed","timestamp":"2025-09-30T20:57:46.750Z"}
+{"level":"info","message":"Analyzing voice quality...","timestamp":"2025-09-30T20:57:46.751Z"}
+{"level":"info","message":"Voice quality analysis completed","timestamp":"2025-09-30T20:57:46.751Z"}
+{"level":"info","message":"Detecting pathological voice indicators...","timestamp":"2025-09-30T20:57:46.752Z"}
+{"level":"info","message":"Pathological indicator detection completed","timestamp":"2025-09-30T20:57:46.752Z"}
+{"level":"info","message":"Audio processing completed successfully","timestamp":"2025-09-30T20:57:46.752Z"}
+{"level":"info","message":"Starting audio processing...","timestamp":"2025-09-30T21:08:43.072Z"}
+{"level":"info","message":"Preprocessing audio...","timestamp":"2025-09-30T21:08:43.073Z"}
+{"level":"info","message":"Audio preprocessing completed","timestamp":"2025-09-30T21:08:43.073Z"}
+{"level":"info","message":"Extracting acoustic features...","timestamp":"2025-09-30T21:08:43.073Z"}
+{"level":"info","message":"Acoustic feature extraction completed","timestamp":"2025-09-30T21:08:43.074Z"}
+{"level":"info","message":"Analyzing voice quality...","timestamp":"2025-09-30T21:08:43.075Z"}
+{"level":"info","message":"Voice quality analysis completed","timestamp":"2025-09-30T21:08:43.075Z"}
+{"level":"info","message":"Detecting pathological voice indicators...","timestamp":"2025-09-30T21:08:43.075Z"}
+{"level":"info","message":"Pathological indicator detection completed","timestamp":"2025-09-30T21:08:43.075Z"}
+{"level":"info","message":"Audio processing completed successfully","timestamp":"2025-09-30T21:08:43.075Z"}
+{"level":"info","message":"Starting audio processing...","timestamp":"2025-09-30T21:32:17.485Z"}
+{"level":"info","message":"Preprocessing audio...","timestamp":"2025-09-30T21:32:17.486Z"}
+{"level":"info","message":"Audio preprocessing completed","timestamp":"2025-09-30T21:32:17.486Z"}
+{"level":"info","message":"Extracting acoustic features...","timestamp":"2025-09-30T21:32:17.486Z"}
+{"level":"info","message":"Acoustic feature extraction completed","timestamp":"2025-09-30T21:32:17.487Z"}
+{"level":"info","message":"Analyzing voice quality...","timestamp":"2025-09-30T21:32:17.487Z"}
+{"level":"info","message":"Voice quality analysis completed","timestamp":"2025-09-30T21:32:17.487Z"}
+{"level":"info","message":"Detecting pathological voice indicators...","timestamp":"2025-09-30T21:32:17.488Z"}
+{"level":"info","message":"Pathological indicator detection completed","timestamp":"2025-09-30T21:32:17.488Z"}
+{"level":"info","message":"Audio processing completed successfully","timestamp":"2025-09-30T21:32:17.488Z"}
+{"level":"info","message":"Starting audio processing...","timestamp":"2025-09-30T21:37:16.422Z"}
+{"level":"info","message":"Preprocessing audio...","timestamp":"2025-09-30T21:37:16.422Z"}
+{"level":"info","message":"Audio preprocessing completed","timestamp":"2025-09-30T21:37:16.423Z"}
+{"level":"info","message":"Extracting acoustic features...","timestamp":"2025-09-30T21:37:16.423Z"}
+{"level":"info","message":"Acoustic feature extraction completed","timestamp":"2025-09-30T21:37:16.423Z"}
+{"level":"info","message":"Analyzing voice quality...","timestamp":"2025-09-30T21:37:16.424Z"}
+{"level":"info","message":"Voice quality analysis completed","timestamp":"2025-09-30T21:37:16.424Z"}
+{"level":"info","message":"Detecting pathological voice indicators...","timestamp":"2025-09-30T21:37:16.424Z"}
+{"level":"info","message":"Pathological indicator detection completed","timestamp":"2025-09-30T21:37:16.424Z"}
+{"level":"info","message":"Audio processing completed successfully","timestamp":"2025-09-30T21:37:16.424Z"}
+{"level":"info","message":"Starting audio processing...","timestamp":"2025-09-30T21:37:54.602Z"}
+{"level":"info","message":"Preprocessing audio...","timestamp":"2025-09-30T21:37:54.603Z"}
+{"level":"info","message":"Audio preprocessing completed","timestamp":"2025-09-30T21:37:54.603Z"}
+{"level":"info","message":"Extracting acoustic features...","timestamp":"2025-09-30T21:37:54.603Z"}
+{"level":"info","message":"Acoustic feature extraction completed","timestamp":"2025-09-30T21:37:54.603Z"}
+{"level":"info","message":"Analyzing voice quality...","timestamp":"2025-09-30T21:37:54.604Z"}
+{"level":"info","message":"Voice quality analysis completed","timestamp":"2025-09-30T21:37:54.604Z"}
+{"level":"info","message":"Detecting pathological voice indicators...","timestamp":"2025-09-30T21:37:54.605Z"}
+{"level":"info","message":"Pathological indicator detection completed","timestamp":"2025-09-30T21:37:54.605Z"}
+{"level":"info","message":"Audio processing completed successfully","timestamp":"2025-09-30T21:37:54.606Z"}

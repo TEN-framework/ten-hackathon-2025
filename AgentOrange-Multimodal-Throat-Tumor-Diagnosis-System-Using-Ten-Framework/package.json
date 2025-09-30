@@ -37,7 +37,8 @@
     "joi": "^17.9.2",
     "winston": "^3.10.0",
     "compression": "^1.7.4",
-    "rate-limiter-flexible": "^2.4.1"
+    "rate-limiter-flexible": "^2.4.1",
+    "openai": "^4.20.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1",
