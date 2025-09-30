@@ -9,6 +9,7 @@
 const AudioProcessor = require('./audio-processor');
 const MedicalImageProcessor = require('./image-processor');
 const ClinicalDataProcessor = require('./clinical-processor');
+const AIAnalysisService = require('../services/ai-analysis-service');
 const winston = require('winston');
 
 class MultimodalProcessorManager {
@@ -29,6 +30,7 @@ class MultimodalProcessorManager {
         this.audioProcessor = new AudioProcessor(); // Use real audio processing
         this.imageProcessor = new MedicalImageProcessor();
         this.clinicalProcessor = new ClinicalDataProcessor();
+        this.aiAnalysisService = new AIAnalysisService(); // Real AI analysis
 
         // Processing configuration
         this.config = {
@@ -239,14 +241,37 @@ class MultimodalProcessorManager {
 
     async performMultimodalFusion(results) {
         try {
-            this.logger.info('Performing multimodal fusion...');
+            this.logger.info('Performing multimodal fusion with real AI analysis...');
+
+            let aiAnalysis = null;
+            
+            // Try to use real AI analysis for multimodal fusion
+            try {
+                aiAnalysis = await this.aiAnalysisService.analyzeVoiceForTumorDiagnosis(
+                    results.voice || {},
+                    results.clinical || {}
+                );
+                this.logger.info('AI analysis completed successfully');
+            } catch (aiError) {
+                this.logger.warn('AI analysis failed, using fallback analysis:', aiError.message);
+                
+                // Fallback analysis
+                aiAnalysis = {
+                    ai_analysis: "AI analysis temporarily unavailable. Based on the provided clinical data, please consult with a healthcare provider for proper evaluation.",
+                    confidence: 0.3,
+                    recommendations: ["Consult with an ENT specialist", "Schedule a laryngoscopy if symptoms persist"],
+                    risk_factors: ["Symptoms require medical evaluation"],
+                    timestamp: new Date().toISOString()
+                };
+            }
 
             const fusionResults = {
-                fusion_method: this.config.fusionMethod,
+                fusion_method: aiAnalysis ? 'AI-powered multimodal analysis' : 'Fallback analysis',
                 modality_contributions: this.calculateModalityContributions(results),
                 cross_modal_consistency: await this.assessCrossModalConsistency(results),
                 fused_features: this.fuseFeatures(results),
-                confidence_scores: this.calculateFusionConfidenceScores(results)
+                confidence_scores: this.calculateFusionConfidenceScores(results),
+                ai_analysis: aiAnalysis
             };
 
             this.logger.info('Multimodal fusion completed');

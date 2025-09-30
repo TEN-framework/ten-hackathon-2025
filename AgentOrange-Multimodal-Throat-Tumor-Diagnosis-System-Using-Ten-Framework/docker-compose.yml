@@ -34,7 +34,7 @@ services:
       # - AGORA_APP_CERTIFICATE=your-agora-app-certificate
       
       # Legacy OpenAI support (can be used as fallback)
-      # - OPENAI_API_KEY=your-openai-api-key
+      - OPENAI_API_KEY=${SILICONFLOW_API_KEY}
       
       # Medical Compliance
       - HIPAA_COMPLIANCE=true
