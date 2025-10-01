@@ -127,3 +127,15 @@
 {"level":"info","message":"Initializing Redis connection...","timestamp":"2025-09-30T23:18:07.881Z"}
 {"level":"info","message":"Redis client connected","timestamp":"2025-09-30T23:18:07.886Z"}
 {"level":"info","message":"Redis connection established successfully","timestamp":"2025-09-30T23:18:07.888Z"}
+{"level":"error","message":"Redis Client Error: Socket closed unexpectedly","stack":"Error: Socket closed unexpectedly\n    at Socket.<anonymous> (/app/node_modules/@redis/client/dist/lib/client/socket.js:194:118)\n    at Object.onceWrapper (node:events:623:26)\n    at Socket.emit (node:events:508:28)\n    at TCP.<anonymous> (node:net:346:12)","timestamp":"2025-10-01T05:14:00.616Z"}
+{"address":"172.18.0.2","code":"ECONNREFUSED","errno":-111,"level":"error","message":"Redis Client Error: connect ECONNREFUSED 172.18.0.2:6379","port":6379,"stack":"Error: connect ECONNREFUSED 172.18.0.2:6379\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)","syscall":"connect","timestamp":"2025-10-01T05:14:00.618Z"}
+{"address":"172.18.0.2","code":"ECONNREFUSED","errno":-111,"level":"error","message":"Redis Client Error: connect ECONNREFUSED 172.18.0.2:6379","port":6379,"stack":"Error: connect ECONNREFUSED 172.18.0.2:6379\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)","syscall":"connect","timestamp":"2025-10-01T05:14:00.620Z"}
+{"address":"172.18.0.2","code":"ECONNREFUSED","errno":-111,"level":"error","message":"Redis Client Error: connect ECONNREFUSED 172.18.0.2:6379","port":6379,"stack":"Error: connect ECONNREFUSED 172.18.0.2:6379\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)","syscall":"connect","timestamp":"2025-10-01T05:14:00.672Z"}
+{"address":"172.18.0.2","code":"ECONNREFUSED","errno":-111,"level":"error","message":"Redis Client Error: connect ECONNREFUSED 172.18.0.2:6379","port":6379,"stack":"Error: connect ECONNREFUSED 172.18.0.2:6379\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)","syscall":"connect","timestamp":"2025-10-01T05:14:00.773Z"}
+{"code":"EAI_AGAIN","errno":-3001,"hostname":"redis","level":"error","message":"Redis Client Error: getaddrinfo EAI_AGAIN redis","stack":"Error: getaddrinfo EAI_AGAIN redis\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","syscall":"getaddrinfo","timestamp":"2025-10-01T05:14:00.926Z"}
+{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-10-01T05:34:48.715Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-10-01T05:34:48.720Z"}
+{"level":"info","message":"Redis connection established successfully","timestamp":"2025-10-01T05:34:48.723Z"}
+{"level":"info","message":"Initializing Redis connection...","timestamp":"2025-10-01T06:21:08.855Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-10-01T06:21:08.860Z"}
+{"level":"info","message":"Redis connection established successfully","timestamp":"2025-10-01T06:21:08.863Z"}
