@@ -122,16 +122,25 @@ class VoiceGuidedFormAgent {
 
             const currentField = session.formTemplate.fields[session.currentFieldIndex];
             
+            // If audio file is provided, convert it to text first
+            let processedInput = voiceInput;
+            if (audioFile && !voiceInput) {
+                this.logger.info('Converting audio to text...');
+                processedInput = await this.convertAudioToText(audioFile);
+                this.logger.info(`Audio converted to text: ${processedInput}`);
+            }
+            
             // Add to conversation history
             session.conversationHistory.push({
                 type: 'user_input',
-                content: voiceInput,
+                content: processedInput,
                 timestamp: new Date().toISOString(),
-                field: currentField.id
+                field: currentField.id,
+                audioFile: audioFile ? 'provided' : null
             });
 
             // Process the voice input to extract field value
-            const extractedValue = await this.extractFieldValue(voiceInput, currentField, session);
+            const extractedValue = await this.extractFieldValue(processedInput, currentField, session);
             
             // Validate the extracted value
             const validationResult = this.validateFieldValue(extractedValue, currentField);
@@ -552,6 +561,30 @@ class VoiceGuidedFormAgent {
             startTime: session.startTime,
             endTime: session.endTime
         };
+    }
+
+    /**
+     * Convert audio file to text using AI
+     */
+    async convertAudioToText(audioFile) {
+        try {
+            this.logger.info('Converting audio to text using AI...');
+            
+            // For now, we'll use a simple approach with the AI service
+            // In a production system, you might want to use a dedicated speech-to-text service
+            const prompt = `Please transcribe the following audio file. The audio contains a user's voice input for a medical form. Extract only the spoken words clearly and accurately.`;
+            
+            // Since we can't directly process audio files with the current AI service,
+            // we'll return a placeholder that indicates audio was received
+            // In a real implementation, you would use a speech-to-text API here
+            
+            this.logger.warn('Audio-to-text conversion not fully implemented. Using placeholder response.');
+            return "Audio input received - please use text input for now";
+            
+        } catch (error) {
+            this.logger.error('Failed to convert audio to text:', error);
+            throw new Error('Failed to process audio input');
+        }
     }
 
     /**

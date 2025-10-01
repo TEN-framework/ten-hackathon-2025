@@ -412,9 +412,12 @@
                 this.mediaRecorder = null;
                 this.audioChunks = [];
                 this.isRecording = false;
+                this.recognition = null;
+                this.isListening = false;
                 
                 this.initializeEventListeners();
                 this.loadFormTemplates();
+                this.initializeSpeechRecognition();
             }
 
             initializeEventListeners() {
@@ -432,6 +435,45 @@
                         this.sendMessage();
                     }
                 });
+            }
+
+            initializeSpeechRecognition() {
+                // Check if browser supports speech recognition
+                if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                    this.recognition = new SpeechRecognition();
+                    
+                    this.recognition.continuous = false;
+                    this.recognition.interimResults = false;
+                    this.recognition.lang = 'en-US';
+                    
+                    this.recognition.onresult = (event) => {
+                        const transcript = event.results[0][0].transcript;
+                        console.log('Speech recognized:', transcript);
+                        
+                        // Set the recognized text in the input field
+                        document.getElementById('voiceInput').value = transcript;
+                        
+                        // Automatically send the message
+                        this.sendMessage();
+                    };
+                    
+                    this.recognition.onerror = (event) => {
+                        console.error('Speech recognition error:', event.error);
+                        this.showError('Speech recognition error: ' + event.error);
+                        this.isListening = false;
+                        this.updateRecordButton();
+                    };
+                    
+                    this.recognition.onend = () => {
+                        this.isListening = false;
+                        this.updateRecordButton();
+                    };
+                    
+                    console.log('Speech recognition initialized');
+                } else {
+                    console.warn('Speech recognition not supported in this browser');
+                }
             }
 
             async loadFormTemplates() {
@@ -616,77 +658,49 @@
             }
 
             async toggleRecording() {
-                if (!this.isRecording) {
-                    await this.startRecording();
+                if (!this.isListening) {
+                    await this.startListening();
                 } else {
-                    this.stopRecording();
+                    this.stopListening();
                 }
             }
 
-            async startRecording() {
+            async startListening() {
+                if (!this.recognition) {
+                    this.showError('Speech recognition not supported in this browser');
+                    return;
+                }
+
                 try {
-                    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-                    this.mediaRecorder = new MediaRecorder(stream);
-                    this.audioChunks = [];
+                    this.recognition.start();
+                    this.isListening = true;
+                    this.updateRecordButton();
+                    console.log('Started listening for speech...');
+                } catch (error) {
+                    this.showError('Failed to start speech recognition: ' + error.message);
+                }
+            }
 
-                    this.mediaRecorder.ondataavailable = (event) => {
-                        this.audioChunks.push(event.data);
-                    };
+            stopListening() {
+                if (this.recognition && this.isListening) {
+                    this.recognition.stop();
+                    this.isListening = false;
+                    this.updateRecordButton();
+                    console.log('Stopped listening for speech');
+                }
+            }
 
-                    this.mediaRecorder.onstop = () => {
-                        this.processRecording();
-                    };
-
-                    this.mediaRecorder.start();
-                    this.isRecording = true;
-                    
-                    const recordButton = document.getElementById('recordButton');
+            updateRecordButton() {
+                const recordButton = document.getElementById('recordButton');
+                if (this.isListening) {
                     recordButton.classList.add('recording');
                     recordButton.textContent = '⏹️';
-                    
-                } catch (error) {
-                    this.showError('Failed to start recording: ' + error.message);
-                }
-            }
-
-            stopRecording() {
-                if (this.mediaRecorder && this.isRecording) {
-                    this.mediaRecorder.stop();
-                    this.isRecording = false;
-                    
-                    const recordButton = document.getElementById('recordButton');
+                } else {
                     recordButton.classList.remove('recording');
                     recordButton.textContent = '🎤';
                 }
             }
 
-            async processRecording() {
-                if (this.audioChunks.length === 0) return;
-
-                const audioBlob = new Blob(this.audioChunks, { type: 'audio/wav' });
-                const formData = new FormData();
-                formData.append('audio_file', audioBlob, 'recording.wav');
-                formData.append('sessionId', this.sessionId);
-
-                try {
-                    this.showLoading('Processing your voice input...');
-
-                    const response = await fetch('/api/voice-guided-form/process', {
-                        method: 'POST',
-                        body: formData
-                    });
-
-                    const data = await response.json();
-
-                    if (data.success) {
-                        this.handleFormResponse(data.data);
-                    } else {
-                        this.showError(data.message || 'Failed to process voice input');
-                    }
-                } catch (error) {
-                    this.showError('Failed to process voice input: ' + error.message);
-                }
-            }
 
             addMessage(type, content) {
                 const conversation = document.getElementById('conversation');

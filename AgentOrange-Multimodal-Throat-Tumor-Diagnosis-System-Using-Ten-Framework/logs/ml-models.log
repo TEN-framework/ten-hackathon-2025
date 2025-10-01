@@ -478,3 +478,15 @@
 {"level":"info","message":"Multimodal fusion model loaded","timestamp":"2025-10-01T05:34:48.742Z"}
 {"level":"info","message":"All ML models loaded successfully","timestamp":"2025-10-01T05:34:48.742Z"}
 {"level":"info","message":"ML models manager initialized successfully","timestamp":"2025-10-01T05:34:48.742Z"}
+{"level":"info","message":"Initializing ML models manager...","timestamp":"2025-10-01T06:21:08.880Z"}
+{"level":"info","message":"Loading ML models...","timestamp":"2025-10-01T06:21:08.880Z"}
+{"level":"info","message":"Loading voice analysis model...","timestamp":"2025-10-01T06:21:08.880Z"}
+{"level":"info","message":"Voice analysis model loaded","timestamp":"2025-10-01T06:21:08.880Z"}
+{"level":"info","message":"Loading image analysis model...","timestamp":"2025-10-01T06:21:08.880Z"}
+{"level":"info","message":"Image analysis model loaded","timestamp":"2025-10-01T06:21:08.881Z"}
+{"level":"info","message":"Loading clinical analysis model...","timestamp":"2025-10-01T06:21:08.881Z"}
+{"level":"info","message":"Clinical analysis model loaded","timestamp":"2025-10-01T06:21:08.881Z"}
+{"level":"info","message":"Loading multimodal fusion model...","timestamp":"2025-10-01T06:21:08.881Z"}
+{"level":"info","message":"Multimodal fusion model loaded","timestamp":"2025-10-01T06:21:08.881Z"}
+{"level":"info","message":"All ML models loaded successfully","timestamp":"2025-10-01T06:21:08.881Z"}
+{"level":"info","message":"ML models manager initialized successfully","timestamp":"2025-10-01T06:21:08.881Z"}
