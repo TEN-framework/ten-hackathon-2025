@@ -10,6 +10,7 @@ const winston = require('winston');
 const wav = require('node-wav');
 const fft = require('fft');
 const { Matrix } = require('ml-matrix');
+const ffmpeg = require('fluent-ffmpeg');
 
 class AudioProcessor {
     constructor() {
@@ -88,35 +89,36 @@ class AudioProcessor {
                 // Use node-wav for WAV files
                 audioData = wav.decode(buffer);
             } else {
-                // For other formats (M4A, MP3, etc.), create mock data for now
-                // In a real implementation, you would use ffmpeg or another library
-                this.logger.info(`Creating mock audio data for ${fileExtension} file`);
+                // For other formats (M4A, MP3, etc.), use ffmpeg to convert to WAV first
+                this.logger.info(`Converting ${fileExtension} file to WAV using ffmpeg for real analysis`);
                 
-                // Create mock audio data with realistic parameters
-                const sampleRate = 44100;
-                const duration = 20; // Assume 20 seconds for now
-                const channels = 1;
-                const samples = sampleRate * duration;
+                const tempWavPath = filePath.replace(fileExtension, '_temp.wav');
                 
-                // Generate mock audio samples (sine wave with some noise)
-                const channelData = [];
-                for (let ch = 0; ch < channels; ch++) {
-                    const channel = new Float32Array(samples);
-                    for (let i = 0; i < samples; i++) {
-                        const t = i / sampleRate;
-                        // Generate a sine wave with some harmonics and noise
-                        const fundamental = Math.sin(2 * Math.PI * 200 * t); // 200 Hz fundamental
-                        const harmonic = 0.3 * Math.sin(2 * Math.PI * 400 * t); // 400 Hz harmonic
-                        const noise = 0.1 * (Math.random() - 0.5); // Random noise
-                        channel[i] = fundamental + harmonic + noise;
-                    }
-                    channelData.push(channel);
-                }
+                // Use ffmpeg to convert to WAV format
+                await new Promise((resolve, reject) => {
+                    ffmpeg(filePath)
+                        .toFormat('wav')
+                        .audioChannels(1) // Convert to mono
+                        .audioFrequency(44100) // Standard sample rate
+                        .on('end', () => {
+                            this.logger.info('FFmpeg conversion completed');
+                            resolve();
+                        })
+                        .on('error', (err) => {
+                            this.logger.error('FFmpeg conversion failed:', err);
+                            reject(err);
+                        })
+                        .save(tempWavPath);
+                });
                 
-                audioData = {
-                    sampleRate: sampleRate,
-                    channelData: channelData
-                };
+                // Now decode the converted WAV file
+                const wavBuffer = fs.readFileSync(tempWavPath);
+                audioData = wav.decode(wavBuffer);
+                
+                // Clean up temporary file
+                fs.unlinkSync(tempWavPath);
+                
+                this.logger.info(`Successfully converted and decoded ${fileExtension} file`);
             }
             
             this.logger.info(`Audio file loaded: ${audioData.sampleRate}Hz, ${audioData.channelData.length} channels`);

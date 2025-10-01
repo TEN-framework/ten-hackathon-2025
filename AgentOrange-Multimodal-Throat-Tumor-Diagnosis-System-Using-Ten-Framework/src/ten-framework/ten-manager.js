@@ -12,12 +12,14 @@
 // No direct imports - we'll communicate with TEN Framework service via HTTP/gRPC
 const axios = require('axios');
 const winston = require('winston');
+const AIAnalysisService = require('../services/ai-analysis-service');
 
 class TENFrameworkManager {
     constructor() {
         this.tenFramework = null;
         this.extensions = new Map();
         this.agents = new Map();
+        this.aiAnalysisService = new AIAnalysisService();
         this.logger = winston.createLogger({
             level: 'info',
             format: winston.format.combine(
@@ -427,25 +429,17 @@ class TENFrameworkManager {
 
     async generateConversationResponse(context, analysisResults) {
         try {
-            const medicalAgent = this.agents.get('medical');
-            if (!medicalAgent) {
-                throw new Error('Medical agent not initialized');
-            }
+            this.logger.info('Generating conversation response using real AI analysis...');
 
-            this.logger.info('Generating conversation response using TEN Framework integration...');
-
-            // Try to use TEN Agent for conversation generation
+            // Use real AI analysis service for conversation generation
             try {
-                const response = await this.agentManager.generateResponse(medicalAgent, {
-                    context: context,
-                    analysisResults: analysisResults,
-                    medicalKnowledge: true,
-                    evidenceBased: true,
-                    multimodal: true
-                });
+                const response = await this.aiAnalysisService.generateConversationalResponse(analysisResults);
+                
+                this.logger.info('Real AI conversation response generated successfully');
                 return response;
-            } catch (tenError) {
-                this.logger.warn('TEN Agent conversation generation failed, using fallback:', tenError.message);
+                
+            } catch (aiError) {
+                this.logger.warn('Real AI conversation generation failed, using fallback:', aiError.message);
                 
                 // Fallback: Generate response locally using SiliconFlow
                 const fallbackResponse = await this.generateFallbackResponse(context, analysisResults);
