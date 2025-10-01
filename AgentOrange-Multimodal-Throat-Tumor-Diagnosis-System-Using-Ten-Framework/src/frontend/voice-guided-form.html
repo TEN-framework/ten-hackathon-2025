@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice-Guided Form Filling - Medical Diagnosis System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .form-selection {
+            margin-bottom: 30px;
+        }
+
+        .form-selection h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .form-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .form-option {
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .form-option:hover {
+            border-color: #4facfe;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(79, 172, 254, 0.2);
+        }
+
+        .form-option.selected {
+            border-color: #4facfe;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .form-option h3 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .form-option p {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .start-button {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .start-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(79, 172, 254, 0.3);
+        }
+
+        .start-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-session {
+            display: none;
+        }
+
+        .form-session.active {
+            display: block;
+        }
+
+        .progress-bar {
+            background: #f0f0f0;
+            border-radius: 25px;
+            height: 10px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            height: 100%;
+            border-radius: 25px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .conversation {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            min-height: 200px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 15px;
+            max-width: 80%;
+        }
+
+        .message.assistant {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            margin-right: auto;
+        }
+
+        .message.user {
+            background: #e9ecef;
+            color: #333;
+            margin-left: auto;
+        }
+
+        .message.system {
+            background: #fff3cd;
+            color: #856404;
+            margin: 0 auto;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .voice-input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .voice-input input {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 1em;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .voice-input input:focus {
+            border-color: #4facfe;
+        }
+
+        .voice-input button {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1em;
+        }
+
+        .voice-input button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+        }
+
+        .voice-input button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .recording-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .record-button {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            width: 60px;
+            height: 60px;
+        }
+
+        .record-button:hover {
+            transform: scale(1.1);
+        }
+
+        .record-button.recording {
+            background: #28a745;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .form-summary {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .form-summary h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+
+        .summary-label {
+            font-weight: 600;
+            color: #666;
+        }
+
+        .summary-value {
+            color: #333;
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #f5c6cb;
+        }
+
+        .success {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+        }
+
+        .loading {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .form-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎤 Voice-Guided Form Filling</h1>
+            <p>Complete medical forms using natural voice interaction</p>
+        </div>
+
+        <div class="content">
+            <!-- Form Selection -->
+            <div id="formSelection" class="form-selection">
+                <h2>Select a Form to Complete</h2>
+                <div class="form-options">
+                    <div class="form-option" data-form="clinical_intake">
+                        <h3>🏥 Clinical Intake Form</h3>
+                        <p>Basic medical information and symptoms</p>
+                    </div>
+                    <div class="form-option" data-form="voice_assessment">
+                        <h3>🎵 Voice Assessment Form</h3>
+                        <p>Detailed voice quality and symptoms</p>
+                    </div>
+                </div>
+                <button id="startFormButton" class="start-button" disabled>
+                    Start Voice-Guided Form
+                </button>
+            </div>
+
+            <!-- Form Session -->
+            <div id="formSession" class="form-session">
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div id="progressText" class="progress-text">Ready to start...</div>
+
+                <div id="conversation" class="conversation">
+                    <div class="message system">
+                        Welcome! I'll guide you through the form using voice. Please speak naturally.
+                    </div>
+                </div>
+
+                <div class="voice-input">
+                    <input type="text" id="voiceInput" placeholder="Type your response or use voice recording..." />
+                    <button id="sendButton">Send</button>
+                </div>
+
+                <div class="recording-controls">
+                    <button id="recordButton" class="record-button">🎤</button>
+                </div>
+
+                <div id="formSummary" class="form-summary hidden">
+                    <h3>Form Summary</h3>
+                    <div id="summaryContent"></div>
+                </div>
+            </div>
+
+            <div id="errorMessage" class="error hidden"></div>
+            <div id="successMessage" class="success hidden"></div>
+        </div>
+    </div>
+
+    <script>
+        class VoiceGuidedForm {
+            constructor() {
+                this.sessionId = null;
+                this.selectedForm = null;
+                this.mediaRecorder = null;
+                this.audioChunks = [];
+                this.isRecording = false;
+                
+                this.initializeEventListeners();
+                this.loadFormTemplates();
+            }
+
+            initializeEventListeners() {
+                // Form selection
+                document.querySelectorAll('.form-option').forEach(option => {
+                    option.addEventListener('click', () => this.selectForm(option));
+                });
+
+                document.getElementById('startFormButton').addEventListener('click', () => this.startForm());
+                document.getElementById('sendButton').addEventListener('click', () => this.sendMessage());
+                document.getElementById('recordButton').addEventListener('click', () => this.toggleRecording());
+                
+                document.getElementById('voiceInput').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.sendMessage();
+                    }
+                });
+            }
+
+            async loadFormTemplates() {
+                try {
+                    const response = await fetch('/api/voice-guided-form/templates');
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        console.log('Available form templates:', data.data.templates);
+                    }
+                } catch (error) {
+                    console.error('Failed to load form templates:', error);
+                }
+            }
+
+            selectForm(option) {
+                // Remove previous selection
+                document.querySelectorAll('.form-option').forEach(opt => opt.classList.remove('selected'));
+                
+                // Add selection to clicked option
+                option.classList.add('selected');
+                this.selectedForm = option.dataset.form;
+                
+                // Enable start button
+                document.getElementById('startFormButton').disabled = false;
+            }
+
+            async startForm() {
+                if (!this.selectedForm) {
+                    this.showError('Please select a form first');
+                    return;
+                }
+
+                try {
+                    this.showLoading('Starting voice-guided form...');
+
+                    const response = await fetch('/api/voice-guided-form/start', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            formType: this.selectedForm
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        this.sessionId = data.data.sessionId;
+                        this.showFormSession(data.data);
+                    } else {
+                        this.showError(data.message || 'Failed to start form session');
+                    }
+                } catch (error) {
+                    this.showError('Failed to start form session: ' + error.message);
+                }
+            }
+
+            showFormSession(sessionData) {
+                // Hide form selection
+                document.getElementById('formSelection').classList.add('hidden');
+                
+                // Show form session
+                document.getElementById('formSession').classList.add('active');
+                
+                // Add greeting message
+                this.addMessage('assistant', sessionData.greeting);
+                
+                // Add first question
+                this.addMessage('assistant', sessionData.currentQuestion);
+                
+                // Update progress
+                this.updateProgress(sessionData.progress);
+                
+                this.hideLoading();
+            }
+
+            async sendMessage() {
+                const input = document.getElementById('voiceInput');
+                const message = input.value.trim();
+                
+                if (!message) {
+                    this.showError('Please enter a response');
+                    return;
+                }
+
+                if (!this.sessionId) {
+                    this.showError('No active form session');
+                    return;
+                }
+
+                try {
+                    // Add user message to conversation
+                    this.addMessage('user', message);
+                    input.value = '';
+                    
+                    this.showLoading('Processing your response...');
+
+                    const response = await fetch('/api/voice-guided-form/process', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            sessionId: this.sessionId,
+                            voiceInput: message
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        this.handleFormResponse(data.data);
+                    } else {
+                        this.showError(data.message || 'Failed to process response');
+                    }
+                } catch (error) {
+                    this.showError('Failed to process response: ' + error.message);
+                }
+            }
+
+            handleFormResponse(responseData) {
+                this.hideLoading();
+
+                // Add assistant response
+                if (responseData.response) {
+                    this.addMessage('assistant', responseData.response);
+                }
+
+                // Update progress
+                if (responseData.progress) {
+                    this.updateProgress(responseData.progress);
+                }
+
+                // Handle next question or completion
+                if (responseData.nextQuestion) {
+                    this.addMessage('assistant', responseData.nextQuestion);
+                } else if (responseData.clarificationQuestion) {
+                    this.addMessage('assistant', responseData.clarificationQuestion);
+                } else if (responseData.status === 'completed') {
+                    this.handleFormCompletion(responseData);
+                }
+            }
+
+            handleFormCompletion(completionData) {
+                // Add completion message
+                this.addMessage('assistant', completionData.completionMessage);
+                
+                // Show form summary
+                this.showFormSummary(completionData.formSummary);
+                
+                // Show success message
+                this.showSuccess('Form completed successfully!');
+                
+                // Disable input
+                document.getElementById('voiceInput').disabled = true;
+                document.getElementById('sendButton').disabled = true;
+                document.getElementById('recordButton').disabled = true;
+            }
+
+            showFormSummary(summary) {
+                const summaryDiv = document.getElementById('formSummary');
+                const contentDiv = document.getElementById('summaryContent');
+                
+                contentDiv.innerHTML = `
+                    <div class="summary-item">
+                        <span class="summary-label">Form:</span>
+                        <span class="summary-value">${summary.formName}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Fields Completed:</span>
+                        <span class="summary-value">${summary.fieldsCompleted}/${summary.totalFields}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Completion Time:</span>
+                        <span class="summary-value">${new Date(summary.completionTime).toLocaleString()}</span>
+                    </div>
+                `;
+                
+                summaryDiv.classList.remove('hidden');
+            }
+
+            async toggleRecording() {
+                if (!this.isRecording) {
+                    await this.startRecording();
+                } else {
+                    this.stopRecording();
+                }
+            }
+
+            async startRecording() {
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    this.mediaRecorder = new MediaRecorder(stream);
+                    this.audioChunks = [];
+
+                    this.mediaRecorder.ondataavailable = (event) => {
+                        this.audioChunks.push(event.data);
+                    };
+
+                    this.mediaRecorder.onstop = () => {
+                        this.processRecording();
+                    };
+
+                    this.mediaRecorder.start();
+                    this.isRecording = true;
+                    
+                    const recordButton = document.getElementById('recordButton');
+                    recordButton.classList.add('recording');
+                    recordButton.textContent = '⏹️';
+                    
+                } catch (error) {
+                    this.showError('Failed to start recording: ' + error.message);
+                }
+            }
+
+            stopRecording() {
+                if (this.mediaRecorder && this.isRecording) {
+                    this.mediaRecorder.stop();
+                    this.isRecording = false;
+                    
+                    const recordButton = document.getElementById('recordButton');
+                    recordButton.classList.remove('recording');
+                    recordButton.textContent = '🎤';
+                }
+            }
+
+            async processRecording() {
+                if (this.audioChunks.length === 0) return;
+
+                const audioBlob = new Blob(this.audioChunks, { type: 'audio/wav' });
+                const formData = new FormData();
+                formData.append('audio_file', audioBlob, 'recording.wav');
+                formData.append('sessionId', this.sessionId);
+
+                try {
+                    this.showLoading('Processing your voice input...');
+
+                    const response = await fetch('/api/voice-guided-form/process', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        this.handleFormResponse(data.data);
+                    } else {
+                        this.showError(data.message || 'Failed to process voice input');
+                    }
+                } catch (error) {
+                    this.showError('Failed to process voice input: ' + error.message);
+                }
+            }
+
+            addMessage(type, content) {
+                const conversation = document.getElementById('conversation');
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${type}`;
+                messageDiv.textContent = content;
+                conversation.appendChild(messageDiv);
+                conversation.scrollTop = conversation.scrollHeight;
+            }
+
+            updateProgress(progress) {
+                const progressFill = document.getElementById('progressFill');
+                const progressText = document.getElementById('progressText');
+                
+                progressFill.style.width = `${progress.percentage}%`;
+                progressText.textContent = `Question ${progress.current} of ${progress.total} (${progress.percentage}%)`;
+            }
+
+            showError(message) {
+                const errorDiv = document.getElementById('errorMessage');
+                errorDiv.textContent = message;
+                errorDiv.classList.remove('hidden');
+                setTimeout(() => errorDiv.classList.add('hidden'), 5000);
+            }
+
+            showSuccess(message) {
+                const successDiv = document.getElementById('successMessage');
+                successDiv.textContent = message;
+                successDiv.classList.remove('hidden');
+                setTimeout(() => successDiv.classList.add('hidden'), 5000);
+            }
+
+            showLoading(message) {
+                this.addMessage('system', message);
+            }
+
+            hideLoading() {
+                // Remove the last system message if it's a loading message
+                const conversation = document.getElementById('conversation');
+                const lastMessage = conversation.lastElementChild;
+                if (lastMessage && lastMessage.classList.contains('system')) {
+                    lastMessage.remove();
+                }
+            }
+        }
+
+        // Initialize the voice-guided form when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new VoiceGuidedForm();
+        });
+    </script>
+</body>
+</html>

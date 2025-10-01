@@ -25,6 +25,7 @@ const authRoutes = require('./api/routes/auth');
 const analysisRoutes = require('./api/routes/analysis');
 const multimodalRoutes = require('./api/routes/multimodal');
 const healthRoutes = require('./api/routes/health');
+const voiceGuidedFormRoutes = require('./api/routes/voice-guided-form');
 
 // Import middleware
 const { errorHandler } = require('./middleware/error-handler');
@@ -176,6 +177,14 @@ class MultimodalDiagnosisApp {
         // Multimodal routes
         this.app.use('/api/multimodal', multimodalRoutes);
 
+        // Voice-guided form routes
+        this.app.use('/api/voice-guided-form', voiceGuidedFormRoutes);
+
+        // Frontend routes
+        this.app.get('/voice-guided-form', (req, res) => {
+            res.sendFile('voice-guided-form.html', { root: './src/frontend' });
+        });
+
         // Root endpoint
         this.app.get('/', (req, res) => {
             res.json({
@@ -203,6 +212,7 @@ class MultimodalDiagnosisApp {
                     authentication: '/api/auth',
                     analysis: '/api/analysis',
                     multimodal: '/api/multimodal',
+                    voice_guided_form: '/api/voice-guided-form',
                     health: '/health'
                 }
             });
