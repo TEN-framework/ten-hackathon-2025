@@ -1,0 +1,30 @@
+{
+  "type": "extension",
+  "name": "smart_assistant_python",
+  "version": "0.1.0",
+  "dependencies": [
+    {
+      "type": "system",
+      "name": "ten_runtime_python",
+      "version": ">=0.1.0"
+    }
+  ],
+  "api": {
+    "cmd_in": [
+      {
+        "name": "analyze_conversation"
+      },
+      {
+        "name": "retrieve_context"
+      }
+    ],
+    "cmd_out": [
+      {
+        "name": "conversation_analyzed"
+      },
+      {
+        "name": "context_retrieved"
+      }
+    ]
+  }
+}

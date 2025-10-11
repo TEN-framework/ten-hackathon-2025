@@ -1,0 +1,27 @@
+{
+  "type": "extension",
+  "name": "context_retrieval_tool_python",
+  "version": "0.1.0",
+  "dependencies": [
+    {
+      "type": "system",
+      "name": "ten_runtime_python",
+      "version": ">=0.1.0"
+    }
+  ],
+  "api": {
+    "cmd_in": [
+      {
+        "name": "tool_call"
+      }
+    ],
+    "cmd_out": [
+      {
+        "name": "tool_register"
+      },
+      {
+        "name": "tool_call_result"
+      }
+    ]
+  }
+}
