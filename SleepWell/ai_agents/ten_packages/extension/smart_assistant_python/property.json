@@ -1,0 +1,6 @@
+{
+  "api": {
+    "api_base": "http://localhost:8080",
+    "api_key": "your-api-key-here"
+  }
+}
