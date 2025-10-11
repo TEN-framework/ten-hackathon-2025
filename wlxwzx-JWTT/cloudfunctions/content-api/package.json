@@ -1,0 +1,20 @@
+{
+  "name": "content-api",
+  "version": "1.0.0",
+  "description": "讲我听听项目统一API网关云函数",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["cloudbase", "api-gateway", "jwtt"],
+  "author": "jwtt-team",
+  "license": "MIT",
+  "dependencies": {
+    "@cloudbase/node-sdk": "^2.4.1",
+    "cors": "^2.8.5",
+    "node-fetch": "^2.6.7"
+  },
+  "engines": {
+    "node": ">=18.15.0"
+  }
+}

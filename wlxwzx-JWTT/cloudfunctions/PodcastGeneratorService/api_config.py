@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+API配置文件
+存储API Key和其他API相关配置
+"""
+
+# 云开发API Key
+CLOUDBASE_API_KEY = "eyJhbGciOiJSUzI1NiIsImtpZCI6IjlkMWRjMzFlLWI0ZDAtNDQ4Yi1hNzZmLWIwY2M2M2Q4MTQ5OCJ9.eyJhdWQiOiJjbG91ZDEtOGdya2cwYXI1ZjE2OTI0OSIsImV4cCI6MjUzNDAyMzAwNzk5LCJpYXQiOjE3NTk2NDg5MjMsImF0X2hhc2giOiJfZVVMSUtHN0VmQy1GRkpVQUdrb2xRIiwicHJvamVjdF9pZCI6ImNsb3VkMS04Z3JrZzBhcjVmMTY5MjQ5IiwibWV0YSI6eyJwbGF0Zm9ybSI6IkFwaUtleSJ9LCJhZG1pbmlzdHJhdG9yX2lkIjoiMTk0Mjg1ODEyNjM5MjExMTEwNSIsInVzZXJfdHlwZSI6IiJ9.pIbFLIzaHrL65md_Za8AfgBHwmn7-mI0BX2JNeU6as8OBN-qGhBQkhT_VX8kiPFeayllZJJb-I5JWNXYX1K-NT5168J8hGJWefGOC4OvXnXTLpN-psHMiQOsHPjBI3QYvxeaW2NdtsRtRkTEvwAlrirIGuGbfIjIs5PPQG1gE8Mz6RcGvOQbMbyETZxwLCuBxaBhq9oRDs5YDkd3QHElYz3Oy9LAkIvBTfKnhlnkrAI4PoBfh14OHDuug1wI37ZjASx8hMpzNuwBLHRMdTUGMxBFy883NLEca0vN9S2cH-wLkEmta13bpHoV14OtWDyJ8UpJZBWJEY6Bii-vXqqEqg"
+
+# API网关基础URL模板
+# 根据云开发文档，云函数HTTP API调用格式为 {env-id}.api.tcloudbasegateway.com
+API_GATEWAY_URL_TEMPLATE = "https://{env_id}.api.tcloudbasegateway.com"
+
+# content-api云函数名称
+CONTENT_API_FUNCTION_NAME = "content-api"

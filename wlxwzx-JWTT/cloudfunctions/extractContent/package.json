@@ -1,0 +1,10 @@
+{
+  "name": "extractContent",
+  "version": "1.0.0",
+  "description": "抓取网页内容并提取标题和正文",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.10"
+  }
+}
