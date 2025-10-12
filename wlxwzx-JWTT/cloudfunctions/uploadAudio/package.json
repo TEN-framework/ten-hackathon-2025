@@ -1,0 +1,14 @@
+{
+  "name": "upload-audio",
+  "version": "1.0.0",
+  "description": "音频文件上传云函数",
+  "main": "index.js",
+  "dependencies": {
+    "@cloudbase/node-sdk": "^2.7.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

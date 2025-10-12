@@ -1,0 +1,11 @@
+{
+  "name": "processAudioContent",
+  "version": "1.0.0",
+  "description": "处理音频内容的云函数",
+  "main": "index.js",
+  "dependencies": {
+    "@cloudbase/node-sdk": "^2.4.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
