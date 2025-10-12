@@ -182,6 +182,7 @@
 <script setup>
 import { ref, reactive, onMounted, onUnmounted, nextTick, watch } from 'vue'
 import VoiceChat from '../utils/voiceChat.js'
+import contentAPI from '../utils/new-api-client.js'
 
 // Props
 const props = defineProps({
@@ -340,7 +341,41 @@ const connectToAgent = async () => {
   if (!voiceChatInstance) return
   
   errorMessage.value = ''
-  const success = await voiceChatInstance.connectAgent()
+  
+  // v1.0: 获取网页内容并生成问候语和提示词
+  let greeting = '你好呀，想跟我聊点什么吗？'
+  let prompt = '你是为幽默睿智的聊天助手，请根据用户提供的内容展开对话'
+  
+  if (props.inputUrl) {
+    try {
+      const contentResult = await contentAPI.extractContent(props.inputUrl)
+      
+      if (contentResult.success && contentResult.data) {
+        const { title, content } = contentResult.data
+        
+        // 根据网页内容生成问候语
+        if (title) {
+          greeting = `你好呀，我们来聊聊关于《${title}》这个话题`
+        }
+        
+        // 根据网页内容生成提示词
+        if (content) {
+          prompt = `你是一个专业的文章解读助手。用户正在阅读一篇标题为"${title || '未知'}"的文章。请根据以下文章内容回答用户的问题，提供专业、准确的解读。\n\n文章内容：\n${content.substring(0, 2000)}...`
+        }
+      }
+    } catch (error) {
+      console.error('获取网页内容失败:', error)
+      // 使用默认问候语和提示词
+    }
+  }
+  
+  // 连接Agent并传递自定义问候语和提示词
+  const success = await voiceChatInstance.connectAgent(
+    `voice_chat_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`, // 频道名称
+    123456, // 用户ID
+    greeting, // 自定义问候语
+    prompt   // 自定义提示词
+  )
   
   if (success) {
     startAudioVisualization()

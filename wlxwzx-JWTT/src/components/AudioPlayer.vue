@@ -57,7 +57,7 @@
           <!-- 音频状态 -->
           <div class="text-center mt-2">
             <span class="text-sm" :class="isPlaying ? 'text-green-600' : 'text-gray-500'">
-              {{ isPlaying ? '正在播放' : '已暂停' }}
+              {{ getPlayStatusText() }}
             </span>
           </div>
         </div>
@@ -78,8 +78,16 @@
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { VolumeMute, VolumeNotice } from '@icon-park/vue-next'
 
+// 声明props
+const props = defineProps({
+  playlistType: {
+    type: String,
+    default: null
+  }
+})
+
 // 声明事件发射器
-const emit = defineEmits(['playbackCompleted'])
+const emit = defineEmits(['playbackCompleted', 'play-state-changed'])
 
 // 响应式数据
 const audioUrl = ref('')
@@ -148,10 +156,12 @@ const setupAudioListeners = () => {
   
   audioElement.value.addEventListener('play', () => {
     isPlaying.value = true
+    emit('play-state-changed', true)
   })
   
   audioElement.value.addEventListener('pause', () => {
     isPlaying.value = false
+    emit('play-state-changed', false)
   })
   
   audioElement.value.addEventListener('ended', () => {
@@ -218,6 +228,9 @@ const togglePlay = () => {
       errorMessage.value = '播放失败，请检查音频文件'
     })
   }
+  
+  // 通知父组件播放状态变化
+  emit('play-state-changed', isPlaying.value)
 }
 
 // 静音切换
@@ -252,6 +265,20 @@ const formatFileSize = (bytes) => {
   const sizes = ['B', 'KB', 'MB', 'GB']
   const i = Math.floor(Math.log(bytes) / Math.log(1024))
   return Math.round(bytes / Math.pow(1024, i) * 100) / 100 + ' ' + sizes[i]
+}
+
+// 获取播放状态文本
+const getPlayStatusText = () => {
+  const playStatus = isPlaying.value ? '正在播放' : '已暂停'
+  const type = props.playlistType || playlistType.value
+  
+  if (type === 'original') {
+    return `原文朗读 - ${playStatus}`
+  } else if (type === 'podcast') {
+    return `双人播客 - ${playStatus}`
+  }
+  
+  return playStatus
 }
 
 // 设置音频信息

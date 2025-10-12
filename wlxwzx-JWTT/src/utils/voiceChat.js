@@ -119,24 +119,48 @@ class VoiceChat {
 
   /**
    * 启动Agent
+   * @param {string} channel - 频道名称
+   * @param {string} greeting - 自定义问候语
+   * @param {string} prompt - 自定义提示词
+   * @returns {Promise<boolean>} 启动是否成功
    */
-  async startAgent(channel, userId) {
+  async startAgent(channel, greeting = null, prompt = null) {
     try {
-      const response = await axios.post(`${this.agentServerUrl}/start`, {
+      const properties = {
+        "openai_chatgpt": {
+          "model": "gpt-4o-mini",
+          "max_tokens": 1024,
+          "temperature": 0.7
+        }
+      };
+
+      // 如果提供了自定义提示词，添加到properties.llm中
+      if (prompt) {
+        properties.llm = {
+          "prompt": prompt.trim()
+        };
+        this.log(`使用自定义提示词: ${prompt.trim()}`, 'info');
+      }
+
+      // 如果提供了自定义问候语，添加到properties.main_control中
+      if (greeting) {
+        properties.main_control = {
+          "greeting": greeting.trim()
+        };
+        this.log(`使用自定义问候语: ${greeting.trim()}`, 'info');
+      }
+
+      const requestData = {
         request_id: `req_${Date.now()}`,
         channel_name: channel,
-        user_uid: parseInt(userId),
-        bot_uid: 987654,
+        user_uid: this.USER_ID,
+        bot_uid: this.BOT_UID,
         graph_name: "voice_assistant",
         timeout: -1,
-        properties: {
-          "openai_chatgpt": {
-            "model": "gpt-4o-mini",
-            "max_tokens": 1024,
-            "temperature": 0.7
-          }
-        }
-      }, {
+        properties: properties
+      };
+
+      const response = await axios.post(`${this.agentServerUrl}/start`, requestData, {
         signal: this.connectionAbortController?.signal,
         timeout: this.CONNECTION_TIMEOUT_MS
       });
@@ -152,7 +176,7 @@ class VoiceChat {
         await this.stopAgent(channel);
         // 等待一小段时间让服务器清理频道
         await new Promise(resolve => setTimeout(resolve, 1000));
-        return await this.startAgent(channel, userId);
+        return await this.startAgent(channel, greeting, prompt);
       } else {
         throw new Error(response.data.msg || 'Agent启动失败');
       }
@@ -448,8 +472,13 @@ class VoiceChat {
 
   /**
    * 连接Agent
+   * @param {string} channel - 频道名称
+   * @param {number} userId - 用户ID
+   * @param {string} greeting - 自定义问候语
+   * @param {string} prompt - 自定义提示词
+   * @returns {Promise<boolean>} 连接是否成功
    */
-  async connectAgent(channel = 'test_channel_001', userId = 123456) {
+  async connectAgent(channel = 'test_channel_001', userId = 123456, greeting = null, prompt = null) {
     // 防止重复连接
     if (this.isConnecting || this.isConnected) {
       this.log('已在连接中或已连接，跳过重复连接请求');
@@ -481,12 +510,14 @@ class VoiceChat {
     this.updateStatus(`连接中... (超时时间: ${this.CONNECTION_TIMEOUT_MS / 1000}秒)`, 'connecting');
     this.log(`开始连接到服务器: ${this.agentServerUrl}`);
     this.log(`频道: ${channel}, 用户ID: ${userId}`);
+    if (greeting) this.log(`自定义问候语: ${greeting}`);
+    if (prompt) this.log(`自定义提示词: ${prompt}`);
 
     try {
       // 1. 启动Agent
       this.log('正在启动Agent...', 'info');
       this.updateStatus('正在启动Agent...', 'connecting');
-      const agentSuccess = await this.startAgent(channel, userId);
+      const agentSuccess = await this.startAgent(channel, greeting, prompt);
 
       if (!agentSuccess) {
         throw new Error('Agent启动失败');
@@ -514,7 +545,11 @@ class VoiceChat {
       this.log('🧹 已清空消息历史记录');
 
       // 发送连接成功消息
-      this.sendMessage(`✨ 已成功连接到频道 "${channel}"！请开始说话吧！`, 'system', Date.now());
+      if (greeting) {
+        this.sendMessage(greeting, 'agent', Date.now());
+      } else {
+        this.sendMessage(`✨ 已成功连接到频道 "${channel}"！请开始说话吧！`, 'system', Date.now());
+      }
 
       return true;
     } catch (error) {

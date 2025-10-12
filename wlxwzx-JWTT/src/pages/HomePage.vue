@@ -1,7 +1,7 @@
 <template>
   <div class="hero min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
     <div class="hero-content text-center">
-      <div class="max-w-md">
+      <div class="max-w-2xl">
         <h1 class="text-5xl font-bold text-gray-800 mb-8">讲我听听</h1>
         <p class="text-xl text-gray-600 mb-8">
           懒得看字，就讲我听听~
@@ -16,16 +16,17 @@
         </div>
         
         <!-- URL输入区域 -->
-        <div class="card bg-white shadow-xl mb-6">
+        <div class="card bg-white shadow-xl mb-6" style="width: 100%; max-width: 100%;">
           <div class="card-body">
             <h2 class="card-title justify-center text-gray-700">请输入网页链接</h2>
-            <div class="flex gap-2 mt-4">
-              <div class="relative flex-1">
+            <div class="flex gap-2 mt-4" style="min-width: 0;">
+              <div class="relative flex-1" style="min-width: 0; width: 100%;">
                 <input 
                   type="text" 
                   v-model="inputUrl"
                   placeholder="https://example.com"
-                  class="input input-bordered w-full pr-10"
+                  class="input input-bordered w-full pr-10 min-w-0"
+                  style="flex-shrink: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 500px;"
                   :class="{
                     'input-success': urlValidation.level === 'success',
                     'input-warning': urlValidation.level === 'warning',
@@ -43,7 +44,7 @@
                 </button>
               </div>
               <button 
-                class="btn btn-primary"
+                class="btn btn-primary flex-shrink-0"
                 @click="pasteFromClipboard"
               >
                 粘贴
@@ -59,7 +60,7 @@
                    urlValidation.level === 'info' ? 'text-info' : ''
                  ]">
               <div class="flex items-center gap-1">
-                <span v-if="urlValidation.level === 'success'" class="text-green-500">✓</span>
+                <span v-if="urlValidation.level === 'success'" class="text-green-500"></span>
                 <span v-if="urlValidation.level === 'warning'" class="text-yellow-500">⚠</span>
                 <span v-if="urlValidation.level === 'error'" class="text-red-500">✗</span>
                 <span v-if="urlValidation.level === 'info'" class="text-blue-500">ℹ</span>
@@ -69,12 +70,15 @@
           </div>
         </div>
 
+        <!-- 文章轮播区域 -->
+        <ArticleCarousel @article-selected="handleArticleSelected" />
+
         <!-- 功能按钮区域 -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
           <button 
             class="btn btn-primary"
             @click="handleOriginalRead"
-            :disabled="!urlValidation.isValid || isLoading || (isPlaying && currentPlaylistType === 'original')"
+            :disabled="!urlValidation.isValid || isLoading || (isAudioLoaded && currentPlaylistType === 'original')"
           >
             <span v-if="isLoading" class="loading loading-spinner loading-sm"></span>
             {{ isLoading ? '处理中...' : '原文朗读' }}
@@ -82,7 +86,7 @@
           <button 
             class="btn btn-secondary"
             @click="handlePodcast"
-            :disabled="!urlValidation.isValid || isLoading || (isPlaying && currentPlaylistType === 'podcast')"
+            :disabled="!urlValidation.isValid || isLoading || (isAudioLoaded && currentPlaylistType === 'podcast')"
           >
             <span v-if="isLoading" class="loading loading-spinner loading-sm"></span>
             {{ isLoading ? '请稍后...' : '双人播客' }}
@@ -100,7 +104,9 @@
         <AudioPlayer 
           ref="audioPlayer"
           v-if="showAudioPlayer"
+          :playlist-type="currentPlaylistType"
           @playback-completed="handlePlaybackCompleted"
+          @play-state-changed="handlePlayStateChanged"
         />
 
         <!-- 错误信息显示 -->
@@ -182,7 +188,7 @@
 
 <script setup>
 
-import { ref, onMounted, watch, onUnmounted } from 'vue'
+import { ref, onMounted, watch, onUnmounted, nextTick } from 'vue'
 import { ensureLogin, checkEnvironment, isValidEnvId, ENV_ID, app } from '../utils/cloudbase.js'
 // 替换为新架构API客户端
 import { extractContent, generatePodcast, generateTTS, getContent, healthCheck, withErrorHandling } from '../utils/new-api-client.js'
@@ -192,11 +198,13 @@ import { uploadAudioFile } from '../utils/storage.js'
 import { validateUrlInRealTime, isValidUrl, normalizeUrl } from '../utils/url-validator.js'
 import VoiceChat from '../components/VoiceChat.vue'
 import AudioPlayer from '../components/AudioPlayer.vue'
+import ArticleCarousel from '../components/ArticleCarousel.vue'
 
 
 // 响应式数据
 const isLoading = ref(false)
 const isPlaying = ref(false)  // 添加这行来跟踪播放状态
+const isAudioLoaded = ref(false)  // 添加这行来跟踪音频是否已加载
 const inputUrl = ref('')
 const extractedData = ref(null)
 // v0.8：仅持有 contentId 以驱动后续 TTS/Poll 流程
@@ -240,8 +248,32 @@ onUnmounted(() => {
   }
 })
 
+// 重置播放器状态
+const resetPlayerState = () => {
+  // 暂停当前播放
+  if (audioPlayer.value) {
+    audioPlayer.value.pause()
+  }
+  
+  // 重置所有播放相关状态
+  isPlaying.value = false
+  isAudioLoaded.value = false
+  currentPlaylistType.value = null
+  
+  // 隐藏音频播放器
+  showAudioPlayer.value = false
+  
+  // 强制更新按钮状态
+  forceUpdateButtonState()
+  
+  console.log('播放器状态已重置')
+}
+
 // URL输入处理
 const handleUrlInput = async () => {
+  // 重置播放器状态
+  resetPlayerState()
+  
   // 实时验证URL
   const validation = validateUrlInRealTime(inputUrl.value)
   urlValidation.value = validation
@@ -284,6 +316,8 @@ watch(inputUrl, (newUrl, oldUrl) => {
 const pasteFromClipboard = async () => {
   try {
     const text = await navigator.clipboard.readText()
+    // 重置播放器状态
+    resetPlayerState()
     inputUrl.value = text
     // 粘贴后立即验证
     handleUrlInput()
@@ -309,8 +343,16 @@ const forceUpdateButtonState = () => {
   // 触发Vue的响应式更新
   nextTick(() => {
     // 强制触发组件更新以确保按钮状态正确
-    console.log('强制更新按钮状态:', urlValidation.value.isValid)
+    console.log('强制更新按钮状态:', urlValidation.value.isValid, '播放状态:', isPlaying.value, '音频加载状态:', isAudioLoaded.value, '播放类型:', currentPlaylistType.value)
   })
+}
+
+// 处理文章选择
+const handleArticleSelected = (articleUrl) => {
+  // 将选中的文章URL设置到输入框
+  inputUrl.value = articleUrl
+  // 触发URL验证
+  handleUrlInput()
 }
 
 // 显示保存状态
@@ -458,6 +500,7 @@ const autoExtractContent = async () => {
     extractedData.value = {
       id: contentId.value,
       url: extractResult?.data?.url || normalizedUrl,
+      title: extractResult?.data?.title || '无标题',
       timestamp: extractResult?.data?.timestamp || Date.now()
     }
     
@@ -493,14 +536,19 @@ const autoExtractContent = async () => {
  * 3) 展示等待并轮询 ttsc_task，完成后获取 ttsc_url 列表并播放
  */
 const handleOriginalRead = async () => {
+  // 如果已经在加载中，避免重复调用
+  if (isLoading.value) {
+    return
+  }
+
   // 每次触发都重新验证URL
   const validation = validateUrlInRealTime(inputUrl.value)
-  urlValidation.value = validation
-  forceUpdateButtonState()
   
   // 先进行URL验证检查
-  if (!urlValidation.value.isValid) {
-    errorMessage.value = urlValidation.value.message || '请输入有效的网页链接'
+  if (!validation.isValid) {
+    urlValidation.value = validation
+    forceUpdateButtonState()
+    errorMessage.value = validation.message || '请输入有效的网页链接'
     return
   }
 
@@ -509,6 +557,10 @@ const handleOriginalRead = async () => {
   
   isLoading.value = true
   errorMessage.value = ''
+  // 保存当前显示的标题，避免隐藏
+  const currentMessage = urlValidation.value.message
+  const currentLevel = urlValidation.value.level
+  
   // v0.8：显示播放器并进入加载态
   showAudioPlayer.value = true
   if (audioPlayer.value?.setLoading) audioPlayer.value.setLoading(true)
@@ -553,6 +605,12 @@ const handleOriginalRead = async () => {
   } finally {
     isLoading.value = false
     if (audioPlayer.value?.setLoading) audioPlayer.value.setLoading(false)
+    // 恢复之前显示的标题信息
+    urlValidation.value = {
+      isValid: true,
+      message: currentMessage,
+      level: currentLevel
+    }
   }
 }
 
@@ -565,14 +623,19 @@ const handleOriginalRead = async () => {
  * 4) 轮询 ttsp_task 完成后获取 ttsp_url 列表并播放
  */
 const handlePodcast = async () => {
+  // 如果已经在加载中，避免重复调用
+  if (isLoading.value) {
+    return
+  }
+
   // 每次触发都重新验证URL
   const validation = validateUrlInRealTime(inputUrl.value)
-  urlValidation.value = validation
-  forceUpdateButtonState()
   
   // 先进行URL验证检查
-  if (!urlValidation.value.isValid) {
-    errorMessage.value = urlValidation.value.message || '请输入有效的网页链接'
+  if (!validation.isValid) {
+    urlValidation.value = validation
+    forceUpdateButtonState()
+    errorMessage.value = validation.message || '请输入有效的网页链接'
     return
   }
 
@@ -581,6 +644,10 @@ const handlePodcast = async () => {
   
   isLoading.value = true
   errorMessage.value = ''
+  // 保存当前显示的标题，避免隐藏
+  const currentMessage = urlValidation.value.message
+  const currentLevel = urlValidation.value.level
+  
   // v0.8：显示播放器并进入加载态
   showAudioPlayer.value = true
   if (audioPlayer.value?.setLoading) audioPlayer.value.setLoading(true)
@@ -628,17 +695,44 @@ const handlePodcast = async () => {
   } finally {
     isLoading.value = false
     if (audioPlayer.value?.setLoading) audioPlayer.value.setLoading(false)
+    // 恢复之前显示的标题信息
+    urlValidation.value = {
+      isValid: true,
+      message: currentMessage,
+      level: currentLevel
+    }
   }
 }
 
-// 处理跟我聊聊
-const handleChat = () => {
-  console.log('跟我聊聊:', inputUrl.value)
-  // 暂停播放器
-  if (audioPlayer.value) {
-    audioPlayer.value.pause()
+// 处理"跟我聊聊"按钮点击
+const handleChat = async () => {
+  // 如果已经在加载中，避免重复调用
+  if (isLoading.value) {
+    return
   }
-  showVoiceChat.value = true
+
+  isLoading.value = true
+  errorMessage.value = ''
+  
+  try {
+    // 暂停当前播放
+    if (audioPlayer.value) {
+      audioPlayer.value.pause()
+    }
+    
+    // 显示语音聊天界面
+    showVoiceChat.value = true
+    
+    // 仅暂停播放，不重置音频加载状态和播放列表类型
+    isPlaying.value = false
+    // 不重置 isAudioLoaded 和 currentPlaylistType，保持按钮状态不变
+    
+  } catch (error) {
+    console.error('打开语音聊天失败:', error)
+    errorMessage.value = '打开语音聊天失败: ' + error.message
+  } finally {
+    isLoading.value = false
+  }
 }
 
 // 关闭语音聊天
@@ -714,12 +808,17 @@ const pollTTSAndGetUrls = async (id, type) => {
           }
           return
         }
+        if (status === 'failed') {
+          reject(new Error('TTS生成失败'))
+          return
+        }
         if (attempts >= maxAttempts) {
           reject(new Error('等待音频生成超时'))
           return
         }
         setTimeout(tick, intervalMs)
       } catch (err) {
+        console.error(`轮询TTS状态失败 (尝试 ${attempts}/${maxAttempts}):`, err)
         if (attempts >= maxAttempts) {
           reject(err)
           return
@@ -731,9 +830,21 @@ const pollTTSAndGetUrls = async (id, type) => {
   })
 }
 
+// 处理播放状态变化
+const handlePlayStateChanged = (playing) => {
+  isPlaying.value = playing
+  // 当音频开始播放时，标记为已加载
+  if (playing) {
+    isAudioLoaded.value = true
+  }
+  // 强制更新按钮状态
+  forceUpdateButtonState()
+}
+
 // 处理播放完成事件
 const handlePlaybackCompleted = () => {
   isPlaying.value = false  // 设置播放状态为false
+  isAudioLoaded.value = false  // 重置音频加载状态
   currentPlaylistType.value = null // 重置播放列表类型
   // 强制更新按钮状态
   forceUpdateButtonState()
